@@ -1,11 +1,16 @@
+import LogoTile from "@/components/LogoTile";
 import ModeToggle from "@/components/ModeToggle";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <main>
-      <ModeToggle/>
-      <Button>Hello World !</Button>
+      <ModeToggle />
+      <div className="flex">
+        <LogoTile title="Titre" description="Description" logo="react" />
+        <LogoTile title="Titre" description="Description" logo="typescript" />
+        <LogoTile title="Titre" description="Description" logo="next" />
+        <LogoTile title="Titre" description="Description" logo="javascript" />
+      </div>
     </main>
   );
 }

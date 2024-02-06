@@ -1,5 +1,6 @@
 import AvatarTile from "@/components/AvatarTile";
 import LogoTile from "@/components/LogoTile";
+import ProjectTile from "@/components/ProjectTile";
 
 export default function Home() {
   return (
@@ -36,10 +37,34 @@ export default function Home() {
           logo="nodejs"
         />
       </div>
-      <div className="col-span-2 row-start-3 ">9</div>
-      <div className="col-span-2 col-start-3 row-start-3 ">10</div>
-      <div className="col-span-2 row-start-4 ">11</div>
-      <div className="col-span-2 col-start-3 row-start-4 ">12</div>
+      <div className="col-span-2 row-start-3 ">
+        <ProjectTile
+          title="Projet 1"
+          description="Description"
+          image="folder-dist"
+        />
+      </div>
+      <div className="col-span-2 col-start-3 row-start-3 ">
+        <ProjectTile
+          title="Projet 2"
+          description="Description"
+          image="folder-packages"
+        />
+      </div>
+      <div className="col-span-2 row-start-4 ">
+        <ProjectTile
+          title="Projet 3"
+          description="Description"
+          image="folder-layout"
+        />
+      </div>
+      <div className="col-span-2 col-start-3 row-start-4 ">
+        <ProjectTile
+          title="Projet 4"
+          description="Description"
+          image="folder-app"
+        />
+      </div>
       <div className="row-start-5 ">13</div>
       <div className="row-start-5 ">14</div>
       <div className="row-start-5 ">15</div>

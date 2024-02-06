@@ -4,15 +4,16 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { GanttChart } from "lucide-react";
 import { Button } from "./ui/button";
+import { GanttChart, Plus } from "lucide-react";
 
-interface ILogoTileViewMoreButtonProps {
+interface IViewMoreButtonProps {
+  icon: "GanttChart" | "Plus";
   tooltip: string;
   style?: string;
 }
 
-const LogoTileViewMoreButton = (props: ILogoTileViewMoreButtonProps) => {
+const ViewMoreButton = (props: IViewMoreButtonProps) => {
   return (
     <TooltipProvider>
       <Tooltip>
@@ -22,7 +23,11 @@ const LogoTileViewMoreButton = (props: ILogoTileViewMoreButtonProps) => {
             size="icon"
             className={`rounded-xl ${props.style}`}
           >
-            <GanttChart className="size-4" />
+            {props.icon === "GanttChart" ? (
+              <GanttChart className="size-4" />
+            ) : (
+              <Plus className="size-4" />
+            )}
           </Button>
         </TooltipTrigger>
         <TooltipContent>
@@ -33,4 +38,4 @@ const LogoTileViewMoreButton = (props: ILogoTileViewMoreButtonProps) => {
   );
 };
 
-export default LogoTileViewMoreButton;
+export default ViewMoreButton;

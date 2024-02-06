@@ -68,11 +68,17 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        hello: {
+          from: { transform: "rotate(-20deg)" },
+          to: { transform: "rotate(20deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-slow": "pulse 3s infinite",
+        "pulse-very-slow": "pulse 5s infinite",
+        hello: "hello 1s linear infinite alternate",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],

@@ -27,8 +27,7 @@ const AvatarTile = (props: IAvatarTileProps) => {
         </div>
       </CardHeader>
       <CardContent>
-        <div className="absolute left-0 top-24
-         h-full w-1/2">
+        <div className="absolute left-12 top-24 h-full w-1/2">
           <div
             className="absolute left-0 top-4 animate-pulse-very-slow rounded-full bg-sky-700 blur-xl"
             style={{

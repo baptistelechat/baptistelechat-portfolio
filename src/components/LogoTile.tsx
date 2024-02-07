@@ -18,7 +18,7 @@ const LogoTile = (props: ILogoTileProps) => {
   const imgSize = 150;
 
   return (
-    <Card className="relative" style={{ height: imgSize * 1.65 }}>
+    <Card className="relative" style={{ height: imgSize * 1.7 }}>
       <CardHeader>
         <CardTitle>{props.title}</CardTitle>
         <CardDescription>{props.description}</CardDescription>

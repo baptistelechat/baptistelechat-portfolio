@@ -39,37 +39,41 @@ export default function Home() {
       </div>
       <div className="col-span-2 row-start-3 ">
         <ProjectTile
-          title="Projet 1"
-          description="Description"
-          logo="folder-dist"
+          title="Sismo"
+          description="Un outil pour obtenir les zones de neige, de vent et de sismicité en France (incluant DROM-COM)."
+          pattern="pattern-topography-indigo-800/50"
+          logo="sismo"
         />
       </div>
       <div className="col-span-2 col-start-3 row-start-3 ">
         <ProjectTile
-          title="Projet 2"
-          description="Description"
-          logo="folder-packages"
+          title="SpeedTest Tracker"
+          description="Une application web pour surveiller les données des tests de vitesse internet sur un réseau local."
+          pattern="pattern-circuit-board-slate-700/50"
+          emoji="🚀"
         />
       </div>
       <div className="col-span-2 row-start-4 ">
         <ProjectTile
-          title="Projet 3"
-          description="Description"
-          logo="folder-layout"
+          title="Swish"
+          description="Un système d'automatisation de publication des résultats du basket français."
+          pattern="pattern-tic-tac-toe-orange-800/50"
+          emoji="🏀"
         />
       </div>
       <div className="col-span-2 col-start-3 row-start-4 ">
         <ProjectTile
-          title="Projet 4"
-          description="Description"
-          logo="folder-app"
+          title="Social template (123 Structure)"
+          description="Une application web pour générer des visuels pour le compte LinkedIn de la société : 123 Structure."
+          pattern="pattern-wiggle-yellow-800/50"
+          logo="123str"
         />
       </div>
-      <div className="row-start-5 ">13</div>
-      <div className="row-start-5 ">14</div>
-      <div className="row-start-5 ">15</div>
-      <div className="row-start-5 ">16</div>
-      <div className="col-span-4 row-start-6 ">17</div>
+      <div className="row-start-5 rounded-3xl bg-sky-900" />
+      <div className="row-start-5 rounded-3xl bg-sky-900" />
+      <div className="row-start-5 rounded-3xl bg-sky-900" />
+      <div className="row-start-5 rounded-3xl bg-sky-900" />
+      <div className="col-span-4 row-start-6 rounded-3xl bg-sky-900" />
     </main>
   );
 }

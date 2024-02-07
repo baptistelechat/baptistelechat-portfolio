@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Cyan 600 - #0891b2*/
 @layer base {
   :root {
-    --background: 204 59.15% 2.88%;
+    --background: 204 59.15% 2.9%;
     --foreground: 204 9.1% 96.8%;
 
-    --muted: 204 45.5% 10.799999999999999%;
+    --muted: 204 45.5% 10.8%;
     --muted-foreground: 204 9.1% 53.6%;
 
     --popover: 204 46.8% 4.68%;
@@ -16,16 +17,16 @@
     --card: 204 46.8% 4.68%;
     --card-foreground: 204 9.1% 96.8%;
 
-    --border: 204 45.5% 10.799999999999999%;
-    --input: 204 45.5% 10.799999999999999%;
+    --border: 204 45.5% 10.8%;
+    --input: 204 45.5% 10.8%;
 
     --primary: 204 91% 36%;
     --primary-foreground: 204 9.1% 96.8%;
 
-    --secondary: 204 45.5% 10.799999999999999%;
+    --secondary: 204 45.5% 10.8%;
     --secondary-foreground: 204 9.1% 96.8%;
 
-    --accent: 204 45.5% 10.799999999999999%;
+    --accent: 204 45.5% 10.8%;
     --accent-foreground: 204 9.1% 96.8%;
 
     --destructive: 0 62.8% 30.6%;

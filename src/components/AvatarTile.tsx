@@ -1,11 +1,9 @@
-import { Bot, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import SocialButton from "./SocialButton";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
@@ -17,6 +15,8 @@ interface IAvatarTileProps {
 }
 
 const AvatarTile = (props: IAvatarTileProps) => {
+  const imgSize = 300;
+
   return (
     <Card className="relative h-full">
       <CardHeader>
@@ -26,36 +26,28 @@ const AvatarTile = (props: IAvatarTileProps) => {
           🖐🏽
         </div>
       </CardHeader>
-      <CardContent className="h-[325px]">
-        <div className="relative ml-8 mt-8">
-          <div className="absolute left-0 top-0 size-[300px] animate-pulse-very-slow rounded-full bg-sky-800 blur-xl " />
+      <CardContent>
+        <div className="absolute left-0 top-24
+         h-full w-1/2">
+          <div
+            className="absolute left-0 top-4 animate-pulse-very-slow rounded-full bg-sky-700 blur-xl"
+            style={{
+              height: imgSize,
+              width: imgSize,
+            }}
+          />
           <Image
             src={`/${props.avatar}.svg`}
             alt={`avatar`}
-            width={290}
-            height={290}
-            className="absolute left-[5px] top-[5px] object-fill transition-transform  duration-300 ease-in-out hover:scale-105"
+            width={imgSize}
+            height={imgSize}
+            className="absolute left-0 top-0 object-fill transition-transform  duration-300 ease-in-out hover:scale-105"
           />
         </div>
+        <div className="absolute bottom-8 flex gap-4">
+          <SocialButton />
+        </div>
       </CardContent>
-      <CardFooter className="flex gap-4">
-        <Button>
-          <Github className="mr-2 size-4" /> GitHub
-        </Button>
-        <Button>
-          <Twitter className="mr-2 size-4" /> Twitter
-        </Button>
-        <Button>
-          <Linkedin className="mr-2 size-4" /> LinkedIn
-        </Button>
-        <Button>
-          <Bot className="mr-2 size-4" />
-          Discord
-        </Button>
-        <Button>
-          <Mail className="mr-2 size-4" /> Email
-        </Button>
-      </CardFooter>
     </Card>
   );
 };

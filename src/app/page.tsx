@@ -41,28 +41,28 @@ export default function Home() {
         <ProjectTile
           title="Projet 1"
           description="Description"
-          image="folder-dist"
+          logo="folder-dist"
         />
       </div>
       <div className="col-span-2 col-start-3 row-start-3 ">
         <ProjectTile
           title="Projet 2"
           description="Description"
-          image="folder-packages"
+          logo="folder-packages"
         />
       </div>
       <div className="col-span-2 row-start-4 ">
         <ProjectTile
           title="Projet 3"
           description="Description"
-          image="folder-layout"
+          logo="folder-layout"
         />
       </div>
       <div className="col-span-2 col-start-3 row-start-4 ">
         <ProjectTile
           title="Projet 4"
           description="Description"
-          image="folder-app"
+          logo="folder-app"
         />
       </div>
       <div className="row-start-5 ">13</div>

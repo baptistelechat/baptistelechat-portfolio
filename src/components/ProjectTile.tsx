@@ -14,7 +14,9 @@ interface IProjectTileProps {
   pattern: string;
   logo?: string;
   emoji?: string;
-  stack: string[];
+  stack1: string[];
+  stack2?: string[];
+  stack3?: string[];
 }
 
 const ProjectTile = (props: IProjectTileProps) => {
@@ -74,22 +76,76 @@ const ProjectTile = (props: IProjectTileProps) => {
           </div>
         </div>
         <div
-          className="mt-6 flex flex-col gap-2"
+          className="mt-6 flex w-fit gap-4"
           style={{
             transform: `translateX(${imgSize + 60}px)`,
           }}
         >
-          {props.stack.map((technology) => (
-            <div key={technology} className="flex gap-2">
-              <Image
-                src={`/icons/${technology}.svg`}
-                alt={`${technology} Logo`}
-                width={24}
-                height={24}
-              />
-              <p>{`${technology[0].toUpperCase()}${technology.slice(1)}`}</p>
+          <div className="flex flex-col gap-2">
+            {props.stack1.map((technology) => (
+              <div key={technology} className="flex gap-2">
+                <Image
+                  src={
+                    technology.endsWith("_")
+                      ? `/icons/${technology}.png`
+                      : `/icons/${technology}.svg`
+                  }
+                  alt={`${technology} Logo`}
+                  width={24}
+                  height={24}
+                />
+                <p>{`${technology[0].toUpperCase()}${technology
+                  .slice(1)
+                  .replaceAll("_", " ")}`}</p>
+              </div>
+            ))}
+          </div>
+          {props.stack2 ? (
+            <div className="flex flex-col gap-2">
+              {props.stack2.map((technology) => (
+                <div key={technology} className="flex gap-2">
+                  <Image
+                    src={
+                      technology.endsWith("_")
+                        ? `/icons/${technology}.png`
+                        : `/icons/${technology}.svg`
+                    }
+                    alt={`${technology} Logo`}
+                    width={24}
+                    height={24}
+                  />
+                  <p>{`${technology[0].toUpperCase()}${technology
+                    .slice(1)
+                    .replaceAll("_", " ")}`}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            <></>
+          )}
+          {props.stack3 ? (
+            <div className="flex flex-col gap-2">
+              {props.stack3.map((technology) => (
+                <div key={technology} className="flex gap-2">
+                  <Image
+                    src={
+                      technology.endsWith("_")
+                        ? `/icons/${technology}.png`
+                        : `/icons/${technology}.svg`
+                    }
+                    alt={`${technology} Logo`}
+                    width={24}
+                    height={24}
+                  />
+                  <p>{`${technology[0].toUpperCase()}${technology
+                    .slice(1)
+                    .replaceAll("_", " ")}`}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </CardContent>
     </Card>

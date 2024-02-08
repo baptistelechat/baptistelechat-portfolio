@@ -1,11 +1,14 @@
+"use client";
+
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Button } from "./ui/button";
 import { GanttChart, Plus } from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "./ui/button";
 
 interface IViewMoreButtonProps {
   icon: "GanttChart" | "Plus";
@@ -22,6 +25,12 @@ const ViewMoreButton = (props: IViewMoreButtonProps) => {
             variant="outline"
             size="icon"
             className={`rounded-xl ${props.style}`}
+            onClick={() =>
+              toast("👩🏽‍💻 En cours de développement", {
+                description:
+                  "Cette fonctionnalité n'est pas encore prête, mais elle arrive très vite ⏳",
+              })
+            }
           >
             {props.icon === "GanttChart" ? (
               <GanttChart className="size-4" />

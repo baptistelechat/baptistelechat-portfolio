@@ -1,13 +1,10 @@
-import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { ThemeProvider } from "../components/theme-provider";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Baptiste LECHAT | Portfolio",
@@ -21,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn("bg-background font-sans antialiased", fontSans.variable)}
-      >
+      <body className={`${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -31,6 +26,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

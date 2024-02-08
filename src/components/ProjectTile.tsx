@@ -14,6 +14,7 @@ interface IProjectTileProps {
   pattern: string;
   logo?: string;
   emoji?: string;
+  stack: string[];
 }
 
 const ProjectTile = (props: IProjectTileProps) => {
@@ -36,7 +37,7 @@ const ProjectTile = (props: IProjectTileProps) => {
       <CardContent>
         <div
           className={`absolute left-8 ${
-            props.emoji ? "bottom-6" : "top-3"
+            props.emoji ? "bottom-6" : "top-2"
           } h-full w-1/2`}
         >
           <div className="absolute bottom-0 left-0 -rotate-6 animate-pulse-slow blur-xl">
@@ -71,6 +72,24 @@ const ProjectTile = (props: IProjectTileProps) => {
               />
             )}
           </div>
+        </div>
+        <div
+          className="mt-6 flex flex-col gap-2"
+          style={{
+            transform: `translateX(${imgSize + 60}px)`,
+          }}
+        >
+          {props.stack.map((technology) => (
+            <div key={technology} className="flex gap-2">
+              <Image
+                src={`/icons/${technology}.svg`}
+                alt={`${technology} Logo`}
+                width={24}
+                height={24}
+              />
+              <p>{`${technology[0].toUpperCase()}${technology.slice(1)}`}</p>
+            </div>
+          ))}
         </div>
       </CardContent>
     </Card>

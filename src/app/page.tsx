@@ -1,10 +1,11 @@
 import AvatarTile from "@/components/AvatarTile";
+import Hobby from "@/components/Hobby/Hobby";
 import LogoTile from "@/components/LogoTile";
 import ProjectTile from "@/components/ProjectTile";
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-4 grid-rows-6 gap-4 p-4">
+    <main className="grid grid-cols-4 grid-rows-6 gap-6 p-6">
       {/* <ModeToggle /> */}
       <div className="col-span-2 row-span-2 ">
         <AvatarTile
@@ -76,10 +77,18 @@ export default function Home() {
           stack1={["react", "javascript", "material_ui", "vercel"]}
         />
       </div>
-      <div className="row-start-5 rounded-3xl bg-sky-900" />
-      <div className="row-start-5 rounded-3xl bg-sky-900" />
-      <div className="row-start-5 rounded-3xl bg-sky-900" />
-      <div className="row-start-5 rounded-3xl bg-sky-900" />
+      <div className="row-start-5 ">
+        <Hobby index={1} />
+      </div>
+      <div className="row-start-5 ">
+        <Hobby index={2} />
+      </div>
+      <div className="row-start-5 ">
+        <Hobby index={3} />
+      </div>
+      <div className="row-start-5 ">
+        <Hobby index={4} />
+      </div>
       <div className="col-span-4 row-start-6 rounded-3xl bg-sky-900" />
     </main>
   );

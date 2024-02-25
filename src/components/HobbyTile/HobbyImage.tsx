@@ -1,13 +1,12 @@
 import { promises as fs } from "fs";
+import Image from "next/image";
 import path from "path";
-import { Card } from "../ui/card";
-import HobbyImage from "./HobbyImage";
 
-interface IHobbyProps {
+interface IHobbyImageProps {
   index: number;
 }
 
-const Hobby = async (props: IHobbyProps) => {
+const HobbyImage = async (props: IHobbyImageProps) => {
   const imageDirectory = path.join(
     process.cwd(),
     `/public/img/hobbies/thumbnails/${props.index}`
@@ -16,13 +15,13 @@ const Hobby = async (props: IHobbyProps) => {
   const randomImageIndex = Math.floor(Math.random() * imageFilenames.length);
 
   return (
-    <Card className="relative h-full">
-      <HobbyImage
-        index={props.index}
-        image={imageFilenames[randomImageIndex]}
-      />
-    </Card>
+    <Image
+      src={`/img/hobbies/thumbnails/${props.index}/${imageFilenames[randomImageIndex]}`}
+      className="rounded-3xl object-cover brightness-50"
+      fill
+      alt="Gif"
+    />
   );
 };
 
-export default Hobby;
+export default HobbyImage;

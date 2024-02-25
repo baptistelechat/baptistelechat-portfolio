@@ -27,14 +27,14 @@ const ProjectTile = (props: IProjectTileProps) => {
       className={`relative ${props.pattern}`}
       style={{ height: imgSize * 1.7 }}
     >
+      <ViewMoreButton
+        icon="GanttChart"
+        tooltip="En savoir plus ..."
+        style="absolute right-4 top-4"
+      />
       <CardHeader>
         <CardTitle>{props.title}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
-        <ViewMoreButton
-          icon="GanttChart"
-          tooltip="En savoir plus ..."
-          style="absolute right-4 top-4"
-        />
       </CardHeader>
       <CardContent>
         <div

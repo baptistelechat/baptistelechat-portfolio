@@ -1,5 +1,5 @@
 import AvatarTile from "@/components/AvatarTile";
-import Hobby from "@/components/Hobby/Hobby";
+import HobbyTile from "@/components/HobbyTile/HobbyTile";
 import LogoTile from "@/components/LogoTile";
 import ProjectTile from "@/components/ProjectTile";
 
@@ -78,16 +78,16 @@ export default function Home() {
         />
       </div>
       <div className="row-start-5 ">
-        <Hobby index={1} />
+        <HobbyTile index={1} title="Développement" />
       </div>
       <div className="row-start-5 ">
-        <Hobby index={2} />
+        <HobbyTile index={2} title="Sports" />
       </div>
       <div className="row-start-5 ">
-        <Hobby index={3} />
+        <HobbyTile index={3} title="Jeux vidéo" />
       </div>
       <div className="row-start-5 ">
-        <Hobby index={4} />
+        <HobbyTile index={4} title="Sports mécaniques" />
       </div>
       <div className="col-span-4 row-start-6 rounded-3xl bg-sky-900" />
     </main>

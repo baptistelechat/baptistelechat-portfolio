@@ -19,14 +19,14 @@ const LogoTile = (props: ILogoTileProps) => {
 
   return (
     <Card className="relative" style={{ height: imgSize * 1.7 }}>
+      <ViewMoreButton
+        icon="Plus"
+        tooltip="En voir plus ..."
+        style="absolute right-4 top-4"
+      />
       <CardHeader>
         <CardTitle>{props.title}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
-        <ViewMoreButton
-          icon="Plus"
-          tooltip="En voir plus ..."
-          style="absolute right-4 top-4"
-        />
       </CardHeader>
       <CardContent>
         <div className="absolute left-8 top-3 h-full w-1/2">

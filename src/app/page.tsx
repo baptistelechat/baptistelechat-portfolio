@@ -1,95 +1,202 @@
-import AvatarTile from "@/components/AvatarTile";
-import HobbyTile from "@/components/HobbyTile/HobbyTile";
-import LogoTile from "@/components/LogoTile";
-import ProjectTile from "@/components/ProjectTile";
+import AnimatedGridPattern from "@/components/magic-ui/animated-grid-pattern";
+import { BentoCard, BentoGrid } from "@/components/magic-ui/bento-grid";
+import { cn } from "@/lib/utils";
+import { UserIcon } from "lucide-react";
+import Image from "next/image";
 
-export default function Home() {
+export default function BentoDemo() {
+  const features = [
+    // Profiles
+    {
+      Icon: UserIcon,
+      name: "Baptiste LECHAT",
+      description: "word-rotate",
+      href: "/",
+      cta: "social-dock",
+      background: (
+        <>
+          <AnimatedGridPattern
+            numSquares={30}
+            maxOpacity={0.5}
+            duration={3}
+            repeatDelay={1}
+            className={cn(
+              "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+              "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+            )}
+          />
+          <Image
+            src="/avatar/avatar_bg.png"
+            alt="avatar"
+            width={200}
+            height={200}
+            className="relative z-10 ml-4 mt-4 drop-shadow-md"
+          />
+        </>
+      ),
+      className: "lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-3",
+    },
+    // Techno
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-5",
+    },
+    // Projects
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-2",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-4 lg:col-end-5",
+    },
+    // Hobbies
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-2",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-4 lg:row-end-5 lg:col-start-1 lg:col-end-2",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-4 lg:row-end-5 lg:col-start-2 lg:col-end-3",
+    },
+    // Contact
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-3 lg:row-end-5 lg:col-start-3 lg:col-end-5",
+    },
+  ];
+
   return (
-    <main className="grid grid-cols-4 grid-rows-6 gap-6 p-6">
-      {/* <ModeToggle /> */}
-      <div className="col-span-2 row-span-2 ">
-        <AvatarTile
-          fullName="Baptiste LECHAT"
-          description="Dessinateur / Développeur / Responsable Réseau sociaux"
-          avatar="avatar"
-        />
-      </div>
-      <div className="col-start-3 row-start-1 ">
-        <LogoTile
-          title="React"
-          description="Javascript Framework"
-          logo="react"
-        />
-      </div>
-      <div className="col-start-4 row-start-1 ">
-        <LogoTile title="NextJS" description="React Framework" logo="next" />
-      </div>
-      <div className="col-start-3 row-start-2 ">
-        <LogoTile
-          title="TypeScript"
-          description="Programming language"
-          logo="typescript"
-        />
-      </div>
-      <div className="col-start-4 row-start-2 ">
-        <LogoTile
-          title="NodeJS"
-          description="JavaScript runtime"
-          logo="nodejs"
-        />
-      </div>
-      <div className="col-span-2 row-start-3 ">
-        <ProjectTile
-          title="Sismo"
-          description="Un outil pour obtenir les zones de neige, de vent et de sismicité en France (incluant DROM-COM)."
-          pattern="pattern-topography-indigo-800/50"
-          logo="sismo"
-          stack1={["react", "javascript", "material_ui", "nodejs"]}
-          stack2={["firebase", "vercel"]}
-        />
-      </div>
-      <div className="col-span-2 col-start-3 row-start-3 ">
-        <ProjectTile
-          title="SpeedTest Tracker"
-          description="Une application web pour surveiller les données des tests de vitesse internet sur un réseau local."
-          pattern="pattern-circuit-board-slate-700/50"
-          emoji="🚀"
-          stack1={["react_ts", "typescript", "shadcn_ui_", "nodejs"]}
-          stack2={["tailwindcss", "docker"]}
-        />
-      </div>
-      <div className="col-span-2 row-start-4 ">
-        <ProjectTile
-          title="Swish"
-          description="Un système d'automatisation de publication des résultats du basket français."
-          pattern="pattern-tic-tac-toe-orange-800/50"
-          emoji="🏀"
-          stack1={["react_ts", "typescript", "shadcn_ui_", "nodejs"]}
-          stack2={["tailwindcss", "notion_"]}
-        />
-      </div>
-      <div className="col-span-2 col-start-3 row-start-4 ">
-        <ProjectTile
-          title="Social template (123 Structure)"
-          description="Une application web pour générer des visuels pour le compte LinkedIn de la société : 123 Structure."
-          pattern="pattern-wiggle-yellow-800/50"
-          logo="123str"
-          stack1={["react", "javascript", "material_ui", "vercel"]}
-        />
-      </div>
-      <div className="row-start-5 ">
-        <HobbyTile index={1} title="Développement" />
-      </div>
-      <div className="row-start-5 ">
-        <HobbyTile index={2} title="Sports" />
-      </div>
-      <div className="row-start-5 ">
-        <HobbyTile index={3} title="Jeux vidéo" />
-      </div>
-      <div className="row-start-5 ">
-        <HobbyTile index={4} title="Sports mécaniques" />
-      </div>
-      <div className="col-span-4 row-start-6 rounded-3xl bg-sky-900" />
-    </main>
+    <BentoGrid className="p-4 lg:grid-rows-3">
+      {features.map((feature) => (
+        <BentoCard key={feature.name} {...feature} />
+      ))}
+    </BentoGrid>
   );
 }

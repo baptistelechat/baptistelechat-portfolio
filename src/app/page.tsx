@@ -1,44 +1,197 @@
-import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
-import { GlobeIcon } from "lucide-react";
+import AnimatedGridPattern from "@/components/magic-ui/animated-grid-pattern";
+import { BentoCard, BentoGrid } from "@/components/magic-ui/bento-grid";
+import { cn } from "@/lib/utils";
+import { UserIcon } from "lucide-react";
 import Image from "next/image";
 
-const classNames = [
-  "lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-3", // Profile
+export default function BentoDemo() {
+  const features = [
+    // Profiles
+    {
+      Icon: UserIcon,
+      name: "Baptiste LECHAT",
+      description: "word-rotate",
+      href: "/",
+      cta: "social-dock",
+      background: (
+        <>
+          <AnimatedGridPattern
+            numSquares={30}
+            maxOpacity={0.5}
+            duration={3}
+            repeatDelay={1}
+            className={cn(
+              "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+              "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+            )}
+          />
+          <Image
+            src="/avatar/avatar_bg.png"
+            alt="avatar"
+            width={200}
+            height={200}
+            className="relative z-10 ml-4 mt-4 drop-shadow-md"
+          />
+        </>
+      ),
+      className: "lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-3",
+    },
+    // Techno
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-5",
+    },
+    // Projects
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-2",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-2 lg:row-end-3 lg:col-start-4 lg:col-end-5",
+    },
+    // Hobbies
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-2",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-4 lg:row-end-5 lg:col-start-1 lg:col-end-2",
+    },
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-4 lg:row-end-5 lg:col-start-2 lg:col-end-3",
+    },
+    // Contact
+    {
+      Icon: UserIcon,
+      name: "Bento Card",
+      description: "Lorem Ipsum",
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src=""
+          className="absolute -right-20 -top-20 opacity-60"
+          alt="profile card"
+        />
+      ),
+      className: "lg:row-start-3 lg:row-end-5 lg:col-start-3 lg:col-end-5",
+    },
+  ];
 
-  "lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-5", // Techno
-
-  "lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-2", // Project 1
-  "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3", // Project 2
-  "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4", // Project 3
-  "lg:row-start-2 lg:row-end-3 lg:col-start-4 lg:col-end-5", // Project 4
-
-  "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-2", // Hobbies 1
-  "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3", // Hobbies 2
-  "lg:row-start-4 lg:row-end-5 lg:col-start-1 lg:col-end-2", // Hobbies 3
-  "lg:row-start-4 lg:row-end-5 lg:col-start-2 lg:col-end-3", // Hobbies 4
-
-  "lg:row-start-3 lg:row-end-5 lg:col-start-3 lg:col-end-5", // Contact
-];
-
-const features = classNames.map((className) => {
-  return {
-    Icon: GlobeIcon,
-    name: "Full text search",
-    description: "Search through all your files in one place.",
-    href: "/",
-    cta: "Learn more",
-    background: (
-      <Image
-        src=""
-        className="absolute -right-20 -top-20 opacity-60"
-        alt="profile card"
-      />
-    ),
-    className,
-  };
-});
-
-export default async function BentoDemo() {
   return (
     <BentoGrid className="p-4 lg:grid-rows-3">
       {features.map((feature) => (

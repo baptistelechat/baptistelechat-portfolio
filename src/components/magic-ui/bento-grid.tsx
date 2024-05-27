@@ -58,10 +58,10 @@ const CTA = ({ cta, href }: { cta: string; href: string }) => {
   return (
     <div
       className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
       )}
     >
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto">
+      <Button variant="ghost" asChild size="sm" className="pointer-events-auto bg-card">
         <a href={href}>
           {cta}
           <ArrowRightIcon className="ml-2 size-4" />
@@ -107,15 +107,16 @@ const BentoCard = ({
       {background}
     </div>
     <div
-      className={`pointer-events-none z-10 flex transform-gpu gap-1 p-6 transition-all duration-300 ${
+      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-1 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
         !cta.includes("dock") ? "group-hover:-translate-y-10" : ""
       }`}
     >
-      <Icon className="size-12 transform-gpu text-neutral-700 transition-all duration-300 ease-in-out" />
+      <Icon
+        className="size-12 transform-gpu dark:text-neutral-300"
+        strokeWidth={1.5}
+      />
       <div className="flex flex-col gap-1">
-        <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-          {name}
-        </h3>
+        <h3 className="text-xl font-semibold dark:text-neutral-300">{name}</h3>
         <Description description={description} />
       </div>
     </div>

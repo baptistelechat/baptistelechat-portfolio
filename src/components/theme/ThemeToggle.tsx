@@ -42,6 +42,17 @@ const ThemeToggle = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className="hover:cursor-pointer"
+        >
+          {theme === "system" ? (
+            <ChevronRight className="mr-2 size-4" />
+          ) : (
+            <Dot className="mr-2 size-4" />
+          )}
+          System
+        </DropdownMenuItem>
+        <DropdownMenuItem
           onClick={() => setTheme("light")}
           className="hover:cursor-pointer"
         >

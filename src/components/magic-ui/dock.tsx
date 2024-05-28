@@ -2,7 +2,6 @@
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import link from "next/link";
 import React, { PropsWithChildren, useRef } from "react";
 import {
   Tooltip,
@@ -22,7 +21,8 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "flex h-[58px] w-max items-end gap-2 rounded-2xl border p-2 dark:border-[#707070]"
+  "flex h-[58px] w-max items-end gap-2 rounded-2xl p-2 backdrop-blur-sm"
+  // "flex h-[58px] w-max items-end gap-2 rounded-2xl border p-2 backdrop-blur-sm dark:border-neutral-500"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -115,7 +115,7 @@ const DockIcon = ({
             ref={ref}
             style={{ width }}
             className={cn(
-              "flex aspect-square cursor-pointer items-center justify-center rounded-full bg-neutral-400/40",
+              "flex aspect-square cursor-pointer items-center justify-center rounded-xl bg-sky-500/10",
               className
             )}
             {...props}

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
 import { ReactNode } from "react";
@@ -47,7 +48,14 @@ const Description = ({ description }: { description: string }) => {
     );
   }
 
-  return <p className="max-w-lg text-neutral-400">{description}</p>;
+  return (
+    <p
+      className="max-w-lg text-neutral-400"
+      aria-label={description}
+    >
+      {description}
+    </p>
+  );
 };
 
 const CTA = ({ cta, href }: { cta: string; href: string }) => {
@@ -61,7 +69,12 @@ const CTA = ({ cta, href }: { cta: string; href: string }) => {
         "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
       )}
     >
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto bg-card">
+      <Button
+        variant="ghost"
+        asChild
+        size="sm"
+        className="pointer-events-auto bg-card"
+      >
         <a href={href}>
           {cta}
           <ArrowRightIcon className="ml-2 size-4" />
@@ -79,15 +92,7 @@ const BentoCard = ({
   description,
   href,
   cta,
-}: {
-  name: string;
-  className: string;
-  background: ReactNode;
-  Icon: any;
-  description: string;
-  href: string;
-  cta: string;
-}) => (
+}: BentoCardProps) => (
   <div
     key={name}
     className={cn(
@@ -101,14 +106,14 @@ const BentoCard = ({
   >
     <div
       className={`size-full transition-all duration-300 ${
-        !cta.includes("dock") ? "group-hover:-translate-y-10" : ""
+        !cta || cta.includes("dock") ? "" : "group-hover:-translate-y-10"
       }`}
     >
       {background}
     </div>
     <div
-      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-1 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
-        !cta.includes("dock") ? "group-hover:-translate-y-10" : ""
+      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-2 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
+        !cta || cta.includes("dock") ? "" : "group-hover:-translate-y-10"
       }`}
     >
       <Icon

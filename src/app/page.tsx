@@ -2,7 +2,7 @@ import OrbitingCirclesSkills from "@/components/OrbitingCirclesSkills";
 import AnimatedGridPattern from "@/components/magic-ui/animated-grid-pattern";
 import { BentoCard, BentoGrid } from "@/components/magic-ui/bento-grid";
 import { cn } from "@/lib/utils";
-import { RocketIcon, UserIcon } from "lucide-react";
+import { Rocket, UserIcon } from "lucide-react";
 import Image from "next/image";
 
 export default function BentoDemo() {
@@ -38,7 +38,7 @@ export default function BentoDemo() {
     },
     // Techno
     {
-      Icon: RocketIcon,
+      Icon: Rocket,
       name: "Compétences",
       description: "Développement web et logiciel",
       href: "/",
@@ -187,7 +187,7 @@ export default function BentoDemo() {
   ];
 
   return (
-    <BentoGrid className="p-4 lg:grid-rows-3">
+    <BentoGrid className="max-w-screen-2xl p-4 lg:grid-rows-3">
       {features.map((feature) => (
         <BentoCard key={feature.name} {...feature} />
       ))}

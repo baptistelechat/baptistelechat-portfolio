@@ -49,16 +49,21 @@ const Description = ({ description }: { description: string }) => {
   }
 
   return (
-    <p
-      className="max-w-lg text-neutral-400"
-      aria-label={description}
-    >
+    <p className="max-w-lg text-neutral-400" aria-label={description}>
       {description}
     </p>
   );
 };
 
-const CTA = ({ cta, href }: { cta: string; href: string }) => {
+const CTA = ({
+  cta,
+  href,
+  skills,
+}: {
+  cta: string;
+  href: string;
+  skills?: string[];
+}) => {
   if (cta === "social-dock") {
     return <SocialDock />;
   }
@@ -66,14 +71,23 @@ const CTA = ({ cta, href }: { cta: string; href: string }) => {
   return (
     <div
       className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-col justify-start p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
       )}
     >
+      <div className="flex gap-1 text-xs">
+        {skills &&
+          skills.map((skill) => (
+            <div key={skill} className="w-fit rounded border p-2">
+              {skill}
+            </div>
+          ))}
+      </div>
+
       <Button
         variant="ghost"
         asChild
         size="sm"
-        className="pointer-events-auto bg-card"
+        className={`pointer-events-auto w-fit bg-card ${skills ? "mt-2" : ""}`}
       >
         <a href={href}>
           {cta}
@@ -92,6 +106,7 @@ const BentoCard = ({
   description,
   href,
   cta,
+  skills,
 }: BentoCardProps) => (
   <div
     key={name}
@@ -113,7 +128,11 @@ const BentoCard = ({
     </div>
     <div
       className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-2 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
-        !cta || cta.includes("dock") ? "" : "group-hover:-translate-y-10"
+        !cta || cta.includes("dock")
+          ? ""
+          : skills
+          ? "group-hover:-translate-y-20"
+          : "group-hover:-translate-y-10"
       }`}
     >
       <Icon
@@ -125,7 +144,7 @@ const BentoCard = ({
         <Description description={description} />
       </div>
     </div>
-    <CTA cta={cta} href={href} />
+    <CTA cta={cta} href={href} skills={skills} />
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
   </div>
 );

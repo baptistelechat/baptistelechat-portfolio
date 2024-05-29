@@ -1,11 +1,7 @@
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
-import Image from "next/image";
-import {
-  PyRevitWithVSCode,
-  Sismo,
-  SpeedTestTracker,
-} from "../ProjectIcon";
 import { GanttChart } from "lucide-react";
+import Image from "next/image";
+import { PyRevitWithVSCode, Sismo, SpeedTestTracker } from "../ProjectIcon";
 
 const Projects = (): BentoCardProps[] => {
   return [
@@ -24,6 +20,7 @@ const Projects = (): BentoCardProps[] => {
         />
       ),
       className: "lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-2",
+      skills: ["react", "javascript", "material_ui", "nodejs", "firebase"],
     },
     {
       Icon: SpeedTestTracker,
@@ -40,6 +37,7 @@ const Projects = (): BentoCardProps[] => {
         />
       ),
       className: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
+      skills: ["react_ts", "typescript", "shadcn_ui_", "nodejs", "docker"],
     },
     {
       Icon: PyRevitWithVSCode,
@@ -56,6 +54,7 @@ const Projects = (): BentoCardProps[] => {
         />
       ),
       className: "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
+      skills: ["vscode", "typescript","python"],
     },
     {
       Icon: GanttChart,

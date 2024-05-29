@@ -8,6 +8,7 @@ interface BentoCardProps {
   description: string;
   href: string;
   cta: string;
+  skills?: string[];
 }
 
 export default BentoCardProps;

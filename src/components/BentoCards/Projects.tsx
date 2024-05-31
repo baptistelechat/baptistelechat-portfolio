@@ -20,7 +20,14 @@ const Projects = (): BentoCardProps[] => {
         />
       ),
       className: "lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-2",
-      skills: ["react", "javascript", "material_ui", "nodejs", "firebase"],
+      skills: [
+        "react",
+        "javascript",
+        "material_ui",
+        "nodejs",
+        "firebase",
+        "vercel",
+      ],
     },
     {
       Icon: SpeedTestTracker,
@@ -37,7 +44,14 @@ const Projects = (): BentoCardProps[] => {
         />
       ),
       className: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
-      skills: ["react_ts", "typescript", "shadcn_ui_", "nodejs", "docker"],
+      skills: [
+        "react_ts",
+        "typescript",
+        "_shadcn_ui",
+        "tailwindcss",
+        "nodejs",
+        "docker",
+      ],
     },
     {
       Icon: PyRevitWithVSCode,
@@ -54,7 +68,7 @@ const Projects = (): BentoCardProps[] => {
         />
       ),
       className: "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
-      skills: ["vscode", "typescript","python"],
+      skills: ["vscode", "typescript", "python", "lucide", "_revit", "pyrevit"],
     },
     {
       Icon: GanttChart,

@@ -9,7 +9,7 @@ import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";
 
-export default function BentoDemo() {
+export default function Bento() {
   const features: BentoCardProps[] = [
     Profile(),
     Skills(),

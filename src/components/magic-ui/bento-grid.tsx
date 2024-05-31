@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
+import Image from "next/image";
 import { ReactNode } from "react";
 import SocialDock from "../SocialDock";
 import WordRotate from "./word-rotate";
@@ -77,9 +78,20 @@ const CTA = ({
       <div className="flex gap-1 text-xs">
         {skills &&
           skills.map((skill) => (
-            <div key={skill} className="w-fit rounded border p-2">
-              {skill}
-            </div>
+            // <div key={skill} className="w-fit rounded border p-2">
+            //   {skill}
+            // </div>
+            <Image
+              key={skill}
+              src={
+                skill.startsWith("_")
+                  ? `/icons/${skill}.png`
+                  : `/icons/${skill}.svg`
+              }
+              alt={skill}
+              width={30}
+              height={30}
+            />
           ))}
       </div>
 

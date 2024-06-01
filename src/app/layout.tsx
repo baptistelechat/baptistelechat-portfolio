@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,11 +27,13 @@ export default function RootLayout({
           // enableSystem
           // disableTransitionOnChange
         >
-          {children}
-          <div className="fixed bottom-4 right-4 z-50">
-            <ThemeToggle />
-          </div>
-          <Toaster />
+          <TooltipProvider>
+            {children}
+            <div className="fixed bottom-4 right-4 z-50">
+              <ThemeToggle />
+            </div>
+            <Toaster />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

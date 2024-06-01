@@ -4,7 +4,7 @@ import Skills from "@/components/BentoCards/Skills";
 import {
   BentoCard,
   BentoGrid,
-} from "@/components/magic-ui/bento-grid";
+} from "@/components/magic-ui/bento-grid/bento-grid";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";

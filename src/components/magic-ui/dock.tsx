@@ -3,12 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import React, { PropsWithChildren, useRef } from "react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
@@ -108,26 +103,25 @@ const DockIcon = ({
   });
 
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild onClick={() => window.open(url, "_blank")}>
-          <motion.div
-            ref={ref}
-            style={{ width }}
-            className={cn(
-              "flex aspect-square cursor-pointer items-center justify-center rounded-xl bg-sky-500/10",
-              className
-            )}
-            {...props}
-          >
-            {children}
-          </motion.div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{tooltip}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <motion.div
+          ref={ref}
+          style={{ width }}
+          className={cn(
+            "flex aspect-square cursor-pointer items-center justify-center rounded-xl bg-sky-500/10",
+            className
+          )}
+          onClick={() => window.open(url, "_blank")}
+          {...props}
+        >
+          {children}
+        </motion.div>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>{tooltip}</p>
+      </TooltipContent>
+    </Tooltip>
   );
 };
 

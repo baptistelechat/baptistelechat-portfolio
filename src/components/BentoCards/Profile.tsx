@@ -26,8 +26,8 @@ const Profile = (): BentoCardProps => {
         <Image
           src="/avatar/avatar_bg.png"
           alt="avatar"
-          width={200}
-          height={200}
+          width={225}
+          height={225}
           className="relative mb-2 ml-4 mt-4 drop-shadow-md"
         />
       </>

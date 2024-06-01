@@ -52,12 +52,12 @@ const BentoCard = ({
       {background}
     </div>
     <div
-      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-2 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
+      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-2 p-4 transition-all duration-300 ${
         !cta || cta.includes("dock")
           ? ""
           : skills
           ? "group-hover:-translate-y-20"
-          : "group-hover:-translate-y-10"
+          : "rounded-xl backdrop-blur-sm group-hover:-translate-y-10"
       }`}
     >
       <Icon

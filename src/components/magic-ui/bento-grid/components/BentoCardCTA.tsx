@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const BentoCardCTA = ({
   cta,
@@ -80,9 +81,19 @@ const BentoCardCTA = ({
         variant="ghost"
         asChild
         size="sm"
-        className={`pointer-events-auto w-fit bg-card ${skills ? "mt-2" : ""}`}
+        className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${skills ? "mt-2" : ""}`}
+        onClick={() =>
+          toast("👩🏽‍💻 En cours de développement", {
+            description:
+              "Cette fonctionnalité n'est pas encore prête, mais elle arrive très vite ⏳",
+          })
+        }
       >
-        <a href={href}>
+        {/* <a href={href}>
+          {cta}
+          <ArrowRightIcon className="ml-2 size-4" />
+        </a> */}
+        <a>
           {cta}
           <ArrowRightIcon className="ml-2 size-4" />
         </a>

@@ -1,10 +1,10 @@
 import OrbitingCirclesSkills from "@/components/OrbitingCirclesSkills";
-import { Boxes } from "lucide-react";
+import { BoxesIcon } from "lucide-react";
 import BentoCardProps from "../../lib/interfaces/IBentoCardProps";
 
 const Skills = (): BentoCardProps => {
   return {
-    Icon: Boxes,
+    Icon: BoxesIcon,
     name: "Compétences",
     description: "Développement web et logiciel",
     href: "/",

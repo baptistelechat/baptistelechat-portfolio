@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 "use client"
 import Image from "next/image";
 import OrbitingCircles from "./magic-ui/orbiting-circles";

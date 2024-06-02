@@ -5,7 +5,7 @@ import { PyRevitWithVSCode, Sismo, SpeedTestTracker } from "../ProjectIcon";
 
 const Projects = (): BentoCardProps[] => {
   const ratio = 1600 / 900;
-  const imgSize = 150;
+  const imgSize = 175;
   const height = imgSize;
   const width = imgSize * ratio;
 
@@ -23,7 +23,7 @@ const Projects = (): BentoCardProps[] => {
             src="/project/sismo/Capture_01.png"
             width={width}
             height={height}
-            className="rounded-md drop-shadow-md"
+            className="size-full rounded-md drop-shadow-md"
             alt="sismo"
             unoptimized
           />
@@ -52,7 +52,7 @@ const Projects = (): BentoCardProps[] => {
             src="/project/speedTestTracker/Capture_01.png"
             width={width}
             height={height}
-            className="rounded-md drop-shadow-md"
+            className="size-full rounded-md drop-shadow-md"
             alt="speedTestTracker"
             unoptimized
           />
@@ -81,7 +81,7 @@ const Projects = (): BentoCardProps[] => {
             src="/project/pyRevitWithVSCode/Capture_01.png"
             width={width}
             height={height}
-            className="rounded-md drop-shadow-md"
+            className="size-full rounded-md drop-shadow-md"
             alt="pyRevitWithVSCode"
             unoptimized
           />
@@ -93,7 +93,7 @@ const Projects = (): BentoCardProps[] => {
     {
       Icon: GanttChart,
       name: "En voir plus",
-      description: "Lorem Ipsum",
+      description: "Découvrir plus de projets",
       href: "/",
       cta: "En voir plus",
       background: (

@@ -46,27 +46,37 @@ const BentoCard = ({
   >
     <div
       className={`size-full transition-all duration-300 ${
-        !cta || cta.includes("dock") ? "" : "group-hover:-translate-y-10"
+        !description || !cta || cta.includes("dock")
+          ? ""
+          : "group-hover:-translate-y-10"
       }`}
     >
       {background}
     </div>
     <div
-      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-2 p-4 transition-all duration-300 ${
+      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-2 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
         !cta || cta.includes("dock")
           ? ""
           : skills
           ? "group-hover:-translate-y-20"
-          : "rounded-xl backdrop-blur-sm group-hover:-translate-y-10"
+          : "group-hover:-translate-y-10"
       }`}
     >
       <Icon
-        className="size-12 transform-gpu dark:text-neutral-300"
+        className={`size-12 transform-gpu dark:text-neutral-300 ${
+          !description ? "text-neutral-200" : ""
+        }`}
         strokeWidth={1.5}
       />
       <div className="flex flex-col gap-1">
-        <h3 className="text-xl font-semibold dark:text-neutral-300">{name}</h3>
-        <BentoCardDescription description={description} />
+        <h3
+          className={`text-xl font-semibold dark:text-neutral-300 ${
+            !description ? "text-neutral-200" : ""
+          }`}
+        >
+          {name}
+        </h3>
+        {description && <BentoCardDescription description={description} />}
       </div>
     </div>
     <BentoCardCTA cta={cta} href={href} skills={skills} />

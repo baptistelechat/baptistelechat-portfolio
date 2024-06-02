@@ -1,3 +1,4 @@
+import Hobbies from "@/components/BentoCards/Hobbies";
 import Profile from "@/components/BentoCards/Profile";
 import Projects from "@/components/BentoCards/Projects";
 import Skills from "@/components/BentoCards/Skills";
@@ -14,67 +15,7 @@ export default function Bento() {
     Profile(),
     Skills(),
     ...Projects(),
-    // Hobbies
-    {
-      Icon: UserIcon,
-      name: "Bento Card",
-      description: "Lorem Ipsum",
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <Image
-          src=""
-          className="absolute -right-20 -top-20 opacity-60"
-          alt="profile card"
-        />
-      ),
-      className: "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-2",
-    },
-    {
-      Icon: UserIcon,
-      name: "Bento Card",
-      description: "Lorem Ipsum",
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <Image
-          src=""
-          className="absolute -right-20 -top-20 opacity-60"
-          alt="profile card"
-        />
-      ),
-      className: "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-    },
-    {
-      Icon: UserIcon,
-      name: "Bento Card",
-      description: "Lorem Ipsum",
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <Image
-          src=""
-          className="absolute -right-20 -top-20 opacity-60"
-          alt="profile card"
-        />
-      ),
-      className: "lg:row-start-4 lg:row-end-5 lg:col-start-1 lg:col-end-2",
-    },
-    {
-      Icon: UserIcon,
-      name: "Bento Card",
-      description: "Lorem Ipsum",
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <Image
-          src=""
-          className="absolute -right-20 -top-20 opacity-60"
-          alt="profile card"
-        />
-      ),
-      className: "lg:row-start-4 lg:row-end-5 lg:col-start-2 lg:col-end-3",
-    },
+    ...Hobbies(),
     // Contact
     {
       Icon: UserIcon,

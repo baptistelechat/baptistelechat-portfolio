@@ -4,7 +4,7 @@ import AutoFormLabel from "../common/label";
 import AutoFormTooltip from "../common/tooltip";
 import { AutoFormInputComponentProps } from "../types";
 
-export default function AutoFormTextarea({
+export default function AutoFormFullTextarea({
   label,
   isRequired,
   fieldConfigItem,
@@ -22,10 +22,9 @@ export default function AutoFormTextarea({
       )}
       <FormControl>
         <Textarea
-          {...fieldPropsWithoutShowLabel}
           placeholder="Votre message ici..."
           style={{
-            height: "24rem",
+            height: "24rem"
           }}
         />
       </FormControl>

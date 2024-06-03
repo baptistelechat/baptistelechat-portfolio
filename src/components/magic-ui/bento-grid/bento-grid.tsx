@@ -54,7 +54,7 @@ const BentoCard = ({
       {background}
     </div>
     <div
-      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-2 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
+      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-3 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
         !cta || cta.includes("dock")
           ? ""
           : skills

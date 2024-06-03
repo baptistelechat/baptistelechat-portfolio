@@ -36,7 +36,7 @@ const ContactForm = () => {
       onSubmit={(values) => handleSubmit(values)}
     >
       <AutoFormSubmit className="w-fit bg-card hover:cursor-pointer hover:bg-accent hover:text-accent-foreground">
-        <Mail className="mr-2 size-4" />Envoyé
+        <Mail className="mr-2 size-4" />Envoyer
       </AutoFormSubmit>
     </AutoForm>
   );

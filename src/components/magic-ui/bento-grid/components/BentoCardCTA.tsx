@@ -1,4 +1,5 @@
 "use client";
+import ProfileDialog from "@/components/Dialog/ProfileDialog";
 import SocialDock from "@/components/SocialDock";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -7,6 +8,42 @@ import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
+
+const Dialog = ({
+  cta,
+  href,
+  skills,
+}: {
+  cta: string;
+  href: string;
+  skills?: string[];
+}) => {
+    if (href.includes("profile")) {
+      return <ProfileDialog cta={cta} skills={skills} />;
+    }
+
+  return (
+    <Button
+      variant="ghost"
+      asChild
+      size="sm"
+      className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${
+        skills ? "mt-2" : ""
+      }`}
+      onClick={() =>
+        toast("👩🏽‍💻 En cours de développement", {
+          description:
+            "Cette fonctionnalité n'est pas encore prête, mais elle arrive très vite ⏳",
+        })
+      }
+    >
+      <a>
+        {cta}
+        <ArrowRightIcon className="ml-2 size-4" />
+      </a>
+    </Button>
+  );
+};
 
 const BentoCardCTA = ({
   cta,
@@ -20,7 +57,7 @@ const BentoCardCTA = ({
   const [hoveredSkill, setHoveredSkill] = useState("");
 
   if (cta.includes("social-dock")) {
-      return      <SocialDock />
+    return <SocialDock />;
   }
 
   return (
@@ -77,29 +114,7 @@ const BentoCardCTA = ({
         </AnimatePresence>
       </div>
 
-      <Button
-        variant="ghost"
-        asChild
-        size="sm"
-        className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${
-          skills ? "mt-2" : ""
-        }`}
-        onClick={() =>
-          toast("👩🏽‍💻 En cours de développement", {
-            description:
-              "Cette fonctionnalité n'est pas encore prête, mais elle arrive très vite ⏳",
-          })
-        }
-      >
-        {/* <a href={href}>
-          {cta}
-          <ArrowRightIcon className="ml-2 size-4" />
-        </a> */}
-        <a>
-          {cta}
-          <ArrowRightIcon className="ml-2 size-4" />
-        </a>
-      </Button>
+      <Dialog cta={cta} href={href} skills={skills} />
     </div>
   );
 };

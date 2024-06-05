@@ -1,6 +1,7 @@
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import { ContactIcon } from "lucide-react";
 import ContactForm from "../ContactForm";
+
 const Contact = (): BentoCardProps => {
   return {
     Icon: ContactIcon,
@@ -16,7 +17,8 @@ const Contact = (): BentoCardProps => {
         </a>
       </div>
     ),
-    className: "lg:row-start-3 lg:row-end-5 lg:col-start-3 lg:col-end-5",
+    className:
+      "hidden row-start-11 row-end-12 col-start-1 col-end-2 lg:flex lg:row-start-3 lg:row-end-5 lg:col-start-3 lg:col-end-5",
   };
 };
 

@@ -3,6 +3,7 @@ import Hobbies from "@/components/BentoCards/Hobbies";
 import Profile from "@/components/BentoCards/Profile";
 import Projects from "@/components/BentoCards/Projects";
 import Skills from "@/components/BentoCards/Skills";
+import ResponsiveContactCard from "@/components/ResponsiveContactCard";
 import {
   BentoCard,
   BentoGrid,
@@ -19,10 +20,13 @@ export default function Bento() {
   ];
 
   return (
-    <BentoGrid className="max-w-screen-2xl p-4 lg:grid-rows-3">
-      {features.map((feature) => (
-        <BentoCard key={feature.name} {...feature} />
-      ))}
-    </BentoGrid>
+    <div className="flex max-w-screen-2xl flex-col">
+      <BentoGrid className="lg:grid-rows-3">
+        {features.map((feature) => (
+          <BentoCard key={feature.name} {...feature} />
+        ))}
+      </BentoGrid>
+      <ResponsiveContactCard/>
+    </div>
   );
 }

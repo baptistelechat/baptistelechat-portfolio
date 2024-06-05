@@ -10,7 +10,7 @@ const Skills = (): BentoCardProps => {
     href: "/",
     cta: "En savoir plus",
     background: <OrbitingCirclesSkills />,
-    className: "lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-5",
+    className: "row-start-2 row-end-3 col-start-1 col-end-2 sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3  lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-5",
   };
 };
 

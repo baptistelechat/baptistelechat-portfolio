@@ -19,8 +19,8 @@ const BentoCardCTA = ({
 }) => {
   const [hoveredSkill, setHoveredSkill] = useState("");
 
-  if (cta === "social-dock") {
-    return <SocialDock />;
+  if (cta.includes("social-dock")) {
+      return      <SocialDock />
   }
 
   return (
@@ -81,7 +81,9 @@ const BentoCardCTA = ({
         variant="ghost"
         asChild
         size="sm"
-        className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${skills ? "mt-2" : ""}`}
+        className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${
+          skills ? "mt-2" : ""
+        }`}
         onClick={() =>
           toast("👩🏽‍💻 En cours de développement", {
             description:

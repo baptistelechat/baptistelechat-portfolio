@@ -29,7 +29,8 @@ const Projects = (): BentoCardProps[] => {
           />
         </div>
       ),
-      className: "lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-2",
+      className:
+        "row-start-3 row-end-4 col-start-1 col-end-2 sm:row-start-2 sm:row-end-3 sm:col-start-1 sm:col-end-2 lg:row-start-2 lg:row-end-3 lg:col-start-1 lg:col-end-2",
       skills: [
         "react",
         "javascript",
@@ -58,7 +59,8 @@ const Projects = (): BentoCardProps[] => {
           />
         </div>
       ),
-      className: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
+      className:
+        "row-start-4 row-end-5 col-start-1 col-end-2 sm:row-start-2 sm:row-end-3 sm:col-start-2 sm:col-end-3 lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
       skills: [
         "react_ts",
         "typescript",
@@ -87,7 +89,8 @@ const Projects = (): BentoCardProps[] => {
           />
         </div>
       ),
-      className: "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
+      className:
+        "row-start-5 row-end-6 col-start-1 col-end-2 sm:row-start-3 sm:row-end-4 sm:col-start-1 sm:col-end-2 lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
       skills: ["vscode", "typescript", "python", "lucide", "_revit", "pyrevit"],
     },
     {
@@ -103,7 +106,8 @@ const Projects = (): BentoCardProps[] => {
           alt="profile card"
         />
       ),
-      className: "lg:col-start-4 lg:col-end-5 lg:row-start-2 lg:row-end-3",
+      className:
+        "row-start-6 row-end-7 col-start-1 col-end-2 sm:row-start-3 sm:row-end-4 sm:col-start-2 sm:col-end-3 lg:col-start-4 lg:col-end-5 lg:row-start-2 lg:row-end-3",
     },
   ];
 };

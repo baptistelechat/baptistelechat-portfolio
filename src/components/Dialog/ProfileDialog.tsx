@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRightIcon } from "lucide-react";
+import jobs from "@/lib/constants/jobs";
+import { ArrowRightIcon, BriefcaseIcon, GraduationCapIcon } from "lucide-react";
 import SkillsAnimatedBeam from "../SkillsAnimatedBeam";
 import WordRotate from "../magic-ui/word-rotate";
 import {
@@ -20,8 +21,15 @@ import {
   DialogTrigger,
 } from "../ui/dialog";
 
-const ProfileDialog = ({ name, cta, skills }: { name:string,cta: string; skills?: string[] }) => {
-
+const ProfileDialog = ({
+  name,
+  cta,
+  skills,
+}: {
+  name: string;
+  cta: string;
+  skills?: string[];
+}) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -40,27 +48,11 @@ const ProfileDialog = ({ name, cta, skills }: { name:string,cta: string; skills?
           </a>
         </Button>
       </DialogTrigger>
-      <DialogContent className="flex size-full flex-col items-start justify-start sm:h-3/4 sm:max-w-xl">
+      <DialogContent className="flex size-full flex-col items-start justify-start sm:h-5/6 sm:max-w-xl">
         <DialogHeader>
           <DialogTitle>Baptiste LECHAT</DialogTitle>
           <DialogDescription>
-            <WordRotate
-              className="max-w-lg text-neutral-400"
-              words={[
-                "Développeur web full-stack",
-                "Développeur front-end",
-                "Développeur back-end",
-                "Développeur React",
-                "Développeur TypeScript",
-                "Développeur d'applications",
-                "Développeur d'outils",
-                "Développeur Python",
-                "Spécialiste en optimisation de processus",
-                "Chef de projet technique",
-                "Lead développeur",
-                "Responsable Réseau sociaux",
-              ]}
-            />
+            <WordRotate className="max-w-lg text-neutral-400" words={jobs} />
           </DialogDescription>
         </DialogHeader>
         <Tabs defaultValue={"skills"} className="size-full">
@@ -80,13 +72,71 @@ const ProfileDialog = ({ name, cta, skills }: { name:string,cta: string; skills?
           </TabsContent>
           <TabsContent value="experiences">
             <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="123structure">
-                <AccordionTrigger>123 Structure</AccordionTrigger>
+              <AccordionItem value="formation">
+                <AccordionTrigger>
+                  <div className="flex items-center gap-2">
+                    <GraduationCapIcon className="size-6" />
+                    Formation
+                  </div>
+                </AccordionTrigger>
                 <AccordionContent>
                   <div className="flex flex-col gap-2">
-                    <p className="font-semibold italic text-sky-600">
-                      Dessinateur / Développeur (Octobre 2021 -
-                      Aujourd&apos;hui)
+                    <div className="flex flex-col gap-1">
+                      <p className="font-semibold text-sky-600">
+                        Mastère &quot;Expert Développement Logiciel Mobile &
+                        IoT&quot;
+                        <span className="ml-1 text-sm font-normal italic text-neutral-400">
+                          (2019 - 2021)
+                        </span>
+                      </p>
+                      <p>Nantes Ynov Campus</p>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <p className="font-semibold text-sky-600">
+                        Licence professionnelle &quot;Bureau d&apos;Études et
+                        management de projet BIM&quot;
+                        <span className="ml-1 text-sm font-normal italic text-neutral-400">
+                          (2018 - 2019)
+                        </span>
+                      </p>
+                      <p>Conservatoire National des Arts et Métiers</p>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <p className="font-semibold text-sky-600">
+                        Brevet de Technicien Supérieur &quot;Bâtiment&quot;
+                        <span className="ml-1 text-sm font-normal italic text-neutral-400">
+                          (2016 - 2018)
+                        </span>
+                      </p>
+                      <p>Lycée Eugène Livet (44)</p>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <p className="font-semibold text-sky-600">
+                        Baccalauréat professionnel &quot;Technicien du Bâtiment
+                        en Étude et Économie de la construction&quot;
+                        <span className="ml-1 text-sm font-normal italic text-neutral-400">
+                          (2013 - 2016)
+                        </span>
+                      </p>
+                      <p>Lycée professionnel Funay-Hélène Boucher (72)</p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="123structure">
+                <AccordionTrigger>
+                  <div className="flex items-center gap-1">
+                    <BriefcaseIcon className="size-6" />
+                    123 Structure
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-col gap-2">
+                    <p className="font-semibold text-sky-600">
+                      Dessinateur / Développeur
+                      <span className="ml-1 text-sm font-normal italic text-neutral-400">
+                        (Octobre 2021 - Aujourd&apos;hui)
+                      </span>
                     </p>
                     <ul>
                       <li>
@@ -102,12 +152,19 @@ const ProfileDialog = ({ name, cta, skills }: { name:string,cta: string; skills?
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="abak">
-                <AccordionTrigger>ABAK Ingénierie</AccordionTrigger>
+                <AccordionTrigger>
+                  <div className="flex items-center gap-2">
+                    <BriefcaseIcon className="size-6" />
+                    ABAK Ingénierie
+                  </div>
+                </AccordionTrigger>
                 <AccordionContent>
-                  <div className="flex flex-col gap-2">
-                    <p className="font-semibold italic text-sky-600">
-                      Responsable du service informatique (Septembre 2019 -
-                      Septembre 2021)
+                  <div className="flex flex-col gap-1">
+                    <p className="font-semibold text-sky-600">
+                      Responsable du service informatique
+                      <span className="ml-1 text-sm font-normal italic text-neutral-400">
+                        (Septembre 2019 - Septembre 2021)
+                      </span>
                     </p>
                     <ul>
                       <li>
@@ -117,8 +174,11 @@ const ProfileDialog = ({ name, cta, skills }: { name:string,cta: string; skills?
                       <li>• Support technique,</li>
                       <li>• Gestion du parc informatique et logiciel</li>
                     </ul>
-                    <p className="font-semibold italic text-sky-600">
-                      Économiste de la construction (Septembre 2018 - Août 2019)
+                    <p className="font-semibold text-sky-600">
+                      Économiste de la construction
+                      <span className="ml-1 text-sm font-normal italic text-neutral-400">
+                        (Septembre 2018 - Août 2019)
+                      </span>
                     </p>
                     <ul>
                       <li>• Dessinateur BIM,</li>

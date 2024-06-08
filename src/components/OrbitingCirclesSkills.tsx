@@ -51,8 +51,9 @@ const OrbitingCirclesSkills = () => {
       <OrbitingCircles
         className={`size-[${imgSize}px] border-none bg-transparent`}
         reverse
-        radius={140}
         duration={20}
+        delay={20}
+        radius={140}
       >
         <Image
           src="/icons/typescript.svg"
@@ -64,13 +65,13 @@ const OrbitingCirclesSkills = () => {
       <OrbitingCircles
         className={`size-[${imgSize}px] border-none bg-transparent`}
         reverse
-        radius={140}
         duration={20}
-        delay={20}
+        delay={10}
+        radius={140}
       >
         <Image
-          src="/icons/nodejs.svg"
-          alt="nodejs"
+          src="/icons/tailwindcss.svg"
+          alt="tailwindcss"
           width={imgSize}
           height={imgSize}
         />
@@ -78,13 +79,26 @@ const OrbitingCirclesSkills = () => {
       {/* Outer Circles */}
       <OrbitingCircles
         className={`size-[${imgSize}px] border-none bg-transparent`}
-        radius={200}
         duration={25}
-        delay={50}
+        delay={20}
+        radius={200}
       >
         <Image
           src="/icons/python.svg"
           alt="python"
+          width={imgSize}
+          height={imgSize}
+        />
+      </OrbitingCircles>
+      <OrbitingCircles
+        className={`size-[${imgSize}px] border-none bg-transparent`}
+        duration={25}
+        delay={10}
+        radius={200}
+      >
+        <Image
+          src="/icons/_postgresql.png"
+          alt="postgresql"
           width={imgSize}
           height={imgSize}
         />

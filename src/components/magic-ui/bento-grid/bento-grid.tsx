@@ -29,7 +29,6 @@ const BentoCard = ({
   background,
   Icon,
   description,
-  href,
   cta,
   skills,
 }: BentoCardProps) => (
@@ -79,7 +78,7 @@ const BentoCard = ({
         {description && <BentoCardDescription description={description} />}
       </div>
     </div>
-    <BentoCardCTA cta={cta} href={href} skills={skills} />
+    <BentoCardCTA name={name} cta={cta} skills={skills} />
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
   </div>
 );

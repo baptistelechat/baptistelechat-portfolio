@@ -6,7 +6,6 @@ interface BentoCardProps {
   background: ReactNode;
   Icon: any | JSX.Element;
   description?: string;
-  href: string;
   cta: string;
   skills?: string[];
 }

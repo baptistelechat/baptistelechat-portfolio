@@ -15,7 +15,6 @@ const Projects = (): BentoCardProps[] => {
       name: "Sismo",
       description:
         "Un outil pour obtenir les zones de neige, de vent et de sismicité en France (incluant DROM-COM).",
-      href: "/",
       cta: "En savoir plus",
       background: (
         <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-fuchsia-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-fuchsia-300">
@@ -45,7 +44,6 @@ const Projects = (): BentoCardProps[] => {
       name: "SpeedTest Tracker",
       description:
         "Une application web pour surveiller la vitesse d'internet sur un réseau local.",
-      href: "/",
       cta: "En savoir plus",
       background: (
         <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-rose-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-rose-300 dark:to-sky-300">
@@ -75,7 +73,6 @@ const Projects = (): BentoCardProps[] => {
       name: "pyRevit with VSCode",
       description:
         "Une extension VS Code pour simplifier la création de plug-ins Revit en utilisant pyRevit.",
-      href: "/",
       cta: "En savoir plus",
       background: (
         <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-amber-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-amber-300 dark:to-sky-300">
@@ -97,7 +94,6 @@ const Projects = (): BentoCardProps[] => {
       Icon: GanttChart,
       name: "En voir plus",
       description: "Découvrir plus de projets",
-      href: "/",
       cta: "En voir plus",
       background: (
         <Image

@@ -10,16 +10,16 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const Dialog = ({
+  name,
   cta,
-  href,
   skills,
 }: {
+  name:string;
   cta: string;
-  href: string;
   skills?: string[];
 }) => {
-    if (href.includes("profile")) {
-      return <ProfileDialog cta={cta} skills={skills} />;
+    if (["Compétences", "Développement", "Sport", "Jeux vidéo", "Sports mécaniques"].includes(name)) {
+      return <ProfileDialog name={name} cta={cta} skills={skills} />;
     }
 
   return (
@@ -46,12 +46,12 @@ const Dialog = ({
 };
 
 const BentoCardCTA = ({
+  name,
   cta,
-  href,
   skills,
 }: {
+  name:string;
   cta: string;
-  href: string;
   skills?: string[];
 }) => {
   const [hoveredSkill, setHoveredSkill] = useState("");
@@ -114,7 +114,7 @@ const BentoCardCTA = ({
         </AnimatePresence>
       </div>
 
-      <Dialog cta={cta} href={href} skills={skills} />
+      <Dialog name={name} cta={cta} skills={skills} />
     </div>
   );
 };

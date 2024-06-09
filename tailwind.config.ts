@@ -72,6 +72,16 @@ const config = {
           from: { transform: "rotate(-20deg)" },
           to: { transform: "rotate(20deg)" },
         },
+        orbit: {
+          "0%": {
+            transform:
+              "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+          },
+          "100%": {
+            transform:
+              "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -79,6 +89,7 @@ const config = {
         "pulse-slow": "pulse 3s infinite",
         "pulse-very-slow": "pulse 5s infinite",
         hello: "hello 1s linear infinite alternate",
+        orbit: "orbit calc(var(--duration)*1s) linear infinite",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],

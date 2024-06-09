@@ -5,6 +5,38 @@
 /* Cyan 600 - #0891b2*/
 @layer base {
   :root {
+    --background: 195 100% 98.8%;
+    --foreground: 195 12.8% 13.7%;
+
+    --muted: 195 60.8% 93.5%;
+    --muted-foreground: 195 19.6% 39.4%;
+
+    --popover: 195 100% 98.8%;
+    --popover-foreground: 195 12.8% 13.7%;
+
+    --card: 195 100% 98.8%;
+    --card-foreground: 195 12.8% 13.7%;
+
+    --border: 195 81.6% 90.4%;
+    --input: 195 81.6% 90.4%;
+
+    --primary: 195 74.5% 56.5%;
+    --primary-foreground: 195 12.8% 13.7%;
+
+    --secondary: 195 81.6% 90.4%;
+    --secondary-foreground: 195 12.8% 13.7%;
+
+    --accent: 195 81.6% 90.4%;
+    --accent-foreground: 195 12.8% 13.7%;
+
+    --destructive: 358 100% 64.3%;
+    --destructive-foreground: 195 12.8% 13.7%;
+
+    --ring: 195 74.5% 56.5%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
     --background: 204 59.15% 2.9%;
     --foreground: 204 9.1% 96.8%;
 

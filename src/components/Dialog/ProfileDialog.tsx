@@ -22,13 +22,9 @@ import {
 } from "../ui/dialog";
 
 const ProfileDialog = ({
-  name,
   cta,
-  skills,
 }: {
-  name: string;
   cta: string;
-  skills?: string[];
 }) => {
   return (
     <Dialog>
@@ -38,9 +34,6 @@ const ProfileDialog = ({
           asChild
           size="sm"
           className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
-          // className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${
-          //   skills ? "mt-2" : ""
-          // }`}
         >
           <a>
             {cta}
@@ -192,7 +185,7 @@ const ProfileDialog = ({
             </Accordion>
           </TabsContent>
         </Tabs>
-        <DialogFooter className="sm:justify-start">
+        <DialogFooter className="flex w-full justify-end">
           <DialogClose asChild>
             <Button
               variant="ghost"

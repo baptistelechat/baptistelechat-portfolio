@@ -1,7 +1,9 @@
 "use client";
 import ProfileDialog from "@/components/Dialog/ProfileDialog";
+import ProjectDialog from "@/components/Dialog/ProjectDialog";
 import SocialDock from "@/components/SocialDock";
 import { Button } from "@/components/ui/button";
+import projects from "@/lib/constants/projects";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
@@ -12,24 +14,35 @@ import { toast } from "sonner";
 const Dialog = ({
   name,
   cta,
-  skills,
 }: {
-  name:string;
+  name: string;
   cta: string;
-  skills?: string[];
 }) => {
-    if (["Compétences", "Développement", "Sport", "Jeux vidéo", "Sports mécaniques"].includes(name)) {
-      return <ProfileDialog name={name} cta={cta} skills={skills} />;
-    }
+  if (
+    [
+      "Compétences",
+      "Développement",
+      "Sport",
+      "Jeux vidéo",
+      "Sports mécaniques",
+    ].includes(name)
+  ) {
+    return <ProfileDialog cta={cta} />;
+  }
+
+  if (
+    projects.map(project => project.name).includes(name)
+  ) {
+    return <ProjectDialog name={name}/>
+
+  }
 
   return (
     <Button
       variant="ghost"
       asChild
       size="sm"
-      className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${
-        skills ? "mt-2" : ""
-      }`}
+      className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
       onClick={() =>
         toast("👩🏽‍💻 En cours de développement", {
           description:
@@ -50,7 +63,7 @@ const BentoCardCTA = ({
   cta,
   skills,
 }: {
-  name:string;
+  name: string;
   cta: string;
   skills?: string[];
 }) => {
@@ -114,7 +127,7 @@ const BentoCardCTA = ({
         </AnimatePresence>
       </div>
 
-      <Dialog name={name} cta={cta} skills={skills} />
+      <Dialog name={name} cta={cta} />
     </div>
   );
 };

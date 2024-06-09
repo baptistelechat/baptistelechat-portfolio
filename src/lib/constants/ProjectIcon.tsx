@@ -5,7 +5,7 @@ const size = 48;
 export const Sismo = () => {
   return (
     <Image
-      src="/project/_Sismo/icon.png"
+      src="/project/Sismo/icon.png"
       alt="sismo"
       width={size}
       height={size}

@@ -10,14 +10,14 @@ const width = imgSize * ratio;
 const projects: IProject[] = [
   {
     Icon: Sismo,
-    name: "Sismo",
+    name: "_Sismo",
     description:
       "Un outil pour obtenir les zones de neige, de vent et de sismicité en France (incluant DROM-COM).",
     cta: "En savoir plus",
     background: (
       <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-fuchsia-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-fuchsia-300">
         <Image
-          src="/project/Sismo/Capture_1.png"
+          src="/project/_Sismo/Capture_1.png"
           width={width}
           height={height}
           className="size-full rounded-md drop-shadow-md"

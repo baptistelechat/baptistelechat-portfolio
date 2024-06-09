@@ -1,8 +1,8 @@
-import Contact from "@/components/BentoCards/Contact";
-import Hobbies from "@/components/BentoCards/Hobbies";
-import Profile from "@/components/BentoCards/Profile";
-import Projects from "@/components/BentoCards/Projects";
-import Skills from "@/components/BentoCards/Skills";
+import Contact from "@/components/BentoCard/Contact";
+import Hobbies from "@/components/BentoCard/Hobbies";
+import Profile from "@/components/BentoCard/Profile";
+import Projects from "@/components/BentoCard/Projects";
+import Skills from "@/components/BentoCard/Skills";
 import ResponsiveContactCard from "@/components/ResponsiveContactCard";
 import {
   BentoCard,

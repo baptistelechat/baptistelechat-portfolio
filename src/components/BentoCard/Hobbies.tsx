@@ -7,7 +7,6 @@ const Hobbies = (): BentoCardProps[] => {
     {
       Icon: Binary,
       name: "Développement",
-      href: "/",
       cta: "En savoir plus",
       background: (
         <Image
@@ -23,7 +22,6 @@ const Hobbies = (): BentoCardProps[] => {
     {
       Icon: TrophyIcon,
       name: "Sports",
-      href: "/",
       cta: "En savoir plus",
       background: (
         <Image
@@ -39,7 +37,6 @@ const Hobbies = (): BentoCardProps[] => {
     {
       Icon: Gamepad2Icon,
       name: "Jeux vidéo",
-      href: "/",
       cta: "En savoir plus",
       background: (
         <Image
@@ -55,7 +52,6 @@ const Hobbies = (): BentoCardProps[] => {
     {
       Icon: CarIcon,
       name: "Sports mécaniques",
-      href: "/",
       cta: "En savoir plus",
       background: (
         <Image

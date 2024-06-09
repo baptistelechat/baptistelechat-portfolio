@@ -1,6 +1,9 @@
 "use client";
+import ProfileDialog from "@/components/Dialog/ProfileDialog";
+import ProjectDialog from "@/components/Dialog/ProjectDialog";
 import SocialDock from "@/components/SocialDock";
 import { Button } from "@/components/ui/button";
+import projects from "@/lib/constants/projects";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
@@ -8,19 +11,66 @@ import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const BentoCardCTA = ({
+const Dialog = ({
+  name,
   cta,
-  href,
+}: {
+  name: string;
+  cta: string;
+}) => {
+  if (
+    [
+      "Compétences",
+      "Développement",
+      "Sport",
+      "Jeux vidéo",
+      "Sports mécaniques",
+    ].includes(name)
+  ) {
+    return <ProfileDialog cta={cta} />;
+  }
+
+  if (
+    projects.map(project => project.name).includes(name)
+  ) {
+    return <ProjectDialog name={name}/>
+
+  }
+
+  return (
+    <Button
+      variant="ghost"
+      asChild
+      size="sm"
+      className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
+      onClick={() =>
+        toast("👩🏽‍💻 En cours de développement", {
+          description:
+            "Cette fonctionnalité n'est pas encore prête, mais elle arrive très vite ⏳",
+        })
+      }
+    >
+      <a>
+        {cta}
+        <ArrowRightIcon className="ml-2 size-4" />
+      </a>
+    </Button>
+  );
+};
+
+const BentoCardCTA = ({
+  name,
+  cta,
   skills,
 }: {
+  name: string;
   cta: string;
-  href: string;
   skills?: string[];
 }) => {
   const [hoveredSkill, setHoveredSkill] = useState("");
 
   if (cta.includes("social-dock")) {
-      return      <SocialDock />
+    return <SocialDock />;
   }
 
   return (
@@ -77,29 +127,7 @@ const BentoCardCTA = ({
         </AnimatePresence>
       </div>
 
-      <Button
-        variant="ghost"
-        asChild
-        size="sm"
-        className={`pointer-events-auto w-fit bg-card hover:cursor-pointer ${
-          skills ? "mt-2" : ""
-        }`}
-        onClick={() =>
-          toast("👩🏽‍💻 En cours de développement", {
-            description:
-              "Cette fonctionnalité n'est pas encore prête, mais elle arrive très vite ⏳",
-          })
-        }
-      >
-        {/* <a href={href}>
-          {cta}
-          <ArrowRightIcon className="ml-2 size-4" />
-        </a> */}
-        <a>
-          {cta}
-          <ArrowRightIcon className="ml-2 size-4" />
-        </a>
-      </Button>
+      <Dialog name={name} cta={cta} />
     </div>
   );
 };

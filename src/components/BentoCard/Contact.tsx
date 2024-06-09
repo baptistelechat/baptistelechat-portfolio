@@ -7,7 +7,6 @@ const Contact = (): BentoCardProps => {
     Icon: ContactIcon,
     name: "Contact",
     description: "Vous souhaitez me contacter ?",
-    href: "/",
     cta: "social-dock",
     background: (
       <div className="size-full p-4">

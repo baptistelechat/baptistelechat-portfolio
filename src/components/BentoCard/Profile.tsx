@@ -9,7 +9,6 @@ const Profile = (): BentoCardProps => {
     Icon: UserIcon,
     name: "Baptiste LECHAT",
     description: "word-rotate",
-    href: "/",
     cta: "social-dock",
     background: (
       <>

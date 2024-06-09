@@ -102,7 +102,7 @@ const ProjectDialog = ({ name }: { name: string }) => {
                         className={`flex items-center justify-center rounded-md bg-gradient-to-bl ${bgGradientLight} p-6 ${bgGradientDark}`}
                       >
                         <Image
-                          src={`/project/${name}/Capture_0${index + 1}.png`}
+                          src={`/project/${name}/Capture_${index + 1}.png`}
                           alt={`Capture ${index + 1} - ${name}`}
                           width={width}
                           height={height}

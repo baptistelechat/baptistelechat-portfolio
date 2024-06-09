@@ -5,7 +5,7 @@ const size = 48;
 export const Sismo = () => {
   return (
     <Image
-      src="/project/sismo/icon.png"
+      src="/project/Sismo/icon.png"
       alt="sismo"
       width={size}
       height={size}
@@ -20,7 +20,7 @@ export const SpeedTestTracker = () => {
 export const PyRevitWithVSCode = () => {
   return (
     <Image
-      src="/project/pyRevitWithVSCode/icon.png"
+      src="/project/pyRevit With VSCode/icon.png"
       alt="pyRevit With VSCode"
       width={size}
       height={size}

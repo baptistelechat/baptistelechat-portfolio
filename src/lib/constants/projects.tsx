@@ -17,7 +17,7 @@ const projects: IProject[] = [
     background: (
       <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-fuchsia-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-fuchsia-300">
         <Image
-          src="/project/sismo/Capture_01.png"
+          src="/project/Sismo/Capture_1.png"
           width={width}
           height={height}
           className="size-full rounded-md drop-shadow-md"
@@ -51,7 +51,7 @@ const projects: IProject[] = [
     background: (
       <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-rose-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-rose-300 dark:to-sky-300">
         <Image
-          src="/project/speedTest Tracker/Capture_01.png"
+          src="/project/SpeedTest Tracker/Capture_1.png"
           width={width}
           height={height}
           className="size-full rounded-md drop-shadow-md"
@@ -77,14 +77,14 @@ const projects: IProject[] = [
   },
   {
     Icon: PyRevitWithVSCode,
-    name: "pyRevit with VSCode",
+    name: "pyRevit With VSCode",
     description:
       "Une extension VS Code pour simplifier la création de plug-ins Revit en utilisant pyRevit.",
     cta: "En savoir plus",
     background: (
       <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-amber-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-amber-300 dark:to-sky-300">
         <Image
-          src="/project/pyRevit With VSCode/Capture_01.png"
+          src="/project/pyRevit With VSCode/Capture_1.png"
           width={width}
           height={height}
           className="size-full rounded-md drop-shadow-md"

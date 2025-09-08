@@ -46,12 +46,5 @@ export const Aura = () => {
 };
 
 export const TravelTag = () => {
-  return (
-    <Image
-      src="/project/TravelTag/icon.png"
-      alt="TravelTag"
-      width={size}
-      height={size}
-    />
-  );
+  return <p className="text-[40px]">🧳</p>;
 };

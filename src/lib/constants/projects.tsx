@@ -19,10 +19,10 @@ const projects: IProject[] = [
     Icon: TravelTag,
     name: "TravelTag",
     description:
-      "Un outil pour obtenir les zones de neige, de vent et de sismicité en France (incluant DROM-COM).",
+      "Un générateur de QrCode à coller sur ses bagages pour son prochain voyage.",
     cta: "En savoir plus",
     background: (
-      <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-fuchsia-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-fuchsia-300">
+      <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-teal-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-teal-300">
         <Image
           src="/project/TravelTag/Capture_1.png"
           width={width}
@@ -36,27 +36,27 @@ const projects: IProject[] = [
     className:
       "row-start-3 row-end-4 col-start-1 col-end-2 xl:row-start-2 xl:row-end-3 xl:col-start-1 xl:col-end-2",
     skills: [
-      "react",
-      "javascript",
-      "material_ui",
-      "nodejs",
-      "firebase",
+      "react_ts",
+      "typescript",
+      "_shadcn_ui",
+      "tailwindcss",
+      "vite",
       "vercel",
     ],
-    capture: 4,
-    bgGradientLight: "from-indigo-100 to-fuchsia-100",
-    bgGradientDark: "dark:from-indigo-300 dark:to-fuchsia-300",
-    gitHubUrl: "https://github.com/baptistelechat/Sismo",
-    website: "https://sismo.vercel.app/",
+    capture: 1,
+    bgGradientLight: "from-indigo-100 to-teal-100",
+    bgGradientDark: "dark:from-indigo-300 dark:to-teal-300",
+    gitHubUrl: "https://github.com/baptistelechat/travelTag",
+    website: "https://traveltag.vercel.app/",
   },
   {
     Icon: Aura,
     name: "Aura",
     description:
-      "Un outil pour obtenir les zones de neige, de vent et de sismicité en France (incluant DROM-COM).",
+      "un générateur de visuels pensé pour simplifier la création de contenus sur les réseaux sociaux",
     cta: "En savoir plus",
     background: (
-      <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-fuchsia-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-fuchsia-300">
+      <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-blue-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-blue-300">
         <Image
           src="/project/Aura/Capture_1.png"
           width={width}
@@ -70,16 +70,16 @@ const projects: IProject[] = [
     className:
       "row-start-4 row-end-5 col-start-1 col-end-2 xl:row-start-2 xl:row-end-3 xl:col-start-2 xl:col-end-3",
     skills: [
-      "react",
-      "javascript",
-      "material_ui",
-      "nodejs",
-      "firebase",
+      "react_ts",
+      "typescript",
+      "_shadcn_ui",
+      "tailwindcss",
+      "next",
       "vercel",
     ],
     capture: 4,
-    bgGradientLight: "from-indigo-100 to-fuchsia-100",
-    bgGradientDark: "dark:from-indigo-300 dark:to-fuchsia-300",
+    bgGradientLight: "from-indigo-100 to-blue-100",
+    bgGradientDark: "dark:from-indigo-300 dark:to-blue-300",
     gitHubUrl: "https://github.com/baptistelechat/Sismo",
     website: "https://sismo.vercel.app/",
   },

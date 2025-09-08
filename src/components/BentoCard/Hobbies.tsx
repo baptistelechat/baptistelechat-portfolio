@@ -17,7 +17,7 @@ const Hobbies = (): BentoCardProps[] => {
           unoptimized
         />
       ),
-      className: "row-start-7 row-end-8 col-start-1 col-end-2 sm:row-start-4 sm:row-end-5 sm:col-start-1 sm:col-end-2 lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-2",
+      className: "row-start-11 row-end-12 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-1 xl:col-end-2",
     },
     {
       Icon: TrophyIcon,
@@ -32,7 +32,7 @@ const Hobbies = (): BentoCardProps[] => {
           unoptimized
         />
       ),
-      className: "row-start-8 row-end-9 col-start-1 col-end-2 sm:row-start-4 sm:row-end-5 sm:col-start-2 sm:col-end-3 lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+      className: "row-start-12 row-end-13 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-2 xl:col-end-3",
     },
     {
       Icon: Gamepad2Icon,
@@ -47,7 +47,7 @@ const Hobbies = (): BentoCardProps[] => {
           unoptimized
         />
       ),
-      className: "row-start-9 row-end-10 col-start-1 col-end-2 sm:row-start-5 sm:row-end-6 sm:col-start-1 sm:col-end-2 lg:row-start-4 lg:row-end-5 lg:col-start-1 lg:col-end-2",
+      className: "row-start-13 row-end-14 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-1 xl:col-end-2",
     },
     {
       Icon: CarIcon,
@@ -62,7 +62,7 @@ const Hobbies = (): BentoCardProps[] => {
           unoptimized
         />
       ),
-      className: "row-start-10 row-end-11 col-start-1 col-end-2 sm:row-start-5 sm:row-end-6 sm:col-start-2 sm:col-end-3 lg:row-start-4 lg:row-end-5 lg:col-start-2 lg:col-end-3",
+      className: "row-start-14 row-end-15 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-2 xl:col-end-3",
     },
   ];
 };

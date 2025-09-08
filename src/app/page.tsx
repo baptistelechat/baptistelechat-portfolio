@@ -21,12 +21,12 @@ export default function Bento() {
 
   return (
     <div className="flex max-w-screen-2xl flex-col">
-      <BentoGrid className="lg:grid-rows-3">
+      <BentoGrid className="grid grid-cols-1 gap-4 xl:grid-cols-4 xl:grid-rows-5">
         {features.map((feature) => (
           <BentoCard key={feature.name} {...feature} />
         ))}
       </BentoGrid>
-      <ResponsiveContactCard/>
+      <ResponsiveContactCard />
     </div>
   );
 }

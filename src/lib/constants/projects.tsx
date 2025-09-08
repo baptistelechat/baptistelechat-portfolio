@@ -80,8 +80,8 @@ const projects: IProject[] = [
     capture: 4,
     bgGradientLight: "from-indigo-100 to-blue-100",
     bgGradientDark: "dark:from-indigo-300 dark:to-blue-300",
-    gitHubUrl: "https://github.com/baptistelechat/Sismo",
-    website: "https://sismo.vercel.app/",
+    gitHubUrl: "https://github.com/baptistelechat/aura",
+    website: "https://aura-studio.vercel.app/image-generator",
   },
   {
     Icon: Sismo,

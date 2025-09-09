@@ -1,9 +1,10 @@
+import { ArticleIcon } from "@/lib/constants/ProjectIcon";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import { BookOpen } from "lucide-react";
 
 const Articles = (): BentoCardProps => {
   return {
-    Icon: BookOpen,
+    Icon: ArticleIcon,
     name: "Articles / Blog",
     description: "Découvrez mes retours d'expérience et réflexions techniques",
     cta: "Lire les articles",
@@ -15,7 +16,7 @@ const Articles = (): BentoCardProps => {
     ),
     href: "/articles",
     className:
-      "row-start-14 row-end-15 col-start-1 col-end-2 xl:row-start-3 xl:row-end-4 xl:col-start-3 xl:col-end-5",
+      "row-start-14 row-end-15 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-3 xl:col-end-5",
   };
 };
 

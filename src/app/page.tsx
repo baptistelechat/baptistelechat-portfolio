@@ -28,7 +28,7 @@ export default function Bento() {
           <BentoCard key={feature.name} {...feature} />
         ))}
       </BentoGrid>
-      <ResponsiveContactCard />
+      {/* <ResponsiveContactCard /> */}
     </div>
   );
 }

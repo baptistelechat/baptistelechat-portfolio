@@ -16,7 +16,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "flex size-max flex-col items-end gap-2 rounded-2xl p-2 backdrop-blur-sm lg:h-[58px] lg:flex-row"
+  "flex size-max flex-col items-end gap-2 rounded-2xl p-2 backdrop-blur-sm md:flex-row lg:h-[58px]"
   // "flex h-[58px] w-max items-end gap-2 rounded-2xl border p-2 backdrop-blur-sm dark:border-neutral-500"
 );
 

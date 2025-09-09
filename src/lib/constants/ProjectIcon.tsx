@@ -52,3 +52,7 @@ export const TravelTag = () => {
 export const MysteryProject = () => {
   return <p className="text-[40px]">🤫</p>;
 };
+
+export const ArticleIcon = () => {
+  return <p className="text-[40px]">📰</p>;
+};

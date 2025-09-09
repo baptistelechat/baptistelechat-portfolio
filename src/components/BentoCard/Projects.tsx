@@ -1,7 +1,8 @@
+import { MysteryProject } from "@/lib/constants/ProjectIcon";
 import projects from "@/lib/constants/projects";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import IProject from "@/lib/interfaces/IProject";
-import { ToyBrick } from "lucide-react";
+import { GanttChart, ToyBrick } from "lucide-react";
 
 const Projects = (): BentoCardProps[] => {
   const projectList: BentoCardProps[] = projects.map((project: IProject) => {
@@ -19,13 +20,14 @@ const Projects = (): BentoCardProps[] => {
   return [
     ...projectList,
     {
-      Icon: ToyBrick as any,
-      name: "Projet Mystère 🤫",
-      description: "Un nouveau projet passionnant en cours de développement...",
+      Icon: MysteryProject,
+      name: "Projet Mystère",
+      description: "Un nouveau projet passionnant en cours de développement. Un indice se cache dans cette page...",
       cta: "Bientôt disponible",
       background: (
-        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-purple-100 to-indigo-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-purple-300 dark:to-indigo-300">
-          <div className="text-6xl opacity-50">🤫</div>
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-sky-300 dark:to-violet-300">
+          {/* <div className="text-6xl opacity-50">🤫</div> */}
+          <ToyBrick className="size-20 text-gray-600" />
         </div>
       ),
       className:
@@ -33,7 +35,7 @@ const Projects = (): BentoCardProps[] => {
     },
     {
       Icon: GanttChart as any,
-      name: "En voir plus 2",
+      name: "En voir plus",
       description: "Découvrir plus de projets",
       cta: "En voir plus",
       background: <div className="absolute -right-20 -top-20 opacity-60" />,

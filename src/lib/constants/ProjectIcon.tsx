@@ -48,3 +48,7 @@ export const Aura = () => {
 export const TravelTag = () => {
   return <p className="text-[40px]">🧳</p>;
 };
+
+export const MysteryProject = () => {
+  return <p className="text-[40px]">🤫</p>;
+};

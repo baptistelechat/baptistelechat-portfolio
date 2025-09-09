@@ -53,7 +53,7 @@ const projects: IProject[] = [
     Icon: Aura,
     name: "Aura",
     description:
-      "un générateur de visuels pensé pour simplifier la création de contenus sur les réseaux sociaux",
+      "Un générateur de visuels pensé pour simplifier la création de contenus sur les réseaux sociaux",
     cta: "En savoir plus",
     background: (
       <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-indigo-100 to-blue-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-indigo-300 dark:to-blue-300">

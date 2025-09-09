@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
-import { Dock, DockIcon } from "./magic-ui/dock";
 import socialLinks from "@/lib/constants/socialLinks";
+import { cn } from "@/lib/utils";
+import { Dock, DockIcon } from "./magicui/dock";
 
 const SocialDock = () => {
   return (

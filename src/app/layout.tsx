@@ -1,10 +1,10 @@
+import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import ThemeToggle from "@/components/theme/ThemeToggle";
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +30,8 @@ export default function RootLayout({
           <TooltipProvider>
             {children}
             <div className="fixed bottom-4 right-4 z-50">
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
+              <AnimatedThemeToggler />
             </div>
             <Toaster />
           </TooltipProvider>

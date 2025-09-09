@@ -1,4 +1,4 @@
-import AnimatedGridPattern from "@/components/magic-ui/animated-grid-pattern";
+import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";
 import BentoCardProps from "../../lib/interfaces/IBentoCardProps";

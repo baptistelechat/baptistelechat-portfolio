@@ -1,14 +1,9 @@
-import jobs from '@/lib/constants/jobs';
-import WordRotate from '../../word-rotate';
+import jobs from "@/lib/constants/jobs";
+import WordRotate from "../../../magicui/word-rotate";
 
 const BentoCardDescription = ({ description }: { description: string }) => {
   if (description === "word-rotate") {
-    return (
-      <WordRotate
-        className="max-w-lg text-neutral-400"
-        words={jobs}
-      />
-    );
+    return <WordRotate className="max-w-lg text-neutral-400" words={jobs} />;
   }
 
   return (
@@ -18,5 +13,4 @@ const BentoCardDescription = ({ description }: { description: string }) => {
   );
 };
 
-
-export default BentoCardDescription
+export default BentoCardDescription;

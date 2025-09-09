@@ -7,7 +7,7 @@ import ResponsiveContactCard from "@/components/ResponsiveContactCard";
 import {
   BentoCard,
   BentoGrid,
-} from "@/components/magic-ui/bento-grid/bento-grid";
+} from "@/components/magicui/bento-grid/bento-grid";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 
 export default function Bento() {

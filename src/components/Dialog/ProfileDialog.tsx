@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import jobs from "@/lib/constants/jobs";
 import { ArrowRightIcon, BriefcaseIcon, GraduationCapIcon } from "lucide-react";
 import SkillsAnimatedBeam from "../SkillsAnimatedBeam";
-import WordRotate from "../magic-ui/word-rotate";
+import WordRotate from "../magicui/word-rotate";
 import {
   Accordion,
   AccordionContent,
@@ -21,11 +21,7 @@ import {
   DialogTrigger,
 } from "../ui/dialog";
 
-const ProfileDialog = ({
-  cta,
-}: {
-  cta: string;
-}) => {
+const ProfileDialog = ({ cta }: { cta: string }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>

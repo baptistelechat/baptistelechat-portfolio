@@ -1,11 +1,11 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-"use client"
-import Image from "next/image";
-import OrbitingCircles from "./magic-ui/orbiting-circles";
+"use client";
 import { useTheme } from "next-themes";
+import Image from "next/image";
+import OrbitingCircles from "./magicui/orbiting-circles";
 
 const OrbitingCirclesSkills = () => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   const imgSize = 50;
 
   return (

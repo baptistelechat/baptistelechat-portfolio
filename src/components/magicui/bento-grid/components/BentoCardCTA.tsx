@@ -1,4 +1,5 @@
 "use client";
+
 import ProfileDialog from "@/components/Dialog/ProfileDialog";
 import ProjectDialog from "@/components/Dialog/ProjectDialog";
 import SocialDock from "@/components/SocialDock";
@@ -8,16 +9,15 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // App Router Next 13+
 import { useState } from "react";
 import { toast } from "sonner";
 
-const Dialog = ({
-  name,
-  cta,
-}: {
-  name: string;
-  cta: string;
-}) => {
+// --- Dialog Component ---
+const Dialog = ({ name, cta }: { name: string; cta: string }) => {
+  const router = useRouter(); // hook direct ici
+
+  // Dialogs selon type
   if (
     [
       "Compétences",
@@ -30,13 +30,29 @@ const Dialog = ({
     return <ProfileDialog cta={cta} />;
   }
 
-  if (
-    projects.map(project => project.name).includes(name)
-  ) {
-    return <ProjectDialog name={name}/>
-
+  if (projects.map((project) => project.name).includes(name)) {
+    return <ProjectDialog name={name} />;
   }
 
+  // Navigation vers un article
+  if (cta.includes("article")) {
+    return (
+      <Button
+        variant="ghost"
+        asChild
+        size="sm"
+        className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
+        onClick={() => router.push("/articles")} // navigation côté client
+      >
+        <a>
+          {cta}
+          <ArrowRightIcon className="ml-2 size-4" />
+        </a>
+      </Button>
+    );
+  }
+
+  // Fonctionnalité en dev
   return (
     <Button
       variant="ghost"
@@ -58,6 +74,7 @@ const Dialog = ({
   );
 };
 
+// --- BentoCardCTA Component ---
 const BentoCardCTA = ({
   name,
   cta,
@@ -69,6 +86,7 @@ const BentoCardCTA = ({
 }) => {
   const [hoveredSkill, setHoveredSkill] = useState("");
 
+  // SocialDock spécial
   if (cta.includes("social-dock")) {
     return <SocialDock />;
   }
@@ -79,6 +97,7 @@ const BentoCardCTA = ({
         "z-50 absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-col justify-start p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 gap-2"
       )}
     >
+      {/* Skills et hover */}
       <div className="mr-2 flex items-center justify-between">
         <div className="flex gap-1 text-xs">
           {skills &&
@@ -113,6 +132,8 @@ const BentoCardCTA = ({
               );
             })}
         </div>
+
+        {/* Tooltip animé */}
         <AnimatePresence>
           {hoveredSkill && (
             <motion.p
@@ -127,6 +148,7 @@ const BentoCardCTA = ({
         </AnimatePresence>
       </div>
 
+      {/* Dialog / bouton CTA */}
       <Dialog name={name} cta={cta} />
     </div>
   );

@@ -4,7 +4,7 @@ import { UserIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { forwardRef, useRef } from "react";
-import { AnimatedBeam } from "./magic-ui/animated-beam";
+import { AnimatedBeam } from "./magicui/animated-beam";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -75,40 +75,40 @@ const SkillsAnimatedBeam = () => {
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div2Ref}>
             <Image
-          src="/icons/typescript.svg"
-          alt="typescript"
-          width={imgSize}
-          height={imgSize}
-        />
+              src="/icons/typescript.svg"
+              alt="typescript"
+              width={imgSize}
+              height={imgSize}
+            />
           </Circle>
           <Circle ref={div4Ref} className="size-16">
             <UserIcon className="size-10 dark:text-neutral-300" />
           </Circle>
           <Circle ref={div6Ref}>
             <Image
-          src="/icons/tailwindcss.svg"
-          alt="tailwindcss"
-          width={imgSize}
-          height={imgSize}
-        />
+              src="/icons/tailwindcss.svg"
+              alt="tailwindcss"
+              width={imgSize}
+              height={imgSize}
+            />
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div3Ref}>
             <Image
-          src="/icons/python.svg"
-          alt="python"
-          width={imgSize}
-          height={imgSize}
-        />
+              src="/icons/python.svg"
+              alt="python"
+              width={imgSize}
+              height={imgSize}
+            />
           </Circle>
           <Circle ref={div7Ref}>
             <Image
-          src="/icons/_postgresql.png"
-          alt="_postgresql"
-          width={imgSize}
-          height={imgSize}
-        />
+              src="/icons/_postgresql.png"
+              alt="_postgresql"
+              width={imgSize}
+              height={imgSize}
+            />
           </Circle>
         </div>
       </div>

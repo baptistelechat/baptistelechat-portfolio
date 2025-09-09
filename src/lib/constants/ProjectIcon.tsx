@@ -27,3 +27,28 @@ export const PyRevitWithVSCode = () => {
     />
   );
 };
+
+export const CodeX = () => {
+  return (
+    <Image
+      src="/project/CodeX/icon.png"
+      alt="CodeX"
+      width={size}
+      height={size}
+    />
+  );
+};
+
+export const Aura = () => {
+  return (
+    <Image src="/project/Aura/icon.png" alt="Aura" width={size} height={size} />
+  );
+};
+
+export const TravelTag = () => {
+  return <p className="text-[40px]">🧳</p>;
+};
+
+export const MysteryProject = () => {
+  return <p className="text-[40px]">🤫</p>;
+};

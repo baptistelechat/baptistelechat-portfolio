@@ -1,3 +1,4 @@
+import Articles from "@/components/BentoCard/Articles";
 import Contact from "@/components/BentoCard/Contact";
 import Hobbies from "@/components/BentoCard/Hobbies";
 import Profile from "@/components/BentoCard/Profile";
@@ -16,6 +17,7 @@ export default function Bento() {
     Skills(),
     ...Projects(),
     ...Hobbies(),
+    Articles(),
     Contact(),
   ];
 

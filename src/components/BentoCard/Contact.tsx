@@ -16,7 +16,7 @@ const Contact = (): BentoCardProps => {
         </a>
       </div>
     ),
-    className: "row-start-15 row-end-16 col-start-1 col-end-2 xl:row-start-4 xl:row-end-6 xl:col-start-3 xl:col-end-5"
+    className: "row-start-16 row-end-17 col-start-1 col-end-2 xl:row-start-4 xl:row-end-6 xl:col-start-3 xl:col-end-5"
   };
 };
 

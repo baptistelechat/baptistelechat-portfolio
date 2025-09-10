@@ -1,9 +1,9 @@
 import BreadcrumbLinks from "@/components/BreadcrumbLinks";
+import { Card, CardContent } from "@/components/ui/card";
 import { getArticleBySlug, getArticles } from "@/lib/utils/articles";
-import { ArrowLeft, Calendar, Clock, Home } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
@@ -75,76 +75,81 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-8">
+    <div className="mx-auto max-w-screen-xl overflow-hidden">
       {/* Navigation */}
       <BreadcrumbLinks />
+      <Card>
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          {/* Header */}
+          <header className="my-8">
+            {article.coverImage && (
+              <div className="relative mb-6 h-64 w-full max-w-full overflow-hidden rounded-lg md:h-80">
+                <Image
+                  src={article.coverImage}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
 
-      {/* Header */}
-      <header className="mb-8">
-        {article.coverImage && (
-          <div className="relative mb-6 h-64 w-full overflow-hidden rounded-lg md:h-80">
-            <Image
-              src={article.coverImage}
-              alt={article.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
+            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+              {article.title}
+            </h1>
 
-        <h1 className="mb-4 text-4xl font-bold md:text-5xl">{article.title}</h1>
+            <div className="mb-4 flex items-center gap-4 text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Calendar className="size-4" />
+                <span>
+                  {new Date(article.date).toLocaleDateString("fr-FR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="size-4" />
+                <span>{article.readingTime} min de lecture</span>
+              </div>
+            </div>
 
-        <div className="mb-4 flex items-center gap-4 text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Calendar className="size-4" />
-            <span>
-              {new Date(article.date).toLocaleDateString("fr-FR", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Clock className="size-4" />
-            <span>{article.readingTime} min de lecture</span>
-          </div>
-        </div>
+            <p className="text-xl leading-relaxed text-muted-foreground">
+              {article.excerpt}
+            </p>
+          </header>
 
-        <p className="text-xl leading-relaxed text-muted-foreground">
-          {article.excerpt}
-        </p>
-      </header>
-
-      {/* Content */}
-      <article className="prose prose-lg dark:prose-invert max-w-none">
-        <ReactMarkdown
-          components={
-            {
-              code({ className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || "");
-                const isInline = !match;
-                return isInline ? (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                ) : (
-                  <SyntaxHighlighter
-                    style={oneDark as any}
-                    language={match[1]}
-                    PreTag="div"
-                  >
-                    {String(children).replace(/\n$/, "")}
-                  </SyntaxHighlighter>
-                );
-              },
-            } as Components
-          }
-        >
-          {article.content}
-        </ReactMarkdown>
-      </article>
+          {/* Content */}
+          <article className="prose prose-lg w-full dark:prose-invert">
+            <ReactMarkdown
+              components={
+                {
+                  code({ className, children, ...props }) {
+                    const match = /language-(\w+)/.exec(className || "");
+                    const isInline = !match;
+                    return isInline ? (
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    ) : (
+                      <SyntaxHighlighter
+                        style={oneDark as any}
+                        language={match[1]}
+                        PreTag="div"
+                      >
+                        {String(children).replace(/\n$/, "")}
+                      </SyntaxHighlighter>
+                    );
+                  },
+                } as Components
+              }
+            >
+              {article.content}
+            </ReactMarkdown>
+          </article>
+        </CardContent>
+      </Card>
     </div>
   );
 }

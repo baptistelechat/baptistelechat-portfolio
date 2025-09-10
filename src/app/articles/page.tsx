@@ -43,7 +43,7 @@ export default async function ArticlesPage() {
   const articles = await getArticles();
 
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-8">
+    <div className="max-w-screen-xl">
       <BreadcrumbLinks />
       <div className="mb-8 flex flex-col gap-2">
         <div className="flex items-center gap-4">
@@ -68,7 +68,7 @@ export default async function ArticlesPage() {
             background={
               <div>
                 {article.coverImage ? (
-                  <div className="flex h-44 w-full transform-gpu items-center justify-center overflow-hidden">
+                  <div className="flex h-40 w-full transform-gpu items-center justify-center overflow-hidden md:h-52">
                     <Image
                       src={article.coverImage}
                       alt={article.title}
@@ -77,7 +77,7 @@ export default async function ArticlesPage() {
                     />
                   </div>
                 ) : (
-                  <div className="flex h-44 w-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300">
+                  <div className="flex h-40 w-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300 md:h-52">
                     {/* <div className="text-6xl opacity-50">📰</div> */}
                     <ToyBrick className="size-20 text-gray-600" />
                   </div>

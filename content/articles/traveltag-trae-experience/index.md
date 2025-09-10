@@ -154,6 +154,6 @@ _Vous souhaitez en savoir plus sur TravelTag ou TRAE ? N'hésitez pas à me cont
 
 **Liens utiles :**
 
-- [Démo TravelTag](https://traveltag-demo.vercel.app)
+- [Démo TravelTag](https://traveltag.vercel.app)
 - [Code source](https://github.com/baptistelechat/traveltag)
 - [Documentation TRAE](https://trae.ai/docs)

@@ -4,7 +4,6 @@ import Hobbies from "@/components/BentoCard/Hobbies";
 import Profile from "@/components/BentoCard/Profile";
 import Projects from "@/components/BentoCard/Projects";
 import Skills from "@/components/BentoCard/Skills";
-import ResponsiveContactCard from "@/components/ResponsiveContactCard";
 import {
   BentoCard,
   BentoGrid,
@@ -28,7 +27,6 @@ export default function Bento() {
           <BentoCard key={feature.name} {...feature} />
         ))}
       </BentoGrid>
-      {/* <ResponsiveContactCard /> */}
     </div>
   );
 }

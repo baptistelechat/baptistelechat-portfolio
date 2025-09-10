@@ -14,7 +14,15 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 // --- CTAButton Component ---
-const CTAButton = ({ name, cta, href }: { name: string; cta: string; href?: string }) => {
+const CTAButton = ({
+  name,
+  cta,
+  href,
+}: {
+  name: string;
+  cta: string;
+  href?: string;
+}) => {
   const router = useRouter(); // hook direct ici
 
   // Dialogs selon type
@@ -113,7 +121,7 @@ const BentoCardCTA = ({
   return (
     <div
       className={cn(
-        "z-50 absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-col justify-start p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 gap-2"
+        "z-50 absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-col justify-start p-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 gap-2 px-4 mt-2 pb-4"
       )}
     >
       {/* Skills et hover */}

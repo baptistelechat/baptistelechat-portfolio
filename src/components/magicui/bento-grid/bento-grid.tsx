@@ -12,14 +12,7 @@ const BentoGrid = ({
   className?: string;
 }) => {
   return (
-    <div
-      className={cn(
-        "grid w-full auto-rows-fr",
-        className
-      )}
-    >
-      {children}
-    </div>
+    <div className={cn("grid w-full auto-rows-fr", className)}>{children}</div>
   );
 };
 
@@ -29,6 +22,7 @@ const BentoCard = ({
   background,
   Icon,
   description,
+  href,
   cta,
   skills,
 }: BentoCardProps) => (
@@ -53,7 +47,7 @@ const BentoCard = ({
       {background}
     </div>
     <div
-      className={`pointer-events-none z-10 mb-2 flex w-fit transform-gpu items-center gap-3 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
+      className={`pointer-events-none z-10 mb-2 flex transform-gpu items-center gap-3 rounded-xl p-4 backdrop-blur-sm transition-all duration-300 ${
         !cta || cta.includes("dock")
           ? ""
           : skills
@@ -78,7 +72,7 @@ const BentoCard = ({
         {description && <BentoCardDescription description={description} />}
       </div>
     </div>
-    <BentoCardCTA name={name} cta={cta} skills={skills} />
+    <BentoCardCTA name={name} cta={cta} skills={skills} href={href} />
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
   </div>
 );

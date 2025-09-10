@@ -25,7 +25,7 @@ const Projects = (): BentoCardProps[] => {
       description: "Un nouveau projet passionnant en cours de développement. Un indice se cache dans cette page...",
       cta: "Bientôt disponible",
       background: (
-        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-sky-300 dark:to-violet-300">
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300">
           {/* <div className="text-6xl opacity-50">🤫</div> */}
           <ToyBrick className="size-20 text-gray-600" />
         </div>

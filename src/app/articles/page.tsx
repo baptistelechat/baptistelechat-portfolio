@@ -1,9 +1,10 @@
+import BreadcrumbLinks from "@/components/BreadcrumbLinks";
 import {
   BentoCard,
   BentoGrid,
 } from "@/components/magicui/bento-grid/bento-grid";
 import { getArticles } from "@/lib/utils/articles";
-import { Calendar, Clock } from "lucide-react";
+import { Book, Calendar, Clock, Newspaper, ToyBrick } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -43,8 +44,12 @@ export default async function ArticlesPage() {
 
   return (
     <div className="container mx-auto max-w-6xl px-4 py-8">
-      <div className="mb-8">
-        <h1 className="mb-4 text-4xl font-bold">Articles & Blog</h1>
+      <BreadcrumbLinks />
+      <div className="mb-8 flex flex-col gap-2">
+        <div className="flex items-center gap-4">
+          <Newspaper className="size-8" />
+          <h1 className="text-4xl font-bold">Articles & Blog</h1>
+        </div>
         <p className="text-lg text-muted-foreground">
           Retours d&apos;expérience, réflexions techniques et découvertes dans
           le monde du développement.
@@ -57,23 +62,27 @@ export default async function ArticlesPage() {
             key={article.slug}
             name={article.title}
             description={article.excerpt}
-            Icon={Calendar}
+            Icon={Book}
             cta="Lire l'article"
             href={`/articles/${article.slug}`}
             background={
-              <div className="absolute inset-0">
+              <div>
                 {article.coverImage ? (
-                  <Image
-                    src={article.coverImage}
-                    alt={article.title}
-                    fill
-                    className="object-cover opacity-20"
-                  />
+                  <div className="flex h-44 w-full transform-gpu items-center justify-center overflow-hidden">
+                    <Image
+                      src={article.coverImage}
+                      alt={article.title}
+                      fill
+                      className="object-cover opacity-20"
+                    />
+                  </div>
                 ) : (
-                  <div className="size-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/20 dark:to-indigo-900/20" />
+                  <div className="flex h-44 w-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300">
+                    {/* <div className="text-6xl opacity-50">📰</div> */}
+                    <ToyBrick className="size-20 text-gray-600" />
+                  </div>
                 )}
-                <div className="absolute inset-0 bg-black/10 dark:bg-black/20" />
-                <div className="absolute bottom-4 left-4 flex items-center gap-2 text-xs text-muted-foreground">
+                <div className="flex items-center gap-2 p-6 text-xs text-muted-foreground">
                   <Calendar className="size-3" />
                   <span>
                     {new Date(article.date).toLocaleDateString("fr-FR")}
@@ -83,7 +92,7 @@ export default async function ArticlesPage() {
                 </div>
               </div>
             }
-            className="min-h-[300px] transition-transform duration-200 hover:scale-[1.02]"
+            className=""
           />
         ))}
       </BentoGrid>

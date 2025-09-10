@@ -13,8 +13,8 @@ import { useRouter } from "next/navigation"; // App Router Next 13+
 import { useState } from "react";
 import { toast } from "sonner";
 
-// --- Dialog Component ---
-const Dialog = ({ name, cta }: { name: string; cta: string }) => {
+// --- CTAButton Component ---
+const CTAButton = ({ name, cta, href }: { name: string; cta: string; href?: string }) => {
   const router = useRouter(); // hook direct ici
 
   // Dialogs selon type
@@ -32,6 +32,23 @@ const Dialog = ({ name, cta }: { name: string; cta: string }) => {
 
   if (projects.map((project) => project.name).includes(name)) {
     return <ProjectDialog name={name} />;
+  }
+
+  // Navigation avec href fourni
+  if (href) {
+    return (
+      <Button
+        variant="ghost"
+        asChild
+        size="sm"
+        className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
+      >
+        <a href={href}>
+          {cta}
+          <ArrowRightIcon className="ml-2 size-4" />
+        </a>
+      </Button>
+    );
   }
 
   // Navigation vers un article
@@ -79,10 +96,12 @@ const BentoCardCTA = ({
   name,
   cta,
   skills,
+  href,
 }: {
   name: string;
   cta: string;
   skills?: string[];
+  href?: string;
 }) => {
   const [hoveredSkill, setHoveredSkill] = useState("");
 
@@ -148,8 +167,7 @@ const BentoCardCTA = ({
         </AnimatePresence>
       </div>
 
-      {/* Dialog / bouton CTA */}
-      <Dialog name={name} cta={cta} />
+      <CTAButton name={name} cta={cta} href={href} />
     </div>
   );
 };

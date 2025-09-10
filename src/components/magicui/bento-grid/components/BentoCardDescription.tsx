@@ -7,7 +7,7 @@ const BentoCardDescription = ({ description }: { description: string }) => {
   }
 
   return (
-    <p className="max-w-lg text-neutral-400" aria-label={description}>
+    <p className="text-neutral-400" aria-label={description}>
       {description}
     </p>
   );

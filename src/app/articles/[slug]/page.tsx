@@ -1,9 +1,11 @@
+import BreadcrumbLinks from "@/components/BreadcrumbLinks";
 import { getArticleBySlug, getArticles } from "@/lib/utils/articles";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Home } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -45,14 +47,16 @@ export async function generateMetadata({
       publishedTime: article.date,
       authors: ["Baptiste LECHAT"],
       tags: article.tags,
-      images: article.coverImage ? [
-        {
-          url: article.coverImage,
-          width: 1200,
-          height: 630,
-          alt: article.title,
-        },
-      ] : [],
+      images: article.coverImage
+        ? [
+            {
+              url: article.coverImage,
+              width: 1200,
+              height: 630,
+              alt: article.title,
+            },
+          ]
+        : [],
     },
     twitter: {
       card: "summary_large_image",
@@ -73,13 +77,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
       {/* Navigation */}
-      <Link
-        href="/articles"
-        className="mb-8 inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="size-4" />
-        Retour aux articles
-      </Link>
+      <BreadcrumbLinks />
 
       {/* Header */}
       <header className="mb-8">
@@ -122,25 +120,27 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       {/* Content */}
       <article className="prose prose-lg dark:prose-invert max-w-none">
         <ReactMarkdown
-          components={{
-            code({ node, inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || "");
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  style={oneDark}
-                  language={match[1]}
-                  PreTag="div"
-                  {...props}
-                >
-                  {String(children).replace(/\n$/, "")}
-                </SyntaxHighlighter>
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              );
-            },
-          }}
+          components={
+            {
+              code({ className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || "");
+                const isInline = !match;
+                return isInline ? (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                ) : (
+                  <SyntaxHighlighter
+                    style={oneDark as any}
+                    language={match[1]}
+                    PreTag="div"
+                  >
+                    {String(children).replace(/\n$/, "")}
+                  </SyntaxHighlighter>
+                );
+              },
+            } as Components
+          }
         >
           {article.content}
         </ReactMarkdown>

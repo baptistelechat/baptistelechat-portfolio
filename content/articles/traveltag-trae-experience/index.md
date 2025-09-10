@@ -1,10 +1,10 @@
 ---
-title: "TravelTag & TRAE : Retour d'expérience sur un projet innovant"
-excerpt: "Découvrez mon retour d'expérience sur le développement de TravelTag, une application de voyage collaborative, et l'utilisation de TRAE comme assistant IA pour le développement."
-date: "2024-01-15"
-coverImage: "/project/TravelTag/cover.jpg"
-tags: ["React", "Next.js", "IA", "TRAE", "Développement"]
+title: "TravelTag & TRAE : Mon Expérience de Développement"
+excerpt: "Retour d'expérience sur le développement de TravelTag avec TRAE AI, l'IDE révolutionnaire qui transforme la façon de coder."
+date: "2024-09-10"
 author: "Baptiste LECHAT"
+tags: ["React", "TypeScript", "TRAE AI", "Développement", "Expérience"]
+coverImage: "image1.png"
 ---
 
 # TravelTag & TRAE : Une aventure technologique
@@ -28,7 +28,7 @@ const techStack = {
   styling: "Tailwind CSS + shadcn/ui",
   database: "Supabase",
   authentication: "Supabase Auth",
-  deployment: "Vercel"
+  deployment: "Vercel",
 };
 ```
 
@@ -48,6 +48,7 @@ TRAE (Trae AI) est un assistant IA spécialisé dans le développement qui m'a a
 #### 🚀 Productivité accrue
 
 Avec TRAE, j'ai pu :
+
 - Réduire le temps de développement de **40%**
 - Implémenter des fonctionnalités complexes plus rapidement
 - Me concentrer sur la logique métier plutôt que sur le code répétitif
@@ -72,7 +73,7 @@ interface TravelDestination {
 const useTravelDestinations = () => {
   const [destinations, setDestinations] = useState<TravelDestination[]>([]);
   const [loading, setLoading] = useState(true);
-  
+
   // Logique de gestion des destinations...
 };
 ```
@@ -80,6 +81,7 @@ const useTravelDestinations = () => {
 #### 🔧 Résolution de problèmes
 
 TRAE excelle dans :
+
 - L'identification rapide des bugs
 - La proposition de solutions alternatives
 - L'optimisation des performances
@@ -92,20 +94,18 @@ L'un des défis majeurs était l'intégration de cartes interactives avec Leafle
 
 ```typescript
 // Configuration Leaflet avec Next.js
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
-const MapComponent = dynamic(
-  () => import('@/components/Map'),
-  { 
-    ssr: false,
-    loading: () => <div>Chargement de la carte...</div>
-  }
-);
+const MapComponent = dynamic(() => import("@/components/Map"), {
+  ssr: false,
+  loading: () => <div>Chargement de la carte...</div>,
+});
 ```
 
 ### Gestion de l'état collaboratif
 
 La synchronisation en temps réel entre utilisateurs a nécessité :
+
 - Utilisation de Supabase Realtime
 - Gestion optimiste des mises à jour
 - Résolution des conflits de données
@@ -143,15 +143,17 @@ L'expérience avec TRAE m'a convaincu que l'avenir du développement réside dan
 Le développement de TravelTag avec TRAE a été une révélation. Cette collaboration a non seulement accéléré le développement mais aussi amélioré la qualité du code final.
 
 **Recommandations pour les développeurs** :
+
 - Expérimentez avec les assistants IA
 - Maintenez une architecture claire
 - Continuez à apprendre et à vous adapter
 
 ---
 
-*Vous souhaitez en savoir plus sur TravelTag ou TRAE ? N'hésitez pas à me contacter !*
+_Vous souhaitez en savoir plus sur TravelTag ou TRAE ? N'hésitez pas à me contacter !_
 
 **Liens utiles :**
+
 - [Démo TravelTag](https://traveltag-demo.vercel.app)
 - [Code source](https://github.com/baptistelechat/traveltag)
 - [Documentation TRAE](https://trae.ai/docs)

@@ -1,7 +1,8 @@
 import BreadcrumbLinks from "@/components/BreadcrumbLinks";
 import { Card, CardContent } from "@/components/ui/card";
+import { ImageZoom } from "@/components/ui/kibo-ui/image-zoom";
 import { getArticleBySlug, getArticles } from "@/lib/utils/articles";
-import { Calendar, Clock } from "lucide-react";
+import { Book, Calendar, Clock } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -83,19 +84,21 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           {/* Header */}
           <header className="my-8">
             {article.coverImage && (
-              <div className="relative mb-6 h-64 w-full max-w-full overflow-hidden rounded-lg md:h-80">
-                <Image
-                  src={article.coverImage}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+              <ImageZoom zoomMargin={100}>
+                <div className="relative mb-6 h-64 w-full max-w-full overflow-hidden rounded-lg md:h-80">
+                  <Image
+                    src={article.coverImage}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </ImageZoom>
             )}
 
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              {article.title}
+            <h1 className="mb-4 flex items-center gap-2 text-4xl font-bold md:text-5xl">
+              <Book className="size-16" /> {article.title}
             </h1>
 
             <div className="mb-4 flex items-center gap-4 text-muted-foreground">

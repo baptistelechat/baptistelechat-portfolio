@@ -1,4 +1,6 @@
 import BreadcrumbLinks from "@/components/BreadcrumbLinks";
+import TableOfContents from "@/components/TableOfContents";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ImageZoom } from "@/components/ui/kibo-ui/image-zoom";
 import { getArticleBySlug, getArticles } from "@/lib/utils/articles";
@@ -10,6 +12,7 @@ import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import remarkGfm from "remark-gfm";
 
 interface ArticlePageProps {
   params: {
@@ -82,7 +85,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <Card>
         <CardContent className="p-4 sm:p-6 lg:p-8">
           {/* Header */}
-          <header className="my-8">
+          <header className="my-4">
             {article.coverImage && (
               <ImageZoom zoomMargin={100}>
                 <div className="relative mb-6 h-64 w-full max-w-full overflow-hidden rounded-lg md:h-80">
@@ -118,16 +121,57 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </div>
             </div>
 
+            {/* Tags */}
+            {article.tags && article.tags.length > 0 && (
+              <div className="my-4 flex flex-wrap gap-2">
+                {article.tags.map((tag) => (
+                  <Badge key={tag} variant="secondary" className="text-xs">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
+
             <p className="text-xl leading-relaxed text-muted-foreground">
               {article.excerpt}
             </p>
           </header>
 
+          {/* Table des matières */}
+          <TableOfContents content={article.content} />
+
           {/* Content */}
           <article className="prose prose-lg w-full dark:prose-invert">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
               components={
                 {
+                  h2({ children, ...props }) {
+                    const text = String(children).trim();
+                    const id = text
+                      .toLowerCase()
+                      .replace(/[^a-z0-9\s]/g, "")
+                      .replace(/\s+/g, "-")
+                      .replace(/^-+|-+$/g, "");
+                    return (
+                      <h2 id={id} {...props}>
+                        {children}
+                      </h2>
+                    );
+                  },
+                  h3({ children, ...props }) {
+                    const text = String(children).trim();
+                    const id = text
+                      .toLowerCase()
+                      .replace(/[^a-z0-9\s]/g, "")
+                      .replace(/\s+/g, "-")
+                      .replace(/^-+|-+$/g, "");
+                    return (
+                      <h3 id={id} {...props}>
+                        {children}
+                      </h3>
+                    );
+                  },
                   code({ className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
                     const isInline = !match;
@@ -143,6 +187,25 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                       >
                         {String(children).replace(/\n$/, "")}
                       </SyntaxHighlighter>
+                    );
+                  },
+                  img({ src, alt, title, ...props }) {
+                    // Syntaxe: ![alt](src "title|width|height")
+                    const [titleText, width, height] = (title || "").split("|");
+                    const imageWidth = width ? parseInt(width) : 800;
+                    const imageHeight = height ? parseInt(height) : 600;
+
+                    return (
+                      <Image
+                        src={src || ""}
+                        alt={alt || ""}
+                        width={imageWidth}
+                        height={imageHeight}
+                        className="mx-auto rounded-lg shadow-md"
+                        title={titleText || undefined}
+                        priority={false}
+                        unoptimized={false}
+                      />
                     );
                   },
                 } as Components

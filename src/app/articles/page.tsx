@@ -3,8 +3,9 @@ import {
   BentoCard,
   BentoGrid,
 } from "@/components/magicui/bento-grid/bento-grid";
+import { Badge } from "@/components/ui/badge";
 import { getArticles } from "@/lib/utils/articles";
-import { Book, Calendar, Clock, Newspaper, ToyBrick } from "lucide-react";
+import { Book, Calendar, Clock, Newspaper } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -79,10 +80,10 @@ export default async function ArticlesPage() {
                 ) : (
                   <div className="flex h-40 w-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300 md:h-52">
                     {/* <div className="text-6xl opacity-50">📰</div> */}
-                    <ToyBrick className="size-20 text-gray-600" />
+                    <Newspaper className="size-20 text-gray-600" />
                   </div>
                 )}
-                <div className="flex items-center gap-2 p-6 text-xs text-muted-foreground">
+                <div className="flex items-center gap-2 px-6 py-4 text-xs text-muted-foreground">
                   <Calendar className="size-3" />
                   <span>
                     {new Date(article.date).toLocaleDateString("fr-FR")}
@@ -90,6 +91,16 @@ export default async function ArticlesPage() {
                   <Clock className="ml-2 size-3" />
                   <span>{article.readingTime} min</span>
                 </div>
+                {/* Tags */}
+                {article.tags && article.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pl-6">
+                    {article.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
               </div>
             }
             className=""

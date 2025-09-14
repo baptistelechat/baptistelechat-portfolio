@@ -15,27 +15,31 @@ Développer **TravelTag** a été ma première vraie expérience avec un IDE ass
 
 **TravelTag** est une application web pour générer des QR Codes contenant des informations personnelles à imprimer et coller sur des bagages, sacs à dos, affaires d’enfants, etc. Conçue initialement pour un usage personnel, elle vise à devenir un outil simple, **offline** et rassurant pour tous.
 
-### 🎯 Contexte & Problème
+![Traveling](/articles/traveltag-trae-experience/Traveling.svg "Traveling|400|400")
 
-Je suis parti en vacances cet été et je n’avais pas pris l’avion depuis 16 ans. J’avais peur que mes bagages se perdent pendant un trajet de plus de 6000 km avec de multiples étapes (voiture, navette, avion, taxi, bateau). L’idée de TravelTag est née pour créer une solution **rapide et simple** dans le temps qu’il me restait avant le départ (~2 semaines).  
+### 📘 Contexte & Problème
+
+Je suis parti en vacances cet été et je n’avais pas pris l’avion depuis 16 ans. J’avais peur que mes bagages se perdent pendant un trajet de plus de 6000 km avec de multiples étapes (voiture, navette, avion, taxi, bateau). L’idée de TravelTag est née pour créer une solution **rapide et simple** dans le temps qu’il me restait avant le départ (~2 semaines).
+
 Le QR Code a été choisi pour **éviter de développer un lecteur spécifique**, puisque la majorité des smartphones intègrent un lecteur de manière native.
 
 J’ai d’abord cherché des solutions existantes : la plupart étaient payantes, stockaient potentiellement les données sur des serveurs externes et nécessitaient de tout saisir à la main, avec le risque d’oublier des informations cruciales en cas de perte. TravelTag répond à ce besoin de **fiabilité, simplicité et confidentialité**.
 
 Le projet s’adresse aux **voyageurs réguliers ou non**, aux **familles** (facilement stressées par le transport de nombreux bagages), et aux **enfants** (pour voyages scolaires ou affaires personnelles). Les cas d’usage sont nombreux et adaptables.
 
-### Stack technique utilisée
+![Globe](/articles/traveltag-trae-experience/globe.svg "Globe|400|400")
 
-- **Frontend** : Vite + React 18 + TypeScript
+### 📂 Stack technique utilisée
+
+- **Frontend** : Vite + React + TypeScript
 - **Styling** : Tailwind CSS v4 + shadcn/ui
 - **State Management** : Zustand
 - **Validation** : Zod avec TypeScript schemas
 - **QR Code** : react-qr-code
 - **Export** : html-to-image pour PNG
 - **Data** : JSON pour aéroports, gares et pays
-- **Hooks** : Custom hooks pour la logique métier
 
-### Pourquoi Vite + React ?
+### ❓ Pourquoi Vite + React ?
 
 | Critère            | Vite                        | Next.js                                  |
 | ------------------ | --------------------------- | ---------------------------------------- |
@@ -47,12 +51,12 @@ Le projet s’adresse aux **voyageurs réguliers ou non**, aux **familles** (fac
 
 💡 **Astuce** : pour des apps SPA légères, Vite est parfait. Next.js devient pertinent si SEO ou SSR est nécessaire.
 
-### Gestion des données
+### 📄 Gestion des données
 
 - **LocalStorage** : langue sélectionnée pour i18n
-- **JSON** : données aéroports (package NPM `airport-iata-codes`), communes et gares françaises récupérées depuis [data.gouv.fr](https://www.data.gouv.fr)
+- **JSON** : données aéroports (package NPM [airport-iata-codes](https://www.npmjs.com/package/airport-iata-codes)), communes et gares françaises récupérées depuis [data.gouv.fr](https://www.data.gouv.fr)
 
-### Défis techniques
+### 💥 Défis techniques
 
 - Export PNG et rendu QR Code : plusieurs itérations ont été nécessaires pour obtenir la mise en page désirée.
 - Vérification de l’**offline complet** : toutes les dépendances critiques tournent localement, aucun serveur externe requis.
@@ -64,11 +68,13 @@ Le projet s’adresse aux **voyageurs réguliers ou non**, aux **familles** (fac
 - Aperçu QR Code en temps réel à droite pour test avant téléchargement
 - Retour utilisateur : beaucoup de feedbacks positifs de la famille et de la communauté X
 
-## L'expérience TRAE
+## 💻 L'expérience TRAE
 
-### Qu'est-ce que TRAE ?
+![Trae](/articles/traveltag-trae-experience/trae.jpeg "Trae|500|500")
 
-TRAE (Trae AI) est un assistant IA spécialisé dans le développement qui m'a accompagné tout au long du projet. Contrairement aux assistants traditionnels, TRAE comprend le contexte du projet et peut :
+### 👨‍💻 Qu'est-ce que TRAE ?
+
+TRAE (Trae AI) est un **assistant IA** spécialisé dans le développement qui m'a accompagné tout au long du projet. Contrairement aux assistants traditionnels, TRAE comprend le contexte du projet et peut :
 
 - Analyser l'architecture existante
 - Proposer des solutions cohérentes
@@ -81,16 +87,17 @@ L’idée initiale était un projet personnel rapide, mais j’ai décidé d’e
 
 - Je manquais de temps pour créer une solution complète en quelques semaines.
 - Je venais de souscrire à TRAE Pro et souhaitais tester l’IDE sur un projet **from scratch**.
-- L’IDE m’a permis de générer rapidement du code boilerplate et d’obtenir des suggestions pertinentes pour enrichir le produit.
+- L’IDE m’a permis de générer rapidement du code et d’obtenir des suggestions pertinentes pour enrichir le produit.
 
-J’avais une vision de base : nom, prénom, adresse postale, numéro de téléphone et lieux de départ/arrivée. TRAE a ensuite suggéré la **nationalité, les contacts d’urgence, les modes de transport supplémentaires et les informations de santé**.  
-J’ai ajouté un **disclaimer** :
+J’avais une vision de base : nom, prénom, adresse postale, numéro de téléphone et lieux de départ/arrivée. TRAE a ensuite suggéré la **nationalité, les contacts d’urgence, les modes de transport supplémentaires et les informations de santé**.
 
-> "Vous partagez des données personnelles qui peuvent être lues par un grand nombre de personnes. Vous êtes le seul responsable des données que vous partagez."
+J’ai alors ajouté un **disclaimer** :
 
-La **V1** a été fonctionnelle en **1 weekend**, puis affinée durant la semaine suivante pour améliorer la génération de planches PDF et l’interface utilisateur. TRAE a fortement accéléré la mise en place et le développement des idées.
+> Vous partagez des données personnelles qui peuvent être lues par un grand nombre de personnes. Vous êtes le seul responsable des données que vous partagez.
 
-### Avantages constatés
+La **V1** a été fonctionnelle en **1 weekend**, puis affinée ponctuellement durant la semaine suivante pour améliorer la génération de planches PDF et l’interface utilisateur. TRAE a fortement accéléré la mise en place et le développement des idées.
+
+### 💪 Avantages constatés
 
 #### 🚀 Productivité accrue
 
@@ -108,36 +115,35 @@ TRAE excelle dans :
 - La proposition de solutions alternatives
 - L'optimisation des performances
 
-## Résultats et apprentissages
+## 📌 Résultats et apprentissages
 
-### Métriques du projet (à actualiser)
+### 📊 Retour d'expérience
 
-- **Temps de développement** : 1 semaines
-- **Lignes de code** : ~2,500
-- **Composants React** : 25
-- **Tests unitaires** : 85% de couverture
+Depuis son lancement, TravelTag a attiré plus de 100 visiteurs en seulement une semaine, avec une audience internationale répartie sur 18 pays. La France reste le marché le plus actif avec 35 % des visites, suivie du Brésil et des États-Unis. En termes d’engagement, environ 25 % des visiteurs ont généré un QR Code, ce qui montre un bon intérêt pour l’application dès les premiers jours. Ces premiers retours confirment que l’app est intuitive et attire une audience diverse, offrant de belles perspectives pour optimiser l’expérience utilisateur et augmenter les conversions.
 
-### Apprentissages clés
+![Umami](/articles/traveltag-trae-experience/map.png "Umami|800|500")
 
-**L'IA comme partenaire** : TRAE n'est pas un remplaçant mais un amplificateur de compétences
-**TRAE** : SOLO Mode pour lancer le projet, puis Mode Classique CHAT avec agent Builder + MCP pour itérer.  
-**Architecture modulaire** : L'importance d'une structure claire pour faciliter la collaboration avec l'IA
-**Conseil de dev** : rester sur l’essentiel pour un MVP. Utiliser un **KANBAN** pour séparer les fonctionnalités V1 (essentielles) et futures améliorations. 
-**Hooks/Zustand/Zod** : organiser la logique métier et la validation des données.
+### 🎓 Apprentissages clés
 
-## Perspectives d'avenir
+- **L'IA comme partenaire** : TRAE n'est pas un remplaçant mais un amplificateur de compétences
+- **TRAE** : SOLO Mode pour lancer le projet, puis Mode Classique CHAT avec agent Builder + MCP pour itérer.
+- **Architecture modulaire** : L'importance d'une structure claire pour faciliter la collaboration avec l'IA
+- **Conseil de dev** : rester sur l’essentiel pour un MVP. Utiliser un **KANBAN** pour séparer les fonctionnalités V1 (essentielles) et futures améliorations.
+- **Hooks/Zustand/Zod** : organiser la logique métier et la validation des données.
 
-### Impact et évolutions prévues pour TravelTag
+## 🔮 Perspectives d'avenir
 
-- TravelTag a été utilisé avec succès lors de mon voyage.  
-- Fonctionnalités futures possibles : mode sombre, identité visuelle propre, amélioration de l’interface.  
+### 📈 Impact et évolutions prévues pour TravelTag
+
+- TravelTag a été utilisé avec succès lors de mon voyage.
+- Fonctionnalités futures possibles : mode sombre, identité visuelle propre, amélioration de l’interface.
 - Objectif : rester un projet personnel mais facilement partageable.
 
-### TRAE et l'avenir du développement
+### 🤖 TRAE et l'avenir du développement
 
 L'expérience avec TRAE m'a convaincu que l'avenir du développement réside dans la collaboration homme-IA. Les développeurs qui sauront tirer parti de ces outils auront un avantage concurrentiel significatif.
 
-## Conclusion
+## 🎯 Conclusion
 
 Le développement de TravelTag avec TRAE a été une premère expérience et un test réussi au la main. Cette collaboration a non seulement accéléré le développement mais aussi amélioré considérablement la qualité de mon code final.
 
@@ -151,7 +157,7 @@ Le développement de TravelTag avec TRAE a été une premère expérience et un 
 
 _Vous souhaitez en savoir plus sur TravelTag ou TRAE ? N'hésitez pas à me contacter !_
 
-**Liens utiles :**
+**🔗 Liens utiles :**
 
 - [Démo TravelTag](https://traveltag.vercel.app)
 - [Code source](https://github.com/baptistelechat/traveltag)

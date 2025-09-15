@@ -1,3 +1,4 @@
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
@@ -20,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} flex justify-center p-4`}
-      >
+      <body className={`${inter.className} flex justify-center p-4`}>
         <ThemeProvider
           attribute="class"
           // defaultTheme="system"
@@ -31,8 +30,8 @@ export default function RootLayout({
         >
           <TooltipProvider>
             {children}
-            <div className="fixed bottom-4 right-4 z-50">
-              {/* <ThemeToggle /> */}
+            <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-4">
+              <LanguageSwitcher />
               <AnimatedThemeToggler />
             </div>
             <Toaster />

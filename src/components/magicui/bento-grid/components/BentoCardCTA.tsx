@@ -4,7 +4,7 @@ import ProfileDialog from "@/components/Dialog/ProfileDialog";
 import ProjectDialog from "@/components/Dialog/ProjectDialog";
 import SocialDock from "@/components/SocialDock";
 import { Button } from "@/components/ui/button";
-import projects from "@/lib/constants/projects";
+import { getProjects } from "@/lib/constants/projects";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useI18n } from "@/i18n/client";
@@ -26,15 +26,16 @@ const CTAButton = ({
 }) => {
   const router = useRouter(); // hook direct ici
   const t = useI18n();
+  const projects = getProjects(t);
 
   // Dialogs selon type
   if (
     [
-      "Compétences",
-      "Développement",
-      "Sport",
-      "Jeux vidéo",
-      "Sports mécaniques",
+      t("navigation.skills"),
+      t("skills.development"),
+      t("skills.sport"),
+      t("skills.video_games"),
+      t("skills.motorsports"),
     ].includes(name)
   ) {
     return <ProfileDialog cta={cta} />;
@@ -62,7 +63,7 @@ const CTAButton = ({
   }
 
   // Navigation vers un article
-  if (cta.includes("article")) {
+  if (cta === t("ui.read_articles") || cta === t("ui.view_article") || cta === t("ui.read_article")) {
     return (
       <Button
         variant="ghost"
@@ -87,8 +88,8 @@ const CTAButton = ({
       size="sm"
       className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
       onClick={() =>
-        toast(t("in_development"), {
-          description: t("feature_coming_soon"),
+        toast(t("notifications.in_development"), {
+          description: t("notifications.feature_coming_soon"),
         })
       }
     >
@@ -116,7 +117,7 @@ const BentoCardCTA = ({
   const t = useI18n();
 
   // SocialDock spécial
-  if (cta.includes("social-dock")) {
+  if (cta === "social-dock") {
     return <SocialDock />;
   }
 

@@ -24,7 +24,7 @@ export default function AutoFormFullTextarea({
       )}
       <FormControl>
         <Textarea
-          placeholder={t("your_message_here")}
+          placeholder={t("ui.your_message_here")}
           style={{
             height: "24rem"
           }}

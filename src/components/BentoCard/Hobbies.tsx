@@ -9,8 +9,8 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
   return [
     {
       Icon: Binary,
-      name: t("development"),
-      cta: t("view_more"),
+      name: t("skills.development"),
+      cta: t("ui.view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/1.gif`}
@@ -24,8 +24,8 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
     },
     {
       Icon: TrophyIcon,
-      name: t("sport"),
-      cta: t("view_more"),
+      name: t("skills.sport"),
+      cta: t("ui.view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/2.gif`}
@@ -39,8 +39,8 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
     },
     {
       Icon: Gamepad2Icon,
-      name: t("video_games"),
-      cta: t("view_more"),
+      name: t("skills.video_games"),
+      cta: t("ui.view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/3.gif`}
@@ -54,8 +54,8 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
     },
     {
       Icon: CarIcon,
-      name: t("motorsports"),
-      cta: t("view_more"),
+      name: t("skills.motorsports"),
+      cta: t("ui.view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/4.gif`}

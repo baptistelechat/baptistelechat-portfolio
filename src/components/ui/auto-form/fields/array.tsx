@@ -88,7 +88,7 @@ export default function AutoFormArray({
           className="mt-4 flex items-center"
         >
           <Plus className="mr-2" size={16} />
-          {t("add")}
+          {t("ui.add")}
         </Button>
       </AccordionContent>
     </AccordionItem>

@@ -1,9 +1,19 @@
+"use client";
+
 import jobs from "@/lib/constants/jobs";
+import { useI18n } from "@/i18n/client";
 import WordRotate from "../../../magicui/word-rotate";
 
 const BentoCardDescription = ({ description }: { description: string }) => {
+  const t = useI18n();
+  
   if (description === "word-rotate") {
-    return <WordRotate className="max-w-lg text-neutral-400" words={jobs} />;
+    // Traduire les clés jobs en textes correspondants
+    const translatedJobs = jobs.map(jobKey => {
+      return t(jobKey as any);
+    });
+    
+    return <WordRotate className="max-w-lg text-neutral-400" words={translatedJobs} />;
   }
 
   return (

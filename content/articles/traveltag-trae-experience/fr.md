@@ -9,23 +9,23 @@ coverImage: "/articles/traveltag-trae-experience/Capture_1.png"
 
 # TravelTag & TRAE : Une aventure technologique
 
-Développer **TravelTag** a été ma première vraie expérience avec un IDE assisté par IA. Grâce à **TRAE IDE**, j’ai découvert une nouvelle façon de coder, plus fluide et motivante, qui a vraiment changé ma manière de travailler.
+Développer **TravelTag** a été ma première vraie expérience avec un IDE assisté par IA. Grâce à **TRAE IDE**, j'ai découvert une nouvelle façon de coder, plus fluide et motivante, qui a vraiment changé ma manière de travailler.
 
 ## 🧳 Le projet TravelTag
 
-**TravelTag** est une application web pour générer des QR Codes contenant des informations personnelles à imprimer et coller sur des bagages, sacs à dos, affaires d’enfants, etc. Conçue initialement pour un usage personnel, elle vise à devenir un outil simple, **offline** et rassurant pour tous.
+**TravelTag** est une application web pour générer des QR Codes contenant des informations personnelles à imprimer et coller sur des bagages, sacs à dos, affaires d'enfants, etc. Conçue initialement pour un usage personnel, elle vise à devenir un outil simple, **offline** et rassurant pour tous.
 
-![Traveling](/articles/traveltag-trae-experience/Traveling.svg "Traveling|400|400")
+![Traveling](/articles/traveltag-trae-experience/traveling.svg "Traveling|400|400")
 
 ### 📘 Contexte & Problème
 
-Je suis parti en vacances cet été et je n’avais pas pris l’avion depuis 16 ans. J’avais peur que mes bagages se perdent pendant un trajet de plus de 6000 km avec de multiples étapes (voiture, navette, avion, taxi, bateau). L’idée de TravelTag est née pour créer une solution **rapide et simple** dans le temps qu’il me restait avant le départ (~2 semaines).
+Je suis parti en vacances cet été et je n'avais pas pris l'avion depuis 16 ans. J'avais peur que mes bagages se perdent pendant un trajet de plus de 6000 km avec de multiples étapes (voiture, navette, avion, taxi, bateau). L'idée de TravelTag est née pour créer une solution **rapide et simple** dans le temps qu'il me restait avant le départ (~2 semaines).
 
 Le QR Code a été choisi pour **éviter de développer un lecteur spécifique**, puisque la majorité des smartphones intègrent un lecteur de manière native.
 
-J’ai d’abord cherché des solutions existantes : la plupart étaient payantes, stockaient potentiellement les données sur des serveurs externes et nécessitaient de tout saisir à la main, avec le risque d’oublier des informations cruciales en cas de perte. TravelTag répond à ce besoin de **fiabilité, simplicité et confidentialité**.
+J'ai d'abord cherché des solutions existantes : la plupart étaient payantes, stockaient potentiellement les données sur des serveurs externes et nécessitaient de tout saisir à la main, avec le risque d'oublier des informations cruciales en cas de perte. TravelTag répond à ce besoin de **fiabilité, simplicité et confidentialité**.
 
-Le projet s’adresse aux **voyageurs réguliers ou non**, aux **familles** (facilement stressées par le transport de nombreux bagages), et aux **enfants** (pour voyages scolaires ou affaires personnelles). Les cas d’usage sont nombreux et adaptables.
+Le projet s'adresse aux **voyageurs réguliers ou non**, aux **familles** (facilement stressées par le transport de nombreux bagages), et aux **enfants** (pour voyages scolaires ou affaires personnelles). Les cas d'usage sont nombreux et adaptables.
 
 ![Globe](/articles/traveltag-trae-experience/globe.svg "Globe|400|400")
 
@@ -59,12 +59,12 @@ Le projet s’adresse aux **voyageurs réguliers ou non**, aux **familles** (fac
 ### 💥 Défis techniques
 
 - Export PNG et rendu QR Code : plusieurs itérations ont été nécessaires pour obtenir la mise en page désirée.
-- Vérification de l’**offline complet** : toutes les dépendances critiques tournent localement, aucun serveur externe requis.
+- Vérification de l'**offline complet** : toutes les dépendances critiques tournent localement, aucun serveur externe requis.
 
 ## 🎨 Design & UX
 
 - Minimaliste et fonctionnel
-- Formulaire à gauche regroupant 4 catégories d’informations
+- Formulaire à gauche regroupant 4 catégories d'informations
 - Aperçu QR Code en temps réel à droite pour test avant téléchargement
 - Retour utilisateur : beaucoup de feedbacks positifs de la famille et de la communauté X
 
@@ -83,19 +83,19 @@ TRAE (Trae AI) est un **assistant IA** spécialisé dans le développement qui m
 
 ### 🚀 Processus de création avec TRAE
 
-L’idée initiale était un projet personnel rapide, mais j’ai décidé d’en faire une **solution complète** pouvant être partagée. TRAE a été choisi car :
+L'idée initiale était un projet personnel rapide, mais j'ai décidé d'en faire une **solution complète** pouvant être partagée. TRAE a été choisi car :
 
 - Je manquais de temps pour créer une solution complète en quelques semaines.
-- Je venais de souscrire à TRAE Pro et souhaitais tester l’IDE sur un projet **from scratch**.
-- L’IDE m’a permis de générer rapidement du code et d’obtenir des suggestions pertinentes pour enrichir le produit.
+- Je venais de souscrire à TRAE Pro et souhaitais tester l'IDE sur un projet **from scratch**.
+- L'IDE m'a permis de générer rapidement du code et d'obtenir des suggestions pertinentes pour enrichir le produit.
 
-J’avais une vision de base : nom, prénom, adresse postale, numéro de téléphone et lieux de départ/arrivée. TRAE a ensuite suggéré la **nationalité, les contacts d’urgence, les modes de transport supplémentaires et les informations de santé**.
+J'avais une vision de base : nom, prénom, adresse postale, numéro de téléphone et lieux de départ/arrivée. TRAE a ensuite suggéré la **nationalité, les contacts d'urgence, les modes de transport supplémentaires et les informations de santé**.
 
-J’ai alors ajouté un **disclaimer** :
+J'ai alors ajouté un **disclaimer** :
 
 > Vous partagez des données personnelles qui peuvent être lues par un grand nombre de personnes. Vous êtes le seul responsable des données que vous partagez.
 
-La **V1** a été fonctionnelle en **1 weekend**, puis affinée ponctuellement durant la semaine suivante pour améliorer la génération de planches PDF et l’interface utilisateur. TRAE a fortement accéléré la mise en place et le développement des idées.
+La **V1** a été fonctionnelle en **1 weekend**, puis affinée ponctuellement durant la semaine suivante pour améliorer la génération de planches PDF et l'interface utilisateur. TRAE a fortement accéléré la mise en place et le développement des idées.
 
 ### 💪 Avantages constatés
 
@@ -119,7 +119,7 @@ TRAE excelle dans :
 
 ### 📊 Retour d'expérience
 
-Depuis son lancement, TravelTag a attiré plus de 100 visiteurs en seulement une semaine, avec une audience internationale répartie sur 18 pays. La France reste le marché le plus actif avec 35 % des visites, suivie du Brésil et des États-Unis. En termes d’engagement, environ 25 % des visiteurs ont généré un QR Code, ce qui montre un bon intérêt pour l’application dès les premiers jours. Ces premiers retours confirment que l’app est intuitive et attire une audience diverse, offrant de belles perspectives pour optimiser l’expérience utilisateur et augmenter les conversions.
+Depuis son lancement, TravelTag a attiré plus de 100 visiteurs en seulement une semaine, avec une audience internationale répartie sur 18 pays. La France reste le marché le plus actif avec 35 % des visites, suivie du Brésil et des États-Unis. En termes d'engagement, environ 25 % des visiteurs ont généré un QR Code, ce qui montre un bon intérêt pour l'application dès les premiers jours. Ces premiers retours confirment que l'app est intuitive et attire une audience diverse, offrant de belles perspectives pour optimiser l'expérience utilisateur et augmenter les conversions.
 
 ![Umami](/articles/traveltag-trae-experience/map.png "Umami|800|500")
 
@@ -128,7 +128,7 @@ Depuis son lancement, TravelTag a attiré plus de 100 visiteurs en seulement une
 - **L'IA comme partenaire** : TRAE n'est pas un remplaçant mais un amplificateur de compétences
 - **TRAE** : SOLO Mode pour lancer le projet, puis Mode Classique CHAT avec agent Builder + MCP pour itérer.
 - **Architecture modulaire** : L'importance d'une structure claire pour faciliter la collaboration avec l'IA
-- **Conseil de dev** : rester sur l’essentiel pour un MVP. Utiliser un **KANBAN** pour séparer les fonctionnalités V1 (essentielles) et futures améliorations.
+- **Conseil de dev** : rester sur l'essentiel pour un MVP. Utiliser un **KANBAN** pour séparer les fonctionnalités V1 (essentielles) et futures améliorations.
 - **Hooks/Zustand/Zod** : organiser la logique métier et la validation des données.
 
 ## 🔮 Perspectives d'avenir
@@ -136,7 +136,7 @@ Depuis son lancement, TravelTag a attiré plus de 100 visiteurs en seulement une
 ### 📈 Impact et évolutions prévues pour TravelTag
 
 - TravelTag a été utilisé avec succès lors de mon voyage.
-- Fonctionnalités futures possibles : mode sombre, identité visuelle propre, amélioration de l’interface.
+- Fonctionnalités futures possibles : mode sombre, identité visuelle propre, amélioration de l'interface.
 - Objectif : rester un projet personnel mais facilement partageable.
 
 ### 🤖 TRAE et l'avenir du développement

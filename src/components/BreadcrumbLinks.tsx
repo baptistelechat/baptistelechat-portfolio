@@ -10,17 +10,15 @@ const BreadcrumbLinks = () => {
 
   return (
     <div className="mb-8 flex items-center justify-between">
-      {pathname !== "/articles" && (
-        <Button variant={"ghost"}>
-          <Link
-            href="/articles"
-            className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="size-4" />
-            Retour aux articles
-          </Link>
-        </Button>
-      )}
+      <Button variant={"ghost"} disabled={pathname.endsWith("/articles")}>
+        <Link
+          href="/articles"
+          className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="size-4" />
+          Retour aux articles
+        </Link>
+      </Button>
       <Button variant={"ghost"}>
         <Link
           href="/"

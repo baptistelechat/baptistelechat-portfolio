@@ -9,8 +9,8 @@ const Contact = async (): Promise<BentoCardProps> => {
   
   return {
     Icon: MailIcon,
-    name: t("contact"),
-    description: t("contact_description"),
+    name: t("navigation.contact"),
+    description: t("contact.contact_description"),
     cta: "social-dock",
     background: (
       <div className="flex size-full flex-col gap-4 p-4 md:hidden">

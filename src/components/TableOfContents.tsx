@@ -85,7 +85,7 @@ const TableOfContents = ({ content, className }: TableOfContentsProps) => {
     <Card className={cn("mb-8", className)}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg">
-          📋 {t("table_of_contents")}
+          📋 {t("ui.table_of_contents")}
         </CardTitle>
       </CardHeader>
       <CardContent>

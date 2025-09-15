@@ -6,7 +6,7 @@ const SocialDock = () => {
   return (
     <div
       className={cn(
-        "absolute bottom-0 w-full translate-y-0 lg:translate-y-10 transform-gpu flex-row items-center p-4 opacity-100 lg:opacity-0 transition-all duration-300 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 justify-end hidden md:flex"
+        "z-50 absolute bottom-0 w-full translate-y-0 lg:translate-y-10 transform-gpu flex-row items-center p-4 opacity-100 lg:opacity-0 transition-all duration-300 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 justify-end hidden md:flex"
       )}
     >
       <Dock>

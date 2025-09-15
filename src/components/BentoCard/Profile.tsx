@@ -10,7 +10,7 @@ const Profile = async (): Promise<BentoCardProps> => {
   
   return {
     Icon: UserIcon,
-    name: t("profile_name"),
+    name: t("profile.name"),
     description: "word-rotate",
     cta: "social-dock",
     background: (

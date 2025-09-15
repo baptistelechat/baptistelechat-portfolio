@@ -27,7 +27,7 @@ export const AnimatedThemeToggler = ({ className }: Props) => {
   const changeTheme = async () => {
     if (!buttonRef.current) return;
 
-    const doc = document as any; // 🔑 cast pour bypass TS
+    const doc = document as any; // 🔑 cast to bypass TS
 
     if (doc.startViewTransition) {
       await doc.startViewTransition(() => {
@@ -36,7 +36,7 @@ export const AnimatedThemeToggler = ({ className }: Props) => {
         });
       }).ready;
     } else {
-      // fallback classique si le navigateur ne supporte pas l'API
+      // classic fallback if browser doesn't support the API
       flushSync(() => {
         setTheme(theme === "dark" ? "light" : "dark");
       });
@@ -66,7 +66,7 @@ export const AnimatedThemeToggler = ({ className }: Props) => {
     );
   };
 
-  if (!mounted) return null; // 🔑 évite l'erreur d’hydratation
+  if (!mounted) return null; // 🔑 avoid hydration error
 
   return (
     <MotionButton

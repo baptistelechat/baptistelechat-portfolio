@@ -1,5 +1,6 @@
-import projects from "@/lib/constants/projects";
+import { getProjects } from "@/lib/constants/projects";
 import { ArrowRightIcon, Laptop, Github } from "lucide-react";
+import { useI18n } from "@/i18n/client";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
@@ -22,6 +23,8 @@ import {
 } from "../ui/dialog";
 
 const ProjectDialog = ({ name }: { name: string }) => {
+  const t = useI18n();
+  const projects = getProjects(t);
   const {
     cta,
     description,
@@ -137,7 +140,7 @@ const ProjectDialog = ({ name }: { name: string }) => {
               onClick={() => window.open(website, "_blank")}
             >
               <Laptop className="mr-2 size-6" />
-              Site officiel
+              {t("ui.official_website")}
             </Button>
           )}
           <DialogClose asChild>
@@ -146,7 +149,7 @@ const ProjectDialog = ({ name }: { name: string }) => {
               size="sm"
               className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
             >
-              Fermer
+              {t("ui.close")}
             </Button>
           </DialogClose>
         </DialogFooter>

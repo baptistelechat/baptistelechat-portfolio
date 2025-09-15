@@ -8,9 +8,9 @@ const Skills = async (): Promise<BentoCardProps> => {
   
   return {
     Icon: BoxesIcon,
-    name: t("skills"),
-    description: t("skills_description"),
-    cta: t("view_more"),
+    name: t("navigation.skills"),
+    description: t("skills.skills_description"),
+    cta: t("ui.view_more"),
     background: <OrbitingCirclesSkills />,
     className:
       "row-start-2 row-end-3 col-start-1 col-end-2 xl:row-start-1 xl:row-end-2 xl:col-start-3 xl:col-end-5",

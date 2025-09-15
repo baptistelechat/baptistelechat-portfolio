@@ -18,28 +18,28 @@ const LOCALES = [
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
-  // Extraire la locale actuelle du pathname
+  // Extract current locale from pathname
   const currentLocaleFromPath = pathname.split("/")[1];
 
   const handleLocaleChange = (newLocale: string) => {
-    // Récupérer le chemin actuel sans le préfixe de locale
+    // Get current path without locale prefix
     const pathWithoutLocale = pathname.replace(/^\/(fr|en)/, "");
 
-    // Construire le nouveau chemin avec le nouveau locale
+    // Build new path with new locale
     const newPath = `/${newLocale}${pathWithoutLocale}`;
 
-    // Rediriger vers le nouveau chemin
+    // Redirect to new path
     router.push(newPath);
   };
 
-  // Trouver le locale actuel dans la liste
+  // Find current locale in the list
   const currentLocale =
     LOCALES.find((l) => l.value === currentLocaleFromPath) || LOCALES[0];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="flex items-center p-0">
+        <Button variant="outline" size="icon" className="flex items-center p-0">
           <div className="size-6 overflow-hidden rounded-sm">
             {currentLocale.code === "FR" && <Flags.FR className="size-full" />}
             {currentLocale.code === "GB" && <Flags.GB className="size-full" />}

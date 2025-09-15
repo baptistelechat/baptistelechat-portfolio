@@ -7,9 +7,9 @@ const Articles = async (): Promise<BentoCardProps> => {
 
   return {
     Icon: BookOpenIcon,
-    name: t("articles_blog"),
-    description: t("articles_description"),
-    cta: t("read_articles"),
+    name: t("articles.articles_blog"),
+    description: t("articles.articles_description"),
+    cta: t("ui.read_articles"),
     background: (
       <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300">
         <Newspaper className="size-20 text-gray-600" />

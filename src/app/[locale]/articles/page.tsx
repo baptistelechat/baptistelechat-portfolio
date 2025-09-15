@@ -15,15 +15,22 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const t = await getI18n();
   
   return {
-    title: t("articles_blog"),
-    description: t("articles_page_description"),
+    title: t("articles.articles_blog"),
+    description: t("articles.articles_page_description"),
   };
+}
+
+export async function generateStaticParams() {
+  const locales = ['fr', 'en'];
+  return locales.map((locale) => ({
+    locale,
+  }));
 }
 
 export default async function ArticlesPage({ params }: { params: { locale: string } }) {
   setStaticParamsLocale(params.locale);
   const t = await getI18n();
-  const articles = await getArticles();
+  const articles = await getArticles(params.locale);
 
   return (
     <div className="max-w-screen-xl">
@@ -31,10 +38,10 @@ export default async function ArticlesPage({ params }: { params: { locale: strin
       <div className="mb-8 flex flex-col gap-2">
         <div className="flex items-center gap-4">
           <Newspaper className="size-8" />
-          <h1 className="text-4xl font-bold">{t("articles_blog")}</h1>
+          <h1 className="text-4xl font-bold">{t("articles.articles_blog")}</h1>
         </div>
         <p className="text-lg text-muted-foreground">
-          {t("articles_page_description")}
+          {t("articles.articles_page_description")}
         </p>
       </div>
 
@@ -45,7 +52,7 @@ export default async function ArticlesPage({ params }: { params: { locale: strin
           name={article.title}
           description={article.excerpt}
           Icon={Book}
-          cta={t("read_article")}
+          cta={t("ui.read_article")}
           href={`/articles/${article.slug}`}
           background={
             <div>
@@ -70,7 +77,7 @@ export default async function ArticlesPage({ params }: { params: { locale: strin
                   {new Date(article.date).toLocaleDateString("fr-FR")}
                 </span>
                 <Clock className="ml-2 size-3" />
-                <span>{article.readingTime} {t("min_read")}</span>
+                <span>{article.readingTime} {t("ui.min_read")}</span>
               </div>
               {/* Tags */}
               {article.tags && article.tags.length > 0 && (
@@ -92,7 +99,7 @@ export default async function ArticlesPage({ params }: { params: { locale: strin
       {articles.length === 0 && (
         <div className="py-12 text-center">
           <p className="text-lg text-muted-foreground">
-            {t("no_articles_yet")}
+            {t("articles.no_articles_yet")}
           </p>
         </div>
       )}

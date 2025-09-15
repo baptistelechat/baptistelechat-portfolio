@@ -27,11 +27,20 @@ export const AnimatedThemeToggler = ({ className }: Props) => {
   const changeTheme = async () => {
     if (!buttonRef.current) return;
 
-    await document.startViewTransition(() => {
+    const doc = document as any; // 🔑 cast pour bypass TS
+
+    if (doc.startViewTransition) {
+      await doc.startViewTransition(() => {
+        flushSync(() => {
+          setTheme(theme === "dark" ? "light" : "dark");
+        });
+      }).ready;
+    } else {
+      // fallback classique si le navigateur ne supporte pas l'API
       flushSync(() => {
         setTheme(theme === "dark" ? "light" : "dark");
       });
-    }).ready;
+    }
 
     const { top, left, width, height } =
       buttonRef.current.getBoundingClientRect();

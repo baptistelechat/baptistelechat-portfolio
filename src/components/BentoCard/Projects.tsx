@@ -1,10 +1,13 @@
+import { getI18n } from "@/i18n/server";
 import { MysteryProject } from "@/lib/constants/ProjectIcon";
 import projects from "@/lib/constants/projects";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import IProject from "@/lib/interfaces/IProject";
 import { GanttChart, ToyBrick } from "lucide-react";
 
-const Projects = (): BentoCardProps[] => {
+const Projects = async (): Promise<BentoCardProps[]> => {
+  const t = await getI18n();
+  
   const projectList: BentoCardProps[] = projects.map((project: IProject) => {
     return {
       Icon: project.Icon,
@@ -21,9 +24,9 @@ const Projects = (): BentoCardProps[] => {
     ...projectList,
     {
       Icon: MysteryProject,
-      name: "Projet Mystère",
-      description: "Un nouveau projet passionnant en cours de développement. Un indice se cache dans cette page...",
-      cta: "Bientôt disponible",
+      name: t("mystery_project"),
+      description: t("mystery_project_description"),
+      cta: t("coming_soon"),
       background: (
         <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300">
           {/* <div className="text-6xl opacity-50">🤫</div> */}
@@ -35,9 +38,9 @@ const Projects = (): BentoCardProps[] => {
     },
     {
       Icon: GanttChart as any,
-      name: "En voir plus",
-      description: "Découvrir plus de projets",
-      cta: "En voir plus",
+      name: t("view_more"),
+      description: t("discover_more_projects"),
+      cta: t("view_more"),
       background: <div className="absolute -right-20 -top-20 opacity-60" />,
       className:
         "row-start-10 row-end-11 col-start-1 col-end-2 xl:row-start-3 xl:row-end-4 xl:col-start-4 xl:col-end-5",

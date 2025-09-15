@@ -1,13 +1,16 @@
+import { getI18n } from "@/i18n/server";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
 import { Binary, CarIcon, Gamepad2Icon, TrophyIcon } from "lucide-react";
 import Image from "next/image";
 
-const Hobbies = (): BentoCardProps[] => {
+const Hobbies = async (): Promise<BentoCardProps[]> => {
+  const t = await getI18n();
+  
   return [
     {
       Icon: Binary,
-      name: "Développement",
-      cta: "En savoir plus",
+      name: t("development"),
+      cta: t("view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/1.gif`}
@@ -21,8 +24,8 @@ const Hobbies = (): BentoCardProps[] => {
     },
     {
       Icon: TrophyIcon,
-      name: "Sports",
-      cta: "En savoir plus",
+      name: t("sport"),
+      cta: t("view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/2.gif`}
@@ -36,8 +39,8 @@ const Hobbies = (): BentoCardProps[] => {
     },
     {
       Icon: Gamepad2Icon,
-      name: "Jeux vidéo",
-      cta: "En savoir plus",
+      name: t("video_games"),
+      cta: t("view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/3.gif`}
@@ -51,8 +54,8 @@ const Hobbies = (): BentoCardProps[] => {
     },
     {
       Icon: CarIcon,
-      name: "Sports mécaniques",
-      cta: "En savoir plus",
+      name: t("motorsports"),
+      cta: t("view_more"),
       background: (
         <Image
           src={`/img/hobbies/gif/4.gif`}

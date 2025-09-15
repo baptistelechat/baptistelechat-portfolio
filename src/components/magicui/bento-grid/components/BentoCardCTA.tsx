@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import projects from "@/lib/constants/projects";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import { useI18n } from "@/i18n/client";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation"; // App Router Next 13+
@@ -24,6 +25,7 @@ const CTAButton = ({
   href?: string;
 }) => {
   const router = useRouter(); // hook direct ici
+  const t = useI18n();
 
   // Dialogs selon type
   if (
@@ -85,9 +87,8 @@ const CTAButton = ({
       size="sm"
       className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
       onClick={() =>
-        toast("👩🏽‍💻 En cours de développement", {
-          description:
-            "Cette fonctionnalité n'est pas encore prête, mais elle arrive très vite ⏳",
+        toast(t("in_development"), {
+          description: t("feature_coming_soon"),
         })
       }
     >
@@ -112,6 +113,7 @@ const BentoCardCTA = ({
   href?: string;
 }) => {
   const [hoveredSkill, setHoveredSkill] = useState("");
+  const t = useI18n();
 
   // SocialDock spécial
   if (cta.includes("social-dock")) {

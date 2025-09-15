@@ -1,32 +1,21 @@
-import { Article, ArticleMetadata } from "@/lib/interfaces/IArticle";
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-const articlesDirectory = path.join(process.cwd(), "content/articles");
-
-// Fonction pour calculer le temps de lecture approximatif
-function calculateReadingTime(content: string): number {
-  const wordsPerMinute = 200;
-  const words = content.trim().split(/\s+/).length;
-  return Math.ceil(words / wordsPerMinute);
+export interface Article {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  readingTime: number;
+  tags?: string[];
+  coverImage?: string;
 }
 
-// Fonction pour adapter les chemins d'images relatives
-function adaptImagePaths(coverImage: string | undefined, slug: string): string | undefined {
-  if (!coverImage) return undefined;
-  
-  // Si l'image commence par "/", c'est déjà un chemin absolu
-  if (coverImage.startsWith("/")) {
-    return coverImage;
-  }
-  
-  // Sinon, on considère que c'est un chemin relatif à adapter
-  return `/articles/${slug}/${coverImage}`;
-}
+const articlesDirectory = path.join(process.cwd(), 'content/articles');
 
-// Fonction pour obtenir tous les articles
-export async function getArticles(): Promise<Article[]> {
+export const getArticles = async (): Promise<Article[]> => {
   try {
     // Vérifier si le dossier existe
     if (!fs.existsSync(articlesDirectory)) {
@@ -35,79 +24,73 @@ export async function getArticles(): Promise<Article[]> {
 
     const entries = fs.readdirSync(articlesDirectory, { withFileTypes: true });
     const articles = entries
-      .filter((entry) => entry.isDirectory())
+      .filter(entry => entry.isDirectory())
       .map((entry) => {
         const slug = entry.name;
-        const indexPath = path.join(articlesDirectory, slug, "index.md");
+        const indexPath = path.join(articlesDirectory, slug, 'index.md');
+        
+        try {
+          const fileContents = fs.readFileSync(indexPath, 'utf8');
+          const { data, content } = matter(fileContents);
 
-        if (!fs.existsSync(indexPath)) return null;
+          // Calculer le temps de lecture approximatif
+          const wordsPerMinute = 200;
+          const wordCount = content.split(/\s+/).length;
+          const readingTime = Math.ceil(wordCount / wordsPerMinute);
 
-        const fileContents = fs.readFileSync(indexPath, "utf8");
-        const { data, content } = matter(fileContents);
-
-        const metadata = data as ArticleMetadata;
-
-        return {
-          slug: slug,
-          title: metadata.title,
-          excerpt: metadata.excerpt,
-          content,
-          date: metadata.date,
-          readingTime: calculateReadingTime(content),
-          coverImage: adaptImagePaths(metadata.coverImage, slug),
-          tags: metadata.tags || [],
-          author: metadata.author || "Baptiste LECHAT",
-        } as Article;
+          return {
+            slug,
+            title: data.title || slug,
+            excerpt: data.excerpt || '',
+            content,
+            date: data.date || new Date().toISOString(),
+            readingTime,
+            tags: data.tags || [],
+            coverImage: data.coverImage,
+          } as Article;
+        } catch (error) {
+          console.error(`Error reading article ${slug}:`, error);
+          return null;
+        }
       })
-      // Type guard pour TS
       .filter((article): article is Article => article !== null)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return articles;
   } catch (error) {
-    console.error("Erreur lors de la lecture des articles:", error);
+    console.error('Erreur lors de la récupération des articles:', error);
     return [];
   }
-}
+};
 
-// Fonction pour obtenir un article par son slug
-export async function getArticleBySlug(slug: string): Promise<Article | null> {
+export const getArticleBySlug = async (slug: string): Promise<Article | null> => {
   try {
-    const articlePath = path.join(articlesDirectory, slug);
-    const indexPath = path.join(articlePath, "index.md");
-
-    if (!fs.existsSync(indexPath)) {
+    const fullPath = path.join(articlesDirectory, slug, 'index.md');
+    
+    if (!fs.existsSync(fullPath)) {
       return null;
     }
 
-    const fileContents = fs.readFileSync(indexPath, "utf8");
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
-    const metadata = data as ArticleMetadata;
+    // Calculer le temps de lecture approximatif
+    const wordsPerMinute = 200;
+    const wordCount = content.split(/\s+/).length;
+    const readingTime = Math.ceil(wordCount / wordsPerMinute);
 
     return {
       slug,
-      title: metadata.title,
-      excerpt: metadata.excerpt,
+      title: data.title || slug,
+      excerpt: data.excerpt || '',
       content,
-      date: metadata.date,
-      readingTime: calculateReadingTime(content),
-      coverImage: adaptImagePaths(metadata.coverImage, slug),
-      tags: metadata.tags || [],
-      author: metadata.author || "Baptiste LECHAT",
+      date: data.date || new Date().toISOString(),
+      readingTime,
+      tags: data.tags || [],
+      coverImage: data.coverImage,
     } as Article;
   } catch (error) {
-    console.error(`Erreur lors de la lecture de l'article ${slug}:`, error);
+    console.error(`Erreur lors de la récupération de l'article ${slug}:`, error);
     return null;
   }
-}
-
-// Fonction pour obtenir les articles par tag
-export async function getArticlesByTag(tag: string): Promise<Article[]> {
-  const articles = await getArticles();
-  return articles.filter((article) =>
-    article.tags?.some(
-      (articleTag) => articleTag.toLowerCase() === tag.toLowerCase()
-    )
-  );
-}
+};

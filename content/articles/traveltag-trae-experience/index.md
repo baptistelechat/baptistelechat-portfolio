@@ -4,7 +4,7 @@ excerpt: "Retour d'expérience sur le développement de TravelTag avec TRAE AI, 
 date: "2024-09-10"
 author: "Baptiste LECHAT"
 tags: ["React", "TypeScript", "TRAE AI", "Développement", "Expérience"]
-coverImage: "Capture_1.png"
+coverImage: "/articles/traveltag-trae-experience/Capture_1.png"
 ---
 
 # TravelTag & TRAE : Une aventure technologique

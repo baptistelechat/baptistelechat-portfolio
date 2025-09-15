@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useI18n } from "@/i18n/client";
 import { Plus, Trash } from "lucide-react";
 import { useFieldArray, useForm } from "react-hook-form";
 import * as z from "zod";
@@ -48,6 +49,8 @@ export default function AutoFormArray({
     ? item._def.innerType._def.type
     : null;
 
+  const t = useI18n();
+  
   return (
     <AccordionItem value={name} className="border-none">
       <AccordionTrigger>{title}</AccordionTrigger>
@@ -85,7 +88,7 @@ export default function AutoFormArray({
           className="mt-4 flex items-center"
         >
           <Plus className="mr-2" size={16} />
-          Add
+          {t("add")}
         </Button>
       </AccordionContent>
     </AccordionItem>

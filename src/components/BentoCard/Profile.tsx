@@ -1,13 +1,16 @@
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
+import { getI18n } from "@/i18n/server";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";
 import BentoCardProps from "../../lib/interfaces/IBentoCardProps";
 import { cn } from "../../lib/utils";
 
-const Profile = (): BentoCardProps => {
+const Profile = async (): Promise<BentoCardProps> => {
+  const t = await getI18n();
+  
   return {
     Icon: UserIcon,
-    name: "Baptiste LECHAT",
+    name: t("profile_name"),
     description: "word-rotate",
     cta: "social-dock",
     background: (

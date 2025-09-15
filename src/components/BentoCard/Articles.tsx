@@ -1,13 +1,15 @@
-import { ArticleIcon } from "@/lib/constants/ProjectIcon";
-import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
-import { Newspaper } from "lucide-react";
+import { getI18n } from "@/i18n/server";
+import { BookOpenIcon, Newspaper } from "lucide-react";
+import BentoCardProps from "../../lib/interfaces/IBentoCardProps";
 
-const Articles = (): BentoCardProps => {
+const Articles = async (): Promise<BentoCardProps> => {
+  const t = await getI18n();
+
   return {
-    Icon: ArticleIcon,
-    name: "Articles / Blog",
-    description: "Découvrez mes retours d'expérience et réflexions techniques",
-    cta: "Lire les articles",
+    Icon: BookOpenIcon,
+    name: t("articles_blog"),
+    description: t("articles_description"),
+    cta: t("read_articles"),
     background: (
       <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-sky-100 to-violet-100 p-4 dark:from-sky-300 dark:to-violet-300">
         <Newspaper className="size-20 text-gray-600" />

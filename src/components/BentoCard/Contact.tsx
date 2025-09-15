@@ -1,13 +1,16 @@
+import { getI18n } from "@/i18n/server";
 import socialLinks from "@/lib/constants/socialLinks";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
-import { ContactIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
 import { Button } from "../ui/button";
 
-const Contact = (): BentoCardProps => {
+const Contact = async (): Promise<BentoCardProps> => {
+  const t = await getI18n();
+  
   return {
-    Icon: ContactIcon,
-    name: "Contact",
-    description: "Vous souhaitez me contacter ?",
+    Icon: MailIcon,
+    name: t("contact"),
+    description: t("contact_description"),
     cta: "social-dock",
     background: (
       <div className="flex size-full flex-col gap-4 p-4 md:hidden">

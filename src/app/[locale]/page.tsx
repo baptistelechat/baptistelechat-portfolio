@@ -9,15 +9,17 @@ import {
   BentoGrid,
 } from "@/components/magicui/bento-grid/bento-grid";
 import BentoCardProps from "@/lib/interfaces/IBentoCardProps";
+import { setStaticParamsLocale } from "@/i18n/server";
 
-export default function Bento() {
+export default async function Bento({ params }: { params: { locale: string } }) {
+  setStaticParamsLocale(params.locale);
   const features: BentoCardProps[] = [
-    Profile(),
-    Skills(),
-    ...Projects(),
-    ...Hobbies(),
-    Articles(),
-    Contact(),
+    await Profile(),
+    await Skills(),
+    ...(await Projects()),
+    ...(await Hobbies()),
+    await Articles(),
+    await Contact(),
   ];
 
   return (

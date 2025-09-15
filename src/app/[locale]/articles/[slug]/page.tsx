@@ -3,6 +3,7 @@ import TableOfContents from "@/components/TableOfContents";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ImageZoom } from "@/components/ui/kibo-ui/image-zoom";
+import { useI18n } from "@/i18n/client";
 import { getArticleBySlug, getArticles } from "@/lib/utils/articles";
 import { Book, Calendar, Clock } from "lucide-react";
 import { Metadata } from "next";
@@ -73,6 +74,7 @@ export async function generateMetadata({
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const article = await getArticleBySlug(params.slug);
+  const t = useI18n();
 
   if (!article) {
     notFound();
@@ -117,7 +119,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="size-4" />
-                <span>{article.readingTime} min de lecture</span>
+                <span>{article.readingTime} {t("min_reading")}</span>
               </div>
             </div>
 

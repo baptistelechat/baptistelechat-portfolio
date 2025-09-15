@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useI18n } from "@/i18n/client";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
@@ -18,6 +19,7 @@ interface TableOfContentsProps {
 const TableOfContents = ({ content, className }: TableOfContentsProps) => {
   const [tocItems, setTocItems] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
+  const t = useI18n();
 
   useEffect(() => {
     // Extraire les titres H2 et H3 du contenu markdown
@@ -78,12 +80,12 @@ const TableOfContents = ({ content, className }: TableOfContentsProps) => {
   };
 
   if (tocItems.length === 0) return null;
-
+  
   return (
     <Card className={cn("mb-8", className)}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg">
-          📋 Table des matières
+          📋 {t("table_of_contents")}
         </CardTitle>
       </CardHeader>
       <CardContent>

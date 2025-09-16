@@ -26,7 +26,7 @@ const Contact = async (): Promise<BentoCardProps> => {
             size="sm"
             className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
           >
-            <a href={link.url} className="flex gap-2">
+            <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex gap-2">
               {link.Icon}
               {link.tooltip}
             </a>

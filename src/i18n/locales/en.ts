@@ -12,6 +12,7 @@ export default {
     experiences: 'Experiences',
     education: 'Education',
     close: 'Close',
+    social_footer: 'Find me on:',
   },
   
   // UI Components

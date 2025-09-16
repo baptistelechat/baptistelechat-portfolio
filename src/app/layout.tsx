@@ -11,9 +11,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://baptistelechat.vercel.app"
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://baptistelechat.vercel.app'),
   title: "Baptiste LECHAT | Portfolio",
   description: "Baptiste LECHAT | Portfolio",
 };

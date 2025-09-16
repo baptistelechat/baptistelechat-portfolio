@@ -1,4 +1,5 @@
 import BreadcrumbLinks from "@/components/BreadcrumbLinks";
+import SocialFooter from "@/components/SocialFooter";
 import TableOfContents from "@/components/TableOfContents";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -227,6 +228,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </article>
         </CardContent>
       </Card>
+      
+      {/* Footer avec liens sociaux */}
+      <SocialFooter />
     </div>
   );
 }

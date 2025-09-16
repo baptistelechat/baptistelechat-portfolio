@@ -1,4 +1,5 @@
 import BreadcrumbLinks from "@/components/BreadcrumbLinks";
+import SocialFooter from "@/components/SocialFooter";
 import {
   BentoCard,
   BentoGrid,
@@ -113,6 +114,9 @@ export default async function ArticlesPage({
           </p>
         </div>
       )}
+      
+      {/* Footer avec liens sociaux */}
+      <SocialFooter />
     </div>
   );
 }

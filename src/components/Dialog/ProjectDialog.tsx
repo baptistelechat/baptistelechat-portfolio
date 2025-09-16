@@ -149,7 +149,7 @@ const ProjectDialog = ({ name }: { name: string }) => {
               size="sm"
               className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
             >
-              {t("ui.close")}
+              {t("navigation.close")}
             </Button>
           </DialogClose>
         </DialogFooter>

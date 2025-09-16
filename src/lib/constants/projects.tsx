@@ -9,7 +9,7 @@ import {
   TravelTag,
 } from "./ProjectIcon";
 
-type TranslationFunction = (key: string) => string;
+type TranslationFunction = (key: string, params?: any, options?: any) => string;
 
 export const getProjects = (t: TranslationFunction): IProject[] => {
   const ratio = 1600 / 900;

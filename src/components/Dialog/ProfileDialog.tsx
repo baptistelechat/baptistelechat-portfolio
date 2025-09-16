@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import jobs from "@/lib/constants/jobs";
 import { ArrowRightIcon, BriefcaseIcon, GraduationCapIcon } from "lucide-react";
 import { useI18n } from "@/i18n/client";
+import { translateJobs } from "@/lib/utils/translateJobs";
 import SkillsAnimatedBeam from "../SkillsAnimatedBeam";
 import WordRotate from "../magicui/word-rotate";
 import {
@@ -41,19 +41,19 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
       </DialogTrigger>
       <DialogContent className="flex size-full flex-col items-start justify-start sm:h-5/6 sm:max-w-xl">
         <DialogHeader>
-          <DialogTitle>{t("profile.profile_name")}</DialogTitle>
+          <DialogTitle>{t("profile.name")}</DialogTitle>
           <DialogDescription>
-            <WordRotate className="max-w-lg text-neutral-400" words={jobs} />
+            <WordRotate className="max-w-lg text-neutral-400" words={translateJobs(t)} />
           </DialogDescription>
         </DialogHeader>
         <Tabs defaultValue={"skills"} className="size-full">
           <TabsList>
             <TabsTrigger value="skills">{t("navigation.skills")}</TabsTrigger>
-            <TabsTrigger value="experiences">{t("profile.experiences")}</TabsTrigger>
+            <TabsTrigger value="experiences">{t("navigation.experiences")}</TabsTrigger>
           </TabsList>
           <TabsContent value="skills" className="flex flex-col gap-4">
             <p className="mt-2 text-sm text-neutral-400">
-              {t("profile.profile_description")}
+              {t("profile.description")}
             </p>
             <SkillsAnimatedBeam />
           </TabsContent>
@@ -63,14 +63,14 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
                 <AccordionTrigger>
                   <div className="flex items-center gap-2">
                     <GraduationCapIcon className="size-6" />
-                    {t("profile.education")}
+                    {t("navigation.education")}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="flex flex-col gap-2">
                     <div className="flex flex-col gap-1">
                       <p className="font-semibold text-sky-600">
-                        {t("profile.degree_master")}
+                        {t("education.degree_master")}
                         <span className="ml-1 text-sm font-normal italic text-neutral-400">
                           (2019 - 2021)
                         </span>
@@ -79,7 +79,7 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
                     </div>
                     <div className="flex flex-col gap-1">
                       <p className="font-semibold text-sky-600">
-                        {t("profile.degree_license")}
+                        {t("education.degree_license")}
                         <span className="ml-1 text-sm font-normal italic text-neutral-400">
                           (2018 - 2019)
                         </span>
@@ -88,7 +88,7 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
                     </div>
                     <div className="flex flex-col gap-1">
                       <p className="font-semibold text-sky-600">
-                        {t("profile.degree_bts")}
+                        {t("education.degree_bts")}
                         <span className="ml-1 text-sm font-normal italic text-neutral-400">
                           (2016 - 2018)
                         </span>
@@ -97,7 +97,7 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
                     </div>
                     <div className="flex flex-col gap-2">
                       <p className="font-semibold text-sky-600">
-                        {t("profile.degree_bac")}
+                        {t("education.degree_bac")}
                         <span className="ml-1 text-sm font-normal italic text-neutral-400">
                           (2013 - 2016)
                         </span>
@@ -111,24 +111,24 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
                 <AccordionTrigger>
                   <div className="flex items-center gap-1">
                     <BriefcaseIcon className="size-6" />
-                    {t("jobs.company_123structure")}
+                    {t("companies.company_123structure")}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="flex flex-col gap-2">
                     <p className="font-semibold text-sky-600">
-                      {t("jobs.job_designer_developer")}
+                      {t("positions.job_designer_developer")}
                       <span className="ml-1 text-sm font-normal italic text-neutral-400">
-                        ({t("profile.october_2021_present")})
+                        ({t("dates.october_2021_present")})
                       </span>
                     </p>
                     <ul>
                       <li>
-                        • {t("jobs.business_tools_development")},
+                        • {t("activities.business_tools_development")},
                       </li>
-                      <li>• {t("jobs.technical_support")},</li>
+                      <li>• {t("activities.technical_support")},</li>
                       <li>
-                        • {t("jobs.formwork_reinforcement_plans")}
+                        • {t("activities.formwork_reinforcement_plans")}
                       </li>
                     </ul>
                   </div>
@@ -138,36 +138,36 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
                 <AccordionTrigger>
                   <div className="flex items-center gap-2">
                     <BriefcaseIcon className="size-6" />
-                    {t("jobs.company_abak")}
+                    {t("companies.company_abak")}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="flex flex-col gap-1">
                     <p className="font-semibold text-sky-600">
-                      {t("jobs.job_it_manager")}
+                      {t("positions.job_it_manager")}
                       <span className="ml-1 text-sm font-normal italic text-neutral-400">
-                        ({t("profile.september_2019_september_2021")})
+                        ({t("dates.september_2019_september_2021")})
                       </span>
                     </p>
                     <ul>
                       <li>
-                        • {t("jobs.business_tools_development")},
+                        • {t("activities.business_tools_development")},
                       </li>
-                      <li>• {t("jobs.website_management")},</li>
-                      <li>• {t("jobs.technical_support")},</li>
-                      <li>• {t("jobs.it_infrastructure_management")}</li>
+                      <li>• {t("activities.website_management")},</li>
+                      <li>• {t("activities.technical_support")},</li>
+                      <li>• {t("activities.it_infrastructure_management")}</li>
                     </ul>
                     <p className="font-semibold text-sky-600">
-                      {t("jobs.job_economist")}
+                      {t("positions.job_economist")}
                       <span className="ml-1 text-sm font-normal italic text-neutral-400">
-                        ({t("profile.september_2018_august_2019")})
+                        ({t("dates.september_2018_august_2019")})
                       </span>
                     </p>
                     <ul>
-                      <li>• {t("jobs.bim_designer")},</li>
-                      <li>• {t("jobs.estimation")},</li>
-                      <li>• {t("jobs.prescription")},</li>
-                      <li>• {t("jobs.construction_site_monitoring")}</li>
+                      <li>• {t("activities.bim_designer")},</li>
+                      <li>• {t("activities.estimation")},</li>
+                      <li>• {t("activities.prescription")},</li>
+                      <li>• {t("activities.construction_site_monitoring")}</li>
                     </ul>
                   </div>
                 </AccordionContent>
@@ -182,7 +182,7 @@ const ProfileDialog = ({ cta }: { cta: string }) => {
               size="sm"
               className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
             >
-              {t("ui.close")}
+              {t("navigation.close")}
             </Button>
           </DialogClose>
         </DialogFooter>

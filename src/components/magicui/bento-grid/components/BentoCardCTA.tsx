@@ -4,13 +4,14 @@ import ProfileDialog from "@/components/Dialog/ProfileDialog";
 import ProjectDialog from "@/components/Dialog/ProjectDialog";
 import SocialDock from "@/components/SocialDock";
 import { Button } from "@/components/ui/button";
+import { useLocalizedNavigation } from "@/hooks/useLocalizedNavigation";
 import { getProjects } from "@/lib/constants/projects";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useI18n } from "@/i18n/client";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation"; // App Router Next 13+
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -24,7 +25,8 @@ const CTAButton = ({
   cta: string;
   href?: string;
 }) => {
-  const router = useRouter(); // hook direct ici
+  const router = useRouter();
+  const { getLocalizedPath } = useLocalizedNavigation();
   const t = useI18n();
   const projects = getProjects(t);
 
@@ -47,6 +49,7 @@ const CTAButton = ({
 
   // Navigation avec href fourni
   if (href) {
+    const localizedHref = href.startsWith('/') ? getLocalizedPath(href) : href;
     return (
       <Button
         variant="ghost"
@@ -54,7 +57,7 @@ const CTAButton = ({
         size="sm"
         className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
       >
-        <a href={href}>
+        <a href={localizedHref}>
           {cta}
           <ArrowRightIcon className="ml-2 size-4" />
         </a>
@@ -64,13 +67,14 @@ const CTAButton = ({
 
   // Navigation vers un article
   if (cta === t("ui.read_articles") || cta === t("ui.view_article") || cta === t("ui.read_article")) {
+    const articlesPath = getLocalizedPath("/articles");
     return (
       <Button
         variant="ghost"
         asChild
         size="sm"
         className="pointer-events-auto w-fit bg-card hover:cursor-pointer"
-        onClick={() => router.push("/articles")} // navigation côté client
+        onClick={() => router.push(articlesPath)}
       >
         <a>
           {cta}

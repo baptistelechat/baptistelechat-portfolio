@@ -15,7 +15,7 @@ const Articles = async (): Promise<BentoCardProps> => {
         <Newspaper className="size-20 text-gray-600" />
       </div>
     ),
-    href: "/articles",
+    href: "/articles", // Sera localisé par BentoCardCTA
     className:
       "row-start-14 row-end-15 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-3 xl:col-end-5",
   };

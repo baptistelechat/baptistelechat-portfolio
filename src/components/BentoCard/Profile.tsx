@@ -1,13 +1,16 @@
-import AnimatedGridPattern from "@/components/magic-ui/animated-grid-pattern";
+import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
+import { getI18n } from "@/i18n/server";
 import { UserIcon } from "lucide-react";
 import Image from "next/image";
 import BentoCardProps from "../../lib/interfaces/IBentoCardProps";
 import { cn } from "../../lib/utils";
 
-const Profile = (): BentoCardProps => {
+const Profile = async (): Promise<BentoCardProps> => {
+  const t = await getI18n();
+  
   return {
     Icon: UserIcon,
-    name: "Baptiste LECHAT",
+    name: t("profile.name"),
     description: "word-rotate",
     cta: "social-dock",
     background: (
@@ -32,7 +35,7 @@ const Profile = (): BentoCardProps => {
       </>
     ),
     className:
-      "row-start-1 row-end-2 col-start-1 col-end-2 sm:row-start-1 sm:row-end-2 sm:col-start-1 sm:col-end-2 lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-3",
+      "row-start-1 row-end-2 col-start-1 col-end-2 xl:row-start-1 xl:row-end-2 xl:col-start-1 xl:col-end-3",
   };
 };
 

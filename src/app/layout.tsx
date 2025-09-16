@@ -1,3 +1,4 @@
+import Analytics from "@/components/Analytics";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
@@ -10,7 +11,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://baptistelechat.vercel.app'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://baptistelechat.vercel.app"
+  ),
   title: "Baptiste LECHAT | Portfolio",
   description: "Baptiste LECHAT | Portfolio",
 };
@@ -37,6 +40,7 @@ export default function RootLayout({
             </div>
             <Toaster />
           </TooltipProvider>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

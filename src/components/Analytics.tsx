@@ -10,8 +10,6 @@ const Analytics = () => {
   // Récupérer les variables d'environnement Umami
   const scriptUrl = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL;
   const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
-  console.log(scriptUrl, websiteId);
-
 
   // Vérifier que les variables sont définies
   if (!scriptUrl || !websiteId) {

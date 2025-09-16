@@ -37,7 +37,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
-  const article = await getArticleBySlug(params.slug);
+  const article = await getArticleBySlug(params.slug, params.locale);
 
   if (!article) {
     return {
@@ -80,7 +80,7 @@ export async function generateMetadata({
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   setStaticParamsLocale(params.locale);
-  const article = await getArticleBySlug(params.slug);
+  const article = await getArticleBySlug(params.slug, params.locale);
   const t = await getI18n();
 
   if (!article) {

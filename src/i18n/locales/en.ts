@@ -32,6 +32,8 @@ export default {
     dark_mode: 'Dark mode',
     light_mode: 'Light mode',
     system_mode: 'System mode',
+    back_to_articles: 'Back to articles',
+    back_to_home: 'Back to home',
   },
   
   // Skills and hobbies

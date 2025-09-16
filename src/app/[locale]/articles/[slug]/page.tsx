@@ -24,9 +24,9 @@ interface ArticlePageProps {
 
 export async function generateStaticParams() {
   const articles = await getArticles();
-  const locales = ['fr', 'en'];
-  
-  return locales.flatMap(locale => 
+  const locales = ["fr", "en"];
+
+  return locales.flatMap((locale) =>
     articles.map((article) => ({
       slug: article.slug,
       locale: locale,
@@ -37,7 +37,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
-  const article = await getArticleBySlug(params.slug, params.locale);
+  const article = await getArticleBySlug(params.slug);
 
   if (!article) {
     return {
@@ -80,7 +80,7 @@ export async function generateMetadata({
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   setStaticParamsLocale(params.locale);
-  const article = await getArticleBySlug(params.slug, params.locale);
+  const article = await getArticleBySlug(params.slug);
   const t = await getI18n();
 
   if (!article) {
@@ -126,7 +126,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="size-4" />
-                <span>{article.readingTime} {t("ui.min_reading")}</span>
+                <span>
+                  {article.readingTime} {t("ui.min_reading")}
+                </span>
               </div>
             </div>
 

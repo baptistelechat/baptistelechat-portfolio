@@ -3,6 +3,7 @@ import IProject from "../interfaces/IProject";
 import {
   Aura,
   CodeX,
+  PaperMonth,
   PyRevitWithVSCode,
   Sismo,
   SpeedTestTracker,
@@ -190,6 +191,134 @@ export const getProjects = (t: TranslationFunction): IProject[] => {
       ),
       className:
         "row-start-8 row-end-9 col-start-1 col-end-2 xl:row-start-3 xl:row-end-4 xl:col-start-2 xl:col-end-3",
+      skills: [
+        "react_ts",
+        "typescript",
+        "_shadcn_ui",
+        "tailwindcss",
+        "nodejs",
+        "docker",
+      ],
+      capture: 4,
+      bgGradientLight: "from-rose-100 to-sky-100",
+      bgGradientDark: "dark:from-rose-300 dark:to-sky-300",
+      gitHubUrl: "https://github.com/baptistelechat/Speedtest-tracker",
+    },
+    {
+      Icon: PaperMonth,
+      name: "PaperMonth",
+      description: t("projects.project_papermonth_description"),
+      cta: t("ui.learn_more"),
+      background: (
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-blue-100 to-gray-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-blue-300 dark:to-gray-300">
+          <Image
+            src="/project/PaperMonth/Capture_1.png"
+            width={width}
+            height={height}
+            className="size-full rounded-md drop-shadow-md"
+            alt="PaperMonth"
+            unoptimized
+          />
+        </div>
+      ),
+      className:
+        "row-start-9 row-end-10 col-start-1 col-end-2 xl:row-start-3 xl:row-end-4 xl:col-start-3 xl:col-end-4",
+      skills: [
+        "react_ts",
+        "typescript",
+        "_shadcn_ui",
+        "tailwindcss",
+        "nodejs",
+        "vercel",
+      ],
+      capture: 4,
+      bgGradientLight: "from-blue-100 to-gray-100",
+      bgGradientDark: "dark:from-blue-300 dark:to-gray-300",
+      gitHubUrl: "https://github.com/baptistelechat/PaperMonth",
+    },
+    {
+      Icon: SpeedTestTracker,
+      name: "New Project 2",
+      description: t("projects.project_speedtest_description"),
+      cta: t("ui.learn_more"),
+      background: (
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-rose-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-rose-300 dark:to-sky-300">
+          <Image
+            src="/project/SpeedTest Tracker/Capture_1.png"
+            width={width}
+            height={height}
+            className="size-full rounded-md drop-shadow-md"
+            alt="New Project 2"
+            unoptimized
+          />
+        </div>
+      ),
+      className:
+        "row-start-10 row-end-11 col-start-1 col-end-2 xl:row-start-3 xl:row-end-4 xl:col-start-4 xl:col-end-5",
+      skills: [
+        "react_ts",
+        "typescript",
+        "_shadcn_ui",
+        "tailwindcss",
+        "nodejs",
+        "docker",
+      ],
+      capture: 4,
+      bgGradientLight: "from-rose-100 to-sky-100",
+      bgGradientDark: "dark:from-rose-300 dark:to-sky-300",
+      gitHubUrl: "https://github.com/baptistelechat/Speedtest-tracker",
+    },
+    {
+      Icon: SpeedTestTracker,
+      name: "New Project 3",
+      description: t("projects.project_speedtest_description"),
+      cta: t("ui.learn_more"),
+      background: (
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-rose-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-rose-300 dark:to-sky-300">
+          <Image
+            src="/project/SpeedTest Tracker/Capture_1.png"
+            width={width}
+            height={height}
+            className="size-full rounded-md drop-shadow-md"
+            alt="New Project 3"
+            unoptimized
+          />
+        </div>
+      ),
+      className:
+        "row-start-11 row-end-12 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-1 xl:col-end-2",
+      skills: [
+        "react_ts",
+        "typescript",
+        "_shadcn_ui",
+        "tailwindcss",
+        "nodejs",
+        "docker",
+      ],
+      capture: 4,
+      bgGradientLight: "from-rose-100 to-sky-100",
+      bgGradientDark: "dark:from-rose-300 dark:to-sky-300",
+      gitHubUrl: "https://github.com/baptistelechat/Speedtest-tracker",
+    },
+    {
+      Icon: SpeedTestTracker,
+      name: "New Project 4",
+      description: t("projects.project_speedtest_description"),
+      cta: t("ui.learn_more"),
+      background: (
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-rose-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-rose-300 dark:to-sky-300">
+          <Image
+            src="/project/SpeedTest Tracker/Capture_1.png"
+            width={width}
+            height={height}
+            className="size-full rounded-md drop-shadow-md"
+            alt="New Project 4"
+            unoptimized
+          />
+        </div>
+      ),
+      className:
+        "row-start-12 row-end-13 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-2 xl:col-end-3",
       skills: [
         "react_ts",
         "typescript",

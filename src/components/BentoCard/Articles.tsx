@@ -17,7 +17,7 @@ const Articles = async (): Promise<BentoCardProps> => {
     ),
     href: "/articles", // Sera localisé par BentoCardCTA
     className:
-      "row-start-14 row-end-15 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-3 xl:col-end-5",
+      "row-start-19 row-end-20 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-3 xl:col-end-5",
   };
 };
 

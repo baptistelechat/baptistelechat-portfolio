@@ -45,6 +45,12 @@ export const Aura = () => {
   );
 };
 
+export const PaperMonth = () => {
+  return (
+    <Image src="/project/PaperMonth/icon.svg" alt="PaperMonth" width={size} height={size} />
+  );
+};
+
 export const TravelTag = () => {
   return <p className="text-[40px]">🧳</p>;
 };

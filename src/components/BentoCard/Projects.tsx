@@ -35,7 +35,7 @@ const Projects = async (): Promise<BentoCardProps[]> => {
         </div>
       ),
       className:
-        "row-start-9 row-end-10 col-start-1 col-end-2 xl:row-start-3 xl:row-end-4 xl:col-start-3 xl:col-end-4",
+        "row-start-13 row-end-14 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-3 xl:col-end-4",
     },
     {
       Icon: GanttChart as any,
@@ -44,7 +44,7 @@ const Projects = async (): Promise<BentoCardProps[]> => {
       cta: t("ui.view_more"),
       background: <div className="absolute -right-20 -top-20 opacity-60" />,
       className:
-        "row-start-10 row-end-11 col-start-1 col-end-2 xl:row-start-3 xl:row-end-4 xl:col-start-4 xl:col-end-5",
+        "row-start-14 row-end-15 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-4 xl:col-end-5",
     },
   ];
 };

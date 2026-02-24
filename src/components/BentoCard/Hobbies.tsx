@@ -20,7 +20,7 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
           unoptimized
         />
       ),
-      className: "row-start-11 row-end-12 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-1 xl:col-end-2",
+      className: "row-start-15 row-end-16 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-1 xl:col-end-2",
     },
     {
       Icon: TrophyIcon,
@@ -35,7 +35,7 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
           unoptimized
         />
       ),
-      className: "row-start-12 row-end-13 col-start-1 col-end-2 xl:row-start-4 xl:row-end-5 xl:col-start-2 xl:col-end-3",
+      className: "row-start-16 row-end-17 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-2 xl:col-end-3",
     },
     {
       Icon: Gamepad2Icon,
@@ -50,7 +50,7 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
           unoptimized
         />
       ),
-      className: "row-start-13 row-end-14 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-1 xl:col-end-2",
+      className: "row-start-17 row-end-18 col-start-1 col-end-2 xl:row-start-6 xl:row-end-7 xl:col-start-1 xl:col-end-2",
     },
     {
       Icon: CarIcon,
@@ -65,7 +65,7 @@ const Hobbies = async (): Promise<BentoCardProps[]> => {
           unoptimized
         />
       ),
-      className: "row-start-14 row-end-15 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-2 xl:col-end-3",
+      className: "row-start-18 row-end-19 col-start-1 col-end-2 xl:row-start-6 xl:row-end-7 xl:col-start-2 xl:col-end-3",
     },
   ];
 };

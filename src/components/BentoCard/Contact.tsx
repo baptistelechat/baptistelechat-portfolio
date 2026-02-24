@@ -35,7 +35,7 @@ const Contact = async (): Promise<BentoCardProps> => {
       </div>
     ),
     className:
-      "row-start-16 row-end-17 col-start-1 col-end-2 xl:row-start-5 xl:row-end-6 xl:col-start-3 xl:col-end-5",
+      "row-start-20 row-end-21 col-start-1 col-end-2 xl:row-start-6 xl:row-end-7 xl:col-start-3 xl:col-end-5",
   };
 };
 

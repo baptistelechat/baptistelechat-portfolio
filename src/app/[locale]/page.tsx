@@ -24,7 +24,7 @@ export default async function Bento({ params }: { params: { locale: string } }) 
 
   return (
     <div className="flex max-w-screen-2xl flex-col">
-      <BentoGrid className="grid grid-cols-1 gap-4 xl:grid-cols-4 xl:grid-rows-5">
+      <BentoGrid className="grid grid-cols-1 gap-4 xl:grid-cols-4 xl:grid-rows-6">
         {features.map((feature) => (
           <BentoCard key={feature.name} {...feature} />
         ))}

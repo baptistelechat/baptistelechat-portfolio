@@ -18,8 +18,8 @@ const OrbitingCirclesSkills = () => {
         radius={70}
       >
         <Image
-          src="/icons/react_ts.svg"
-          alt="react_ts"
+          src="/icons/vite.svg"
+          alt="vite"
           width={imgSize}
           height={imgSize}
         />
@@ -52,7 +52,7 @@ const OrbitingCirclesSkills = () => {
         className={`size-[${imgSize}px] border-none bg-transparent`}
         reverse
         duration={20}
-        delay={20}
+        delay={13}
         radius={140}
       >
         <Image
@@ -66,7 +66,7 @@ const OrbitingCirclesSkills = () => {
         className={`size-[${imgSize}px] border-none bg-transparent`}
         reverse
         duration={20}
-        delay={10}
+        delay={7}
         radius={140}
       >
         <Image
@@ -76,11 +76,25 @@ const OrbitingCirclesSkills = () => {
           height={imgSize}
         />
       </OrbitingCircles>
+      <OrbitingCircles
+        className={`size-[${imgSize}px] border-none bg-transparent`}
+        reverse
+        duration={20}
+        delay={0}
+        radius={140}
+      >
+        <Image
+          src="/icons/react_ts.svg"
+          alt="react_ts"
+          width={imgSize}
+          height={imgSize}
+        />
+      </OrbitingCircles>
       {/* Outer Circles */}
       <OrbitingCircles
         className={`size-[${imgSize}px] border-none bg-transparent`}
         duration={25}
-        delay={20}
+        delay={16.7}
         radius={200}
       >
         <Image
@@ -93,12 +107,25 @@ const OrbitingCirclesSkills = () => {
       <OrbitingCircles
         className={`size-[${imgSize}px] border-none bg-transparent`}
         duration={25}
-        delay={10}
+        delay={8.3}
         radius={200}
       >
         <Image
           src="/icons/_postgresql.png"
           alt="postgresql"
+          width={imgSize}
+          height={imgSize}
+        />
+      </OrbitingCircles>
+      <OrbitingCircles
+        className={`size-[${imgSize}px] border-none bg-transparent`}
+        duration={25}
+        delay={0}
+        radius={200}
+      >
+        <Image
+          src="/icons/supabase.svg"
+          alt="supabase"
           width={imgSize}
           height={imgSize}
         />

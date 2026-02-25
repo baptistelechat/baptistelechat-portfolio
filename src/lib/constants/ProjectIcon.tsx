@@ -51,6 +51,12 @@ export const PaperMonth = () => {
   );
 };
 
+export const Sublimotion = () => {
+  return (
+    <Image src="/project/Sublimotion/icon.svg" alt="Sublimotion" width={size} height={size} />
+  );
+};
+
 export const TravelTag = () => {
   return <p className="text-[40px]">🧳</p>;
 };

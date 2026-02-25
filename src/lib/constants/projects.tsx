@@ -7,6 +7,7 @@ import {
   PyRevitWithVSCode,
   Sismo,
   SpeedTestTracker,
+  Sublimotion,
   TravelTag,
 } from "./ProjectIcon";
 
@@ -210,7 +211,7 @@ export const getProjects = (t: TranslationFunction): IProject[] => {
       description: t("projects.project_papermonth_description"),
       cta: t("ui.learn_more"),
       background: (
-        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-blue-100 to-gray-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-blue-300 dark:to-gray-300">
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-blue-200 to-gray-200 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-blue-300 dark:to-gray-300">
           <Image
             src="/project/PaperMonth/Capture_1.png"
             width={width}
@@ -231,24 +232,24 @@ export const getProjects = (t: TranslationFunction): IProject[] => {
         "nodejs",
         "vercel",
       ],
-      capture: 4,
+      capture: 5,
       bgGradientLight: "from-blue-100 to-gray-100",
       bgGradientDark: "dark:from-blue-300 dark:to-gray-300",
       gitHubUrl: "https://github.com/baptistelechat/PaperMonth",
     },
     {
-      Icon: SpeedTestTracker,
-      name: "New Project 2",
-      description: t("projects.project_speedtest_description"),
+      Icon: Sublimotion,
+      name: "Sublimotion",
+      description: t("projects.project_sublimotion_description"),
       cta: t("ui.learn_more"),
       background: (
-        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-rose-100 to-sky-100 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-rose-300 dark:to-sky-300">
+        <div className="flex size-full transform-gpu items-center justify-center overflow-hidden bg-gradient-to-bl from-blue-400 to-slate-400 p-4 transition-all duration-300 group-hover:-translate-y-10 dark:from-blue-300 dark:to-slate-300">
           <Image
-            src="/project/SpeedTest Tracker/Capture_1.png"
+            src="/project/Sublimotion/Capture_1.png"
             width={width}
             height={height}
             className="size-full rounded-md drop-shadow-md"
-            alt="New Project 2"
+            alt="Sublimotion"
             unoptimized
           />
         </div>
@@ -259,13 +260,13 @@ export const getProjects = (t: TranslationFunction): IProject[] => {
         "react_ts",
         "typescript",
         "_shadcn_ui",
-        "tailwindcss",
+        "_three",
         "nodejs",
-        "docker",
+        "vercel",
       ],
       capture: 4,
-      bgGradientLight: "from-rose-100 to-sky-100",
-      bgGradientDark: "dark:from-rose-300 dark:to-sky-300",
+      bgGradientLight: "from-blue-400 to-slate-400",
+      bgGradientDark: "dark:from-blue-300 dark:to-slate-300",
       gitHubUrl: "https://github.com/baptistelechat/Speedtest-tracker",
     },
     {

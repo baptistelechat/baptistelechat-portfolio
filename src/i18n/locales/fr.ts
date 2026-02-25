@@ -138,6 +138,8 @@ export default {
       "Une application web pour surveiller la vitesse d'internet sur un réseau local.",
     project_papermonth_description:
       "Un générateur de fonds d'écran qui vous permet de vous organiser simplement.",
+    project_sublimotion_description:
+      "Application de personnalisation de mugs en 3D pour de la création de contenu pour les réseaux sociaux.",
     mystery_project: "Projet Mystère",
     mystery_project_description:
       "Un nouveau projet passionnant en cours de développement. Un indice se cache dans cette page...",

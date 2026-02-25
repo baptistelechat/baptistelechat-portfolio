@@ -138,6 +138,8 @@ export default {
       "A web application to monitor internet speed on a local network.",
     project_papermonth_description:
       "A wallpaper generator that helps you stay organized with ease.",
+    project_sublimotion_description:
+      "3D mug customization application for creating content for social media.",
     mystery_project: "Mystery Project",
     mystery_project_description:
       "An exciting new project in development. A clue is hidden on this page...",
